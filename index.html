@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Saúde — Transforme sua clínica em uma máquina de resultados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:       #F3F5FA;
+      --bg2:      #E8EBF4;
+      --white:    #FFFFFF;
+      --green:    #0055FE;
+      --green-l:  #1A6BFF;
+      --green-xl: #4D8AFF;
+      --green-bg: #EEF3FF;
+      --lime:     #93BBFF;
+      --text:     #0D1117;
+      --text2:    #1A2230;
+      --muted:    #5A6472;
+      --dim:      #8A96A8;
+      --border:   #D4DBE8;
+      --border2:  #BEC8D8;
+      --shadow:   0 2px 12px rgba(13,17,23,0.07);
+      --shadow-lg: 0 8px 40px rgba(13,17,23,0.1);
+      --font-h:   'Plus Jakarta Sans', sans-serif;
+      --font-b:   'Inter', sans-serif;
+      --radius:   20px;
+      --radius-sm: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-b);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+
+    /* ─── UTILS ─── */
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--green-bg);
+      border: 1px solid rgba(0,85,254,0.18);
+      color: var(--green);
+      font-family: var(--font-b);
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 5px 13px;
+      border-radius: 100px;
+      letter-spacing: 0.01em;
+    }
+    .tag-dot {
+      width: 6px; height: 6px;
+      background: var(--green-xl);
+      border-radius: 50%;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-b);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-green {
+      background: var(--green);
+      color: #fff;
+    }
+    .btn-green:hover {
+      background: var(--green-l);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0,85,254,0.28);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border2);
+    }
+    .btn-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+      background: var(--green-bg);
+    }
+    .section-eyebrow {
+      font-family: var(--font-b);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--font-h);
+      font-size: clamp(30px, 3.8vw, 46px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.in { opacity: 1; transform: translateY(0); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      transition: all 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(242,245,240,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 13px 0;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark {
+      width: 34px; height: 34px;
+      background: var(--green);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+    }
+    .nav-logo-text {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--bg2); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      padding: 130px 0 80px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .blob-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(174,237,122,0.35) 0%, transparent 70%);
+      top: -100px; right: -50px;
+    }
+    .blob-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(0,85,254,0.1) 0%, transparent 70%);
+      bottom: 0; left: -100px;
+    }
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-tag { margin-bottom: 26px; }
+    .hero-title {
+      font-family: var(--font-h);
+      font-size: clamp(34px, 4vw, 54px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--green);
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 440px;
+    }
+    .hero-btns { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+    .hero-proof { display: flex; align-items: center; gap: 14px; }
+    .proof-avs { display: flex; }
+    .proof-av {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      margin-left: -9px;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .proof-av:first-child { margin-left: 0; }
+    .proof-txt { font-size: 13px; color: var(--muted); }
+    .proof-txt strong { color: var(--text); font-weight: 600; }
+
+    /* ─── DASHBOARD MOCKUP ─── */
+    .hero-mockup-wrap {
+      position: relative;
+    }
+    .dash-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(17,28,20,0.13);
+    }
+    .dash-topbar {
+      background: var(--bg);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .d-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink:0; }
+    .d-dot-r { background: #FF6059; }
+    .d-dot-y { background: #FFBD2D; }
+    .d-dot-g { background: #28CA42; }
+    .d-url {
+      flex: 1;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: var(--dim);
+      font-family: monospace;
+    }
+    .dash-body { display: grid; grid-template-columns: 48px 1fr; height: 340px; }
+    .dash-side {
+      background: var(--bg2);
+      border-right: 1px solid var(--border);
+      padding: 12px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .ds-ico {
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .ds-ico.on { background: var(--green-bg); }
+    .ds-ico.off { opacity: 0.35; }
+    .dash-main { padding: 16px; overflow: hidden; }
+    .dm-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .dm-title { font-family: var(--font-h); font-size: 13px; font-weight: 700; }
+    .dm-sub { font-size: 10px; color: var(--dim); }
+    .dm-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 7px; margin-bottom: 12px; }
+    .dm-stat {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 11px;
+    }
+    .dm-stat-l { font-size: 9px; color: var(--dim); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .dm-stat-v { font-family: var(--font-h); font-size: 17px; font-weight: 800; }
+    .dm-stat-c { font-size: 9px; color: var(--green); margin-top: 1px; font-weight: 600; }
+    .v-green { color: var(--green); }
+    .v-teal  { color: #0891B2; }
+    .v-plum  { color: #7C3AED; }
+    .dm-chart-label { font-size: 9px; font-weight: 600; color: var(--dim); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px; }
+    .dm-chart { display: flex; align-items: flex-end; gap: 4px; height: 52px; margin-bottom: 12px; }
+    .dc-bar { flex: 1; border-radius: 3px 3px 0 0; min-height: 4px; }
+    .dc-g { background: linear-gradient(to top, var(--green), var(--green-xl)); }
+    .dc-dim { background: var(--border2); }
+    .dm-rows-label { font-size: 9px; font-weight: 600; color: var(--dim); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .dm-row {
+      display: flex; align-items: center; gap: 8px;
+      padding: 5px 6px; border-radius: 7px; margin-bottom: 2px;
+      transition: background 0.15s;
+    }
+    .dm-row:hover { background: var(--bg); }
+    .dm-av {
+      width: 24px; height: 24px; border-radius: 50%;
+      font-size: 9px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .dm-info { flex: 1; min-width: 0; }
+    .dm-name { font-size: 11px; font-weight: 600; }
+    .dm-date { font-size: 9px; color: var(--dim); }
+    .dm-chip { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 100px; }
+    .chip-g { background: rgba(0,85,254,0.08); color: var(--green); }
+    .chip-y { background: rgba(234,179,8,0.12); color: #B45309; }
+    .chip-b { background: rgba(8,145,178,0.1); color: #0891B2; }
+
+    /* floating cards no hero */
+    .hero-float {
+      position: absolute;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(17,28,20,0.12);
+    }
+    .hf-1 {
+      bottom: -16px; right: 20px;
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 12px;
+      animation: hf-float1 5s ease-in-out infinite;
+      z-index: 2;
+    }
+    .hf-2 {
+      top: 32px; left: -16px;
+      padding: 10px 14px;
+      animation: hf-float2 6s ease-in-out infinite;
+      z-index: 2;
+    }
+    @keyframes hf-float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+    @keyframes hf-float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+    .hf-icon { font-size: 26px; }
+    .hf-lbl { font-size: 10px; color: var(--dim); }
+    .hf-val { font-family: var(--font-h); font-size: 19px; font-weight: 800; color: var(--green); }
+    .hf2-lbl { font-size: 10px; color: var(--dim); margin-bottom: 4px; }
+    .hf2-row { display: flex; align-items: center; gap: 6px; }
+    .hf2-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-xl); flex-shrink:0; }
+    .hf2-txt { font-size: 12px; font-weight: 600; color: var(--text); }
+
+    /* ─── CALCULADORA ─── */
+    .calc-section { padding: 110px 0; background: var(--white); }
+    .calc-head { text-align: center; max-width: 560px; margin: 0 auto 56px; }
+    .calc-box {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    .calc-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .calc-inputs { padding: 40px; border-right: 1px solid var(--border); }
+    .calc-inputs-title { font-family: var(--font-h); font-size: 16px; font-weight: 700; margin-bottom: 28px; }
+    .calc-field { margin-bottom: 28px; }
+    .calc-label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px; font-weight: 600; color: var(--text2);
+      margin-bottom: 10px;
+    }
+    .calc-label-val {
+      font-family: var(--font-h); font-size: 15px; font-weight: 800; color: var(--green);
+    }
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%; height: 6px;
+      background: var(--border2);
+      border-radius: 3px;
+      outline: none;
+      cursor: pointer;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--green);
+      cursor: pointer;
+      border: 3px solid var(--white);
+      box-shadow: 0 2px 8px rgba(0,85,254,0.28);
+      transition: transform 0.15s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+    input[type=range]::-webkit-slider-runnable-track {
+      height: 6px; border-radius: 3px;
+    }
+    .calc-hint { font-size: 11px; color: var(--dim); margin-top: 6px; }
+
+    .calc-result { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+    .calc-result-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; color: var(--dim); margin-bottom: 6px; }
+    .calc-now { margin-bottom: 24px; }
+    .calc-now-val {
+      font-family: var(--font-h); font-size: 36px; font-weight: 800;
+      color: var(--muted); letter-spacing: -0.02em;
+    }
+    .calc-after { margin-bottom: 24px; }
+    .calc-after-val {
+      font-family: var(--font-h); font-size: 48px; font-weight: 800;
+      color: var(--green); letter-spacing: -0.03em;
+    }
+    .calc-gain-box {
+      background: var(--green-bg);
+      border: 1px solid rgba(0,85,254,0.18);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .calc-gain-lbl { font-size: 12px; color: var(--green); font-weight: 600; margin-bottom: 4px; }
+    .calc-gain-val {
+      font-family: var(--font-h); font-size: 28px; font-weight: 800;
+      color: var(--green); letter-spacing: -0.02em;
+    }
+    .calc-gain-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .calc-arrow {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: var(--muted); margin-bottom: 20px;
+    }
+    .calc-arrow-line {
+      flex: 1; height: 1px; background: var(--border);
+      position: relative;
+    }
+    .calc-pct {
+      background: var(--green); color: #fff;
+      font-size: 11px; font-weight: 800;
+      padding: 3px 10px; border-radius: 100px;
+    }
+
+    /* ─── TRUST ─── */
+    .trust { padding: 44px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .trust-label { text-align: center; font-size: 12px; font-weight: 500; color: var(--dim); text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 26px; }
+    .trust-row { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .trust-name { font-family: var(--font-h); font-size: 15px; font-weight: 700; color: var(--dim); letter-spacing: -0.01em; transition: color 0.2s; }
+    .trust-name:hover { color: var(--green); }
+    .trust-name span { color: var(--green-l); }
+
+    /* ─── FEATURES ─── */
+    .features { padding: 110px 0; }
+    .features-head { text-align: center; max-width: 560px; margin: 0 auto 60px; }
+    .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .feat-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .feat-card:hover {
+      border-color: rgba(0,85,254,0.22);
+      box-shadow: 0 12px 40px rgba(0,85,254,0.08);
+      transform: translateY(-4px);
+    }
+    .feat-icon {
+      width: 50px; height: 50px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    .fi-green { background: var(--green-bg); }
+    .fi-blue  { background: #EFF6FF; }
+    .fi-plum  { background: #F5F3FF; }
+    .feat-title { font-family: var(--font-h); font-size: 20px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .feat-desc { font-size: 14.5px; color: var(--muted); line-height: 1.65; margin-bottom: 24px; }
+    .feat-metric {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .feat-num {
+      font-family: var(--font-h);
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .fn-green { color: var(--green); }
+    .fn-blue  { color: #2563EB; }
+    .fn-plum  { color: #7C3AED; }
+    .feat-meta { font-size: 13px; color: var(--muted); padding-bottom: 3px; line-height: 1.3; }
+    .feat-vis { margin-top: 22px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); overflow: hidden; }
+
+    /* mini charts */
+    .mini-bars { display: flex; align-items: flex-end; gap: 5px; padding: 14px; height: 72px; }
+    .mb { flex: 1; border-radius: 4px 4px 0 0; }
+    .mb-g { background: linear-gradient(to top, var(--green), var(--green-xl)); }
+    .mb-d { background: var(--border2); }
+    .mini-funnel { padding: 14px; }
+    .mf-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .mf-lbl { font-size: 10px; color: var(--dim); width: 50px; text-align: right; }
+    .mf-track { flex: 1; background: var(--border); border-radius: 4px; height: 7px; overflow: hidden; }
+    .mf-fill { height: 100%; border-radius: 4px; }
+    .mff-g { background: var(--green); }
+    .mff-lg { background: var(--green-xl); }
+    .mff-lime { background: var(--lime); }
+    .mff-d { background: var(--border2); }
+    .mf-n { font-size: 10px; color: var(--muted); font-weight: 600; width: 22px; }
+    .mini-chat { padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+    .mc-b { max-width: 80%; padding: 6px 10px; border-radius: 10px; font-size: 10px; line-height: 1.4; }
+    .mc-in  { background: var(--bg); border: 1px solid var(--border); align-self: flex-start; border-radius: 2px 10px 10px 10px; color: var(--text2); }
+    .mc-out { background: var(--green); color: #fff; align-self: flex-end; border-radius: 10px 2px 10px 10px; }
+
+    /* ─── PRODUCT APP DEMO ─── */
+    .product { padding: 110px 0; background: var(--white); }
+    .product-head { text-align: center; max-width: 560px; margin: 0 auto 48px; }
+    /* App Frame */
+    .app-frame { border:1px solid var(--border); border-radius:20px; overflow:hidden; box-shadow:0 20px 60px rgba(13,17,23,0.12); display:grid; grid-template-columns:185px 1fr; height:560px; background:var(--white); }
+    .app-sb { background:#F7F8FC; border-right:1px solid var(--border); display:flex; flex-direction:column; }
+    .app-sb-top { padding:14px 12px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+    .app-sb-logo-mark { width:28px; height:28px; background:var(--green); border-radius:7px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .app-sb-logo-text { font-family:var(--font-h); font-size:13px; font-weight:800; letter-spacing:-0.02em; }
+    .app-sb-nav { flex:1; padding:6px 0; overflow-y:auto; }
+    .app-sb-section { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--dim); padding:8px 14px 3px; }
+    .app-nav-btn { display:flex; align-items:center; gap:9px; width:calc(100% - 12px); margin:1px 6px; padding:8px 10px; background:transparent; border:none; border-radius:8px; font-family:var(--font-b); font-size:12px; font-weight:500; color:var(--muted); cursor:pointer; text-align:left; transition:all 0.15s; }
+    .app-nav-btn:hover { background:var(--bg2); color:var(--text); }
+    .app-nav-btn.active { background:var(--green-bg); color:var(--green); font-weight:700; }
+    .app-nav-icon { font-size:13px; flex-shrink:0; }
+    .app-nav-badge { margin-left:auto; background:var(--green); color:#fff; font-size:9px; font-weight:700; padding:1px 6px; border-radius:100px; }
+    .app-sb-user { padding:10px 12px; border-top:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+    .app-user-av { width:26px; height:26px; border-radius:50%; background:var(--green); color:#fff; font-size:10px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .app-user-name { font-size:11px; font-weight:600; }
+    .app-user-role { font-size:9px; color:var(--dim); }
+    .app-main { overflow:hidden; background:var(--white); }
+    .app-view { display:none; height:560px; flex-direction:column; overflow:hidden; }
+    .app-view.active { display:flex; }
+    @keyframes vfade { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+    .app-view.active { animation:vfade 0.25s ease; }
+    .app-topbar { padding:11px 18px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; flex-shrink:0; background:var(--white); }
+    .app-topbar-title { font-family:var(--font-h); font-size:14px; font-weight:800; }
+    .app-topbar-sub { font-size:10px; color:var(--dim); }
+    .app-topbar-actions { margin-left:auto; display:flex; gap:7px; align-items:center; }
+    .app-btn { font-size:11px; font-weight:600; padding:5px 11px; border-radius:7px; border:1px solid var(--border); background:var(--white); color:var(--muted); cursor:pointer; font-family:var(--font-b); transition:all 0.15s; }
+    .app-btn:hover { border-color:var(--green); color:var(--green); }
+    .app-btn.primary { background:var(--green); border-color:var(--green); color:#fff; }
+    /* Dashboard */
+    .dash-scroll { flex:1; overflow-y:auto; }
+    .dash-metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:14px 18px 10px; }
+    .dash-metric { background:var(--bg); border:1px solid var(--border); border-radius:11px; padding:12px; }
+    .dml { font-size:9px; font-weight:600; color:var(--dim); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:5px; }
+    .dmv { font-family:var(--font-h); font-size:20px; font-weight:800; }
+    .dmc { font-size:9px; font-weight:600; margin-top:1px; }
+    .mv-b{color:var(--green)} .mv-t{color:#0891B2} .mv-p{color:#7C3AED} .mv-g{color:#059669}
+    .mc-up{color:#059669} .mc-dn{color:#DC2626}
+    .dash-charts { display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:0 18px 14px; }
+    .dash-chart-box { background:var(--bg); border:1px solid var(--border); border-radius:11px; padding:12px; }
+    .dct { font-size:11px; font-weight:700; margin-bottom:10px; }
+    .funnel-rows { display:flex; flex-direction:column; gap:5px; }
+    .fr-row { display:flex; align-items:center; gap:7px; }
+    .fr-lbl { font-size:9px; color:var(--muted); width:90px; text-align:right; flex-shrink:0; }
+    .fr-track { flex:1; background:var(--border); border-radius:3px; height:7px; overflow:hidden; }
+    .fr-fill { height:100%; border-radius:3px; background:var(--green); }
+    .fr-n { font-size:9px; font-weight:700; width:14px; flex-shrink:0; }
+    .bar-chart { display:flex; align-items:flex-end; gap:3px; height:72px; }
+    .bc-b { flex:1; border-radius:3px 3px 0 0; min-height:3px; background:linear-gradient(to top,var(--green),var(--green-xl)); }
+    .bc-b.dim { background:var(--border2); }
+    /* Conversas */
+    .conv-layout { display:grid; grid-template-columns:210px 1fr; flex:1; overflow:hidden; }
+    .conv-sb { border-right:1px solid var(--border); display:flex; flex-direction:column; overflow:hidden; }
+    .conv-filters { padding:8px 10px; border-bottom:1px solid var(--border); display:flex; gap:5px; flex-shrink:0; }
+    .cf-btn { font-size:10px; font-weight:600; padding:3px 9px; border-radius:100px; border:none; background:transparent; color:var(--muted); cursor:pointer; }
+    .cf-btn.active { background:var(--green); color:#fff; }
+    .conv-list { flex:1; overflow-y:auto; }
+    .conv-item { display:flex; align-items:center; gap:8px; padding:9px 10px; border-bottom:1px solid rgba(0,0,0,0.04); cursor:pointer; transition:background 0.15s; }
+    .conv-item:hover,.conv-item.sel { background:var(--green-bg); }
+    .conv-av { width:30px; height:30px; border-radius:50%; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .conv-info { flex:1; min-width:0; }
+    .conv-name { font-size:11px; font-weight:600; }
+    .conv-preview { font-size:10px; color:var(--dim); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .conv-meta { display:flex; flex-direction:column; align-items:flex-end; gap:3px; flex-shrink:0; }
+    .conv-time { font-size:9px; color:var(--dim); }
+    .conv-unread { width:15px; height:15px; background:var(--green); border-radius:50%; color:#fff; font-size:8px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+    .chat-area { display:flex; flex-direction:column; overflow:hidden; }
+    .chat-hd { padding:11px 14px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:9px; flex-shrink:0; }
+    .chat-hd-av { width:32px; height:32px; border-radius:50%; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .chat-hd-name { font-size:12px; font-weight:700; }
+    .chat-hd-sub { font-size:9px; color:var(--dim); }
+    .chat-stage { margin-left:auto; font-size:10px; font-weight:700; padding:3px 9px; border-radius:100px; background:var(--green-bg); color:var(--green); border:1px solid rgba(0,85,254,0.15); }
+    .chat-ia { font-size:10px; font-weight:700; padding:3px 9px; border-radius:100px; background:rgba(5,150,105,0.1); color:#059669; }
+    .chat-msgs { flex:1; overflow-y:auto; padding:12px 14px; display:flex; flex-direction:column; gap:7px; background:var(--bg); }
+    .cm { max-width:75%; padding:7px 10px; border-radius:10px; font-size:10.5px; line-height:1.5; }
+    .cm.in { background:var(--white); border:1px solid var(--border); color:var(--text2); align-self:flex-start; border-radius:2px 10px 10px 10px; }
+    .cm.out { background:var(--green); color:#fff; align-self:flex-end; border-radius:10px 2px 10px 10px; }
+    .cm.ai { background:rgba(5,150,105,0.08); border:1px solid rgba(5,150,105,0.15); color:#065F46; align-self:flex-end; border-radius:10px 2px 10px 10px; }
+    .cm-t { font-size:9px; color:var(--dim); margin-top:2px; }
+    .cm-ia { font-size:9px; color:#059669; font-weight:600; margin-top:1px; }
+    .chat-inp { padding:9px 12px; border-top:1px solid var(--border); display:flex; gap:7px; align-items:center; flex-shrink:0; }
+    .chat-field { flex:1; background:var(--bg); border:1px solid var(--border); border-radius:14px; padding:6px 12px; font-size:10.5px; color:var(--muted); font-family:var(--font-b); outline:none; }
+    .chat-send { width:28px; height:28px; background:var(--green); border-radius:50%; border:none; cursor:pointer; color:#fff; font-size:11px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    /* Kanban */
+    .kanban-view { flex:1; display:flex; gap:8px; padding:12px; overflow-x:auto; overflow-y:hidden; }
+    .kb-col-wrap { background:var(--bg); border:1px solid var(--border); border-radius:11px; padding:10px; min-width:148px; flex:1; display:flex; flex-direction:column; transition:background 0.2s; }
+    .kb-col-wrap.over { background:var(--green-bg); border-color:rgba(0,85,254,0.3); }
+    .kb-col-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+    .kb-col-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:var(--muted); }
+    .kb-col-cnt { font-size:10px; font-weight:700; min-width:18px; height:18px; border-radius:100px; display:flex; align-items:center; justify-content:center; padding:0 4px; }
+    .kb-col-cards { flex:1; min-height:50px; }
+    .kb-card { background:var(--white); border:1px solid var(--border); border-radius:8px; padding:9px; margin-bottom:6px; cursor:grab; transition:all 0.2s; user-select:none; }
+    .kb-card:active { cursor:grabbing; }
+    .kb-card.dragging { opacity:0.35; transform:rotate(1.5deg); }
+    .kb-card:hover { border-color:rgba(0,85,254,0.25); box-shadow:0 3px 10px rgba(13,17,23,0.08); }
+    .kc-name { font-size:11px; font-weight:700; margin-bottom:3px; }
+    .kc-phone { font-size:9px; color:var(--dim); }
+    .kc-tags { display:flex; flex-wrap:wrap; gap:3px; margin-top:5px; }
+    .kc-tag { font-size:9px; font-weight:600; padding:2px 6px; border-radius:4px; }
+    .kc-days { font-size:9px; color:var(--dim); margin-top:4px; }
+    .kt-f{background:rgba(0,85,254,0.08);color:var(--green)} .kt-p{background:rgba(217,119,6,0.1);color:#B45309} .kt-n{background:rgba(124,58,237,0.1);color:#7C3AED} .kt-ia{background:rgba(5,150,105,0.1);color:#059669} .kt-hot{background:rgba(220,38,38,0.08);color:#DC2626}
+    /* Agenda */
+    .agenda-layout { display:grid; grid-template-columns:190px 1fr; flex:1; overflow:hidden; }
+    .agenda-left { border-right:1px solid var(--border); padding:13px; background:var(--bg); overflow-y:auto; }
+    .mini-cal { margin-bottom:16px; }
+    .mc-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+    .mc-month { font-size:12px; font-weight:700; }
+    .mc-nav { font-size:12px; background:none; border:none; color:var(--muted); cursor:pointer; padding:2px 5px; border-radius:4px; }
+    .mc-nav:hover { background:var(--border); }
+    .mc-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:1px; text-align:center; }
+    .mc-dl { font-size:9px; font-weight:600; color:var(--dim); padding:3px 0; }
+    .mc-d { font-size:10px; padding:4px 2px; border-radius:50%; cursor:pointer; transition:all 0.15s; line-height:1; }
+    .mc-d:hover { background:var(--green-bg); color:var(--green); }
+    .mc-d.today { background:var(--green); color:#fff; font-weight:700; }
+    .mc-d.om { color:var(--dim); }
+    .agenda-events-label { font-size:10px; font-weight:700; color:var(--dim); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px; }
+    .agenda-ev { display:flex; align-items:flex-start; gap:8px; padding:9px; border-radius:8px; background:var(--white); border:1px solid var(--border); margin-bottom:6px; }
+    .ae-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; margin-top:3px; }
+    .ae-name { font-size:11px; font-weight:600; }
+    .ae-time { font-size:10px; color:var(--dim); }
+    .agenda-right { overflow-y:auto; padding:13px; }
+    .week-hd { display:grid; grid-template-columns:40px repeat(5,1fr); border-bottom:1px solid var(--border); margin-bottom:2px; }
+    .wh-item { text-align:center; padding:5px; }
+    .wh-day-name { font-size:9px; font-weight:600; color:var(--dim); text-transform:uppercase; }
+    .wh-day-num { font-size:15px; font-weight:800; line-height:1.3; }
+    .wh-day-num.today { background:var(--green); color:#fff; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; margin:2px auto 0; font-size:13px; }
+    .week-body { display:grid; grid-template-columns:40px repeat(5,1fr); }
+    .wb-hour { font-size:9px; color:var(--dim); text-align:right; padding:0 4px; height:30px; line-height:30px; }
+    .wb-cell { border-left:1px solid var(--border); border-bottom:1px solid rgba(0,0,0,0.04); height:30px; position:relative; }
+    .wb-event { position:absolute; left:2px; right:2px; top:2px; border-radius:4px; padding:2px 5px; font-size:9px; font-weight:600; overflow:hidden; white-space:nowrap; }
+
+    /* ─── FLUXOS VIEW ─── */
+    .flow-list { flex:1; overflow-y:auto; padding:14px 18px; display:flex; flex-direction:column; gap:12px; }
+    .flow-card { background:var(--bg); border:1px solid var(--border); border-radius:13px; padding:14px 16px; }
+    .flow-card-hd { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+    .flow-icon { width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+    .fi-blue { background:var(--green-bg); }
+    .fi-teal { background:rgba(8,145,178,0.1); }
+    .fi-purple { background:rgba(124,58,237,0.1); }
+    .flow-title { font-size:13px; font-weight:700; }
+    .flow-sub { font-size:10px; color:var(--dim); }
+    .flow-stat { margin-left:auto; text-align:right; }
+    .flow-stat-n { font-size:16px; font-weight:800; color:var(--green); }
+    .flow-stat-l { font-size:9px; color:var(--dim); }
+    .flow-nodes { display:flex; align-items:center; gap:0; flex-wrap:nowrap; overflow-x:auto; padding-bottom:4px; }
+    .fn { display:flex; flex-direction:column; align-items:center; flex-shrink:0; }
+    .fn-box { padding:6px 10px; border-radius:8px; font-size:10px; font-weight:600; text-align:center; min-width:80px; max-width:100px; line-height:1.3; }
+    .fn-trigger { background:rgba(0,85,254,0.08); color:var(--green); border:1px solid rgba(0,85,254,0.2); }
+    .fn-action  { background:var(--white); color:var(--text2); border:1px solid var(--border); }
+    .fn-condition { background:rgba(217,119,6,0.08); color:#B45309; border:1px solid rgba(217,119,6,0.2); }
+    .fn-success { background:rgba(5,150,105,0.08); color:#059669; border:1px solid rgba(5,150,105,0.2); }
+    .fn-arrow { font-size:12px; color:var(--dim); margin:0 4px; }
+    .fn-label { font-size:8px; color:var(--dim); margin-top:3px; text-align:center; }
+    .flow-toggle { display:flex; align-items:center; gap:6px; margin-top:10px; }
+    .tog-track { width:32px; height:18px; border-radius:100px; background:var(--green); position:relative; cursor:pointer; flex-shrink:0; }
+    .tog-thumb { width:14px; height:14px; border-radius:50%; background:#fff; position:absolute; top:2px; right:2px; transition:all 0.2s; }
+    .tog-label { font-size:10px; color:var(--muted); }
+    /* ─── PROMPT ASSISTANT VIEW ─── */
+    .prompt-layout { display:grid; grid-template-columns:260px 1fr; flex:1; overflow:hidden; }
+    .prompt-settings { border-right:1px solid var(--border); overflow-y:auto; padding:14px; background:var(--bg); }
+    .pt-section { margin-bottom:16px; }
+    .pt-section-title { font-size:10px; font-weight:700; color:var(--dim); text-transform:uppercase; letter-spacing:0.07em; margin-bottom:8px; }
+    .pt-chips { display:flex; flex-wrap:wrap; gap:5px; }
+    .pt-chip { font-size:10px; font-weight:600; padding:4px 10px; border-radius:100px; border:1px solid var(--border); background:var(--white); color:var(--muted); cursor:pointer; transition:all 0.15s; }
+    .pt-chip.on { background:var(--green); border-color:var(--green); color:#fff; }
+    .pt-chip.kill { background:rgba(220,38,38,0.07); border-color:rgba(220,38,38,0.2); color:#DC2626; }
+    .pt-textarea { width:100%; background:var(--white); border:1px solid var(--border); border-radius:8px; padding:8px 10px; font-size:10.5px; font-family:var(--font-b); color:var(--text2); resize:none; outline:none; line-height:1.5; box-sizing:border-box; }
+    .pt-textarea:focus { border-color:rgba(0,85,254,0.4); }
+    .pt-range-row { display:flex; align-items:center; gap:8px; }
+    .pt-range { flex:1; accent-color:var(--green); }
+    .pt-range-val { font-size:10px; font-weight:700; color:var(--green); width:24px; }
+    .pt-save { width:100%; background:var(--green); color:#fff; border:none; border-radius:8px; padding:9px; font-size:12px; font-weight:700; cursor:pointer; margin-top:6px; font-family:var(--font-b); }
+    .prompt-preview { display:flex; flex-direction:column; overflow:hidden; }
+    .pp-hd { padding:12px 16px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; flex-shrink:0; background:var(--white); }
+    .pp-title { font-size:13px; font-weight:700; }
+    .pp-badge { font-size:9px; font-weight:700; padding:2px 8px; border-radius:100px; background:rgba(5,150,105,0.1); color:#059669; }
+    .pp-msgs { flex:1; overflow-y:auto; padding:14px 16px; display:flex; flex-direction:column; gap:8px; background:var(--bg); }
+    .pp-msg-wrap { display:flex; flex-direction:column; }
+    .pp-m { max-width:80%; padding:8px 12px; border-radius:10px; font-size:10.5px; line-height:1.55; }
+    .pp-in { background:var(--white); border:1px solid var(--border); align-self:flex-start; color:var(--text2); border-radius:2px 10px 10px 10px; }
+    .pp-ai { background:rgba(0,85,254,0.07); border:1px solid rgba(0,85,254,0.15); align-self:flex-end; color:var(--text2); border-radius:10px 2px 10px 10px; }
+    .pp-lbl { font-size:9px; color:var(--dim); margin-top:3px; }
+    .pp-lbl.right { text-align:right; color:#059669; font-weight:600; }
+    .pp-inp { padding:10px 14px; border-top:1px solid var(--border); display:flex; gap:8px; flex-shrink:0; background:var(--white); }
+    .pp-field { flex:1; background:var(--bg); border:1px solid var(--border); border-radius:14px; padding:7px 13px; font-size:10.5px; font-family:var(--font-b); outline:none; color:var(--muted); }
+    .pp-send { background:var(--green); border:none; border-radius:50%; width:30px; height:30px; color:#fff; font-size:12px; cursor:pointer; flex-shrink:0; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials { padding: 110px 0; }
+    .test-head { text-align: center; max-width: 520px; margin: 0 auto 56px; }
+    .test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .test-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 28px;
+      transition: all 0.3s;
+    }
+    .test-card:hover { border-color: rgba(0,85,254,0.22); box-shadow: 0 12px 40px rgba(45,122,79,0.08); transform: translateY(-3px); }
+    .test-stars { display: flex; gap: 3px; margin-bottom: 18px; }
+    .star { color: #F59E0B; font-size: 14px; }
+    .test-q { font-size: 15px; color: var(--text2); line-height: 1.7; margin-bottom: 24px; }
+    .test-hl { color: var(--green); font-weight: 600; }
+    .test-author { display: flex; align-items: center; gap: 12px; }
+    .test-av { width: 42px; height: 42px; border-radius: 50%; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .test-nm { font-size: 14px; font-weight: 700; }
+    .test-rl { font-size: 12px; color: var(--dim); margin-top: 1px; }
+
+    /* ─── PRICING ─── */
+    .pricing { padding: 110px 0; background: var(--white); }
+    .pricing-head { text-align: center; max-width: 520px; margin: 0 auto 56px; }
+    .price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; align-items: start; }
+    .price-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px 30px;
+      display: flex; flex-direction: column;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .price-card:hover { transform: translateY(-3px); }
+    .price-card.feat {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+    .feat-pill {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--lime);
+      color: var(--text);
+      font-size: 11px; font-weight: 800;
+      padding: 4px 14px; border-radius: 100px;
+      white-space: nowrap; letter-spacing: 0.03em;
+    }
+    .plan-lbl { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 18px; }
+    .plan-lbl.light { color: rgba(255,255,255,0.7); }
+    .plan-lbl.dark  { color: var(--muted); }
+    .plan-price-row { display: flex; align-items: flex-start; gap: 3px; margin-bottom: 6px; }
+    .p-cur { font-size: 20px; font-weight: 700; margin-top: 7px; }
+    .p-cur.light { color: rgba(255,255,255,0.7); }
+    .p-cur.dark  { color: var(--muted); }
+    .p-val { font-family: var(--font-h); font-size: 52px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+    .p-val.light { color: #fff; }
+    .p-val.dark  { color: var(--text); }
+    .p-per { font-size: 14px; align-self: flex-end; margin-bottom: 8px; }
+    .p-per.light { color: rgba(255,255,255,0.6); }
+    .p-per.dark  { color: var(--dim); }
+    .plan-desc { font-size: 14px; line-height: 1.5; margin-bottom: 24px; }
+    .plan-desc.light { color: rgba(255,255,255,0.75); }
+    .plan-desc.dark  { color: var(--muted); }
+    .plan-div { height: 1px; margin-bottom: 22px; }
+    .plan-div.light { background: rgba(255,255,255,0.2); }
+    .plan-div.dark  { background: var(--border); }
+    .plan-feats { list-style: none; flex: 1; margin-bottom: 30px; }
+    .plan-f {
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: 14px; margin-bottom: 11px; line-height: 1.4;
+    }
+    .plan-f.light { color: rgba(255,255,255,0.85); }
+    .plan-f.dark  { color: var(--muted); }
+    .plan-f.off   { opacity: 0.35; }
+    .pf-ck { flex-shrink: 0; margin-top: 1px; }
+    .pf-ck.light { color: var(--lime); }
+    .pf-ck.dark  { color: var(--green); }
+    .plan-cta { width: 100%; padding: 13px; border-radius: var(--radius-sm); font-family: var(--font-b); font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; border: none; }
+    .cta-light { background: #fff; color: var(--green); }
+    .cta-light:hover { background: var(--lime); }
+    .cta-dark { background: var(--green); color: #fff; }
+    .cta-dark:hover { background: var(--green-l); box-shadow: 0 4px 16px rgba(0,85,254,0.22); }
+    .cta-outline { background: transparent; color: var(--muted); border: 1.5px solid var(--border2); }
+    .cta-outline:hover { border-color: var(--green); color: var(--green); background: var(--green-bg); }
+
+    /* ─── FAQ ─── */
+    .faq { padding: 110px 0; }
+    .faq-head { text-align: center; max-width: 490px; margin: 0 auto 56px; }
+    .faq-list { max-width: 720px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; background: transparent; border: none;
+      color: var(--text); font-family: var(--font-b); font-size: 16px; font-weight: 500;
+      text-align: left; padding: 22px 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      cursor: pointer; transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--green); }
+    .faq-ico {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--bg2); border: 1px solid var(--border2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; color: var(--dim); flex-shrink: 0;
+      transition: all 0.3s;
+    }
+    .faq-item.open .faq-ico { background: var(--green); border-color: var(--green); color: #fff; transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-a { max-height: 280px; }
+    .faq-ain { padding-bottom: 22px; font-size: 15px; color: var(--muted); line-height: 1.75; }
+
+    /* ─── CTA FINAL ─── */
+    .cta-section { padding: 100px 0; }
+    .cta-box {
+      background: var(--green);
+      border-radius: 28px;
+      padding: 72px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+    }
+    .cb1 { width: 400px; height: 400px; background: rgba(174,237,122,0.25); top: -100px; right: -80px; }
+    .cb2 { width: 300px; height: 300px; background: rgba(0,0,0,0.1); bottom: -80px; left: -60px; }
+    .cta-inner { position: relative; }
+    .cta-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lime); margin-bottom: 18px; }
+    .cta-title { font-family: var(--font-h); font-size: clamp(34px, 4.5vw, 52px); font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1.1; margin-bottom: 18px; }
+    .cta-sub { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 36px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-b-white { background: #fff; color: var(--green); font-family: var(--font-b); font-size: 15px; font-weight: 700; padding: 14px 28px; border-radius: var(--radius-sm); border: none; cursor: pointer; transition: all 0.2s; }
+    .cta-b-white:hover { background: var(--lime); box-shadow: 0 4px 20px rgba(0,0,0,0.15); transform: translateY(-1px); }
+    .cta-b-ghost { background: transparent; color: #fff; font-family: var(--font-b); font-size: 15px; font-weight: 600; padding: 14px 28px; border-radius: var(--radius-sm); border: 1.5px solid rgba(255,255,255,0.35); cursor: pointer; transition: all 0.2s; }
+    .cta-b-ghost:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); }
+    .cta-fine { margin-top: 22px; font-size: 13px; color: rgba(255,255,255,0.55); }
+    .cta-fine strong { color: var(--lime); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--text); padding: 60px 0 36px; }
+    .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 44px; }
+    .foot-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .foot-logo-mark { width: 32px; height: 32px; background: var(--green); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    .foot-logo-text { font-family: var(--font-h); font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .foot-desc { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.65; max-width: 250px; }
+    .foot-socials { display: flex; gap: 8px; margin-top: 20px; }
+    .fsoc { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; transition: all 0.2s; }
+    .fsoc:hover { background: var(--green); border-color: var(--green); color: #fff; }
+    .foot-col-t { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+    .foot-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .foot-links a { font-size: 14px; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+    .foot-links a:hover { color: rgba(255,255,255,0.9); }
+    .foot-bot { padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .foot-copy { font-size: 13px; color: rgba(255,255,255,0.3); }
+    .foot-legal { display: flex; gap: 22px; }
+    .foot-legal a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+    .foot-legal a:hover { color: rgba(255,255,255,0.6); }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-mark">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 16L10 4L17 16" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 12.5h8" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M14.5 14.5L17.5 17.5" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="nav-logo-text">CRM Saúde</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Funcionalidades</a></li>
+        <li><a href="#pricing">Preços</a></li>
+        <li><a href="#cases">Casos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#pricing" class="btn btn-green" style="font-size:14px;padding:10px 20px;">Começar grátis</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-blob blob-1"></div>
+  <div class="hero-blob blob-2"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="fade-up">
+        <div class="hero-tag">
+          <span class="tag"><span class="tag-dot"></span>IA integrada ao funil de leads</span>
+        </div>
+        <h1 class="hero-title">
+          Transforme sua clínica em uma <em>máquina de resultados</em>
+        </h1>
+        <p class="hero-sub">O único CRM feito para clínicas que precisam crescer. Pacientes, leads, agendamentos e WhatsApp — tudo em um lugar só.</p>
+        <div class="hero-btns">
+          <a href="#pricing" class="btn btn-green">Começar grátis <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#product" class="btn btn-outline">Ver como funciona</a>
+        </div>
+        <div class="hero-proof">
+          <div class="proof-avs">
+            <div class="proof-av" style="background:linear-gradient(135deg,#6EE7B7,#059669)">RS</div>
+            <div class="proof-av" style="background:linear-gradient(135deg,#93C5FD,#3B82F6)">DM</div>
+            <div class="proof-av" style="background:linear-gradient(135deg,#FCA5A5,#EF4444)">AO</div>
+            <div class="proof-av" style="background:linear-gradient(135deg,#DDD6FE,#7C3AED)">JP</div>
+          </div>
+          <span class="proof-txt">Mais de <strong>1.200 clínicas</strong> usam hoje</span>
+        </div>
+      </div>
+      <div class="hero-mockup-wrap fade-up" style="transition-delay:.15s;">
+        <div class="hero-float hf-2">
+          <div class="hf2-lbl">Novo agendamento</div>
+          <div class="hf2-row"><div class="hf2-dot"></div><span class="hf2-txt">Ana Mendes · Implante</span></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-topbar">
+            <div class="d-dot d-dot-r"></div>
+            <div class="d-dot d-dot-y"></div>
+            <div class="d-dot d-dot-g"></div>
+            <div class="d-url">app.crmsaude.com.br/dashboard</div>
+          </div>
+          <div class="dash-body">
+            <div class="dash-side">
+              <div class="ds-ico on">🏠</div>
+              <div class="ds-ico off">👥</div>
+              <div class="ds-ico off">📅</div>
+              <div class="ds-ico off">📊</div>
+              <div class="ds-ico off">💬</div>
+            </div>
+            <div class="dash-main">
+              <div class="dm-header">
+                <span class="dm-title">Dashboard</span>
+                <span class="dm-sub">Abril 2026</span>
+              </div>
+              <div class="dm-stats">
+                <div class="dm-stat">
+                  <div class="dm-stat-l">Pacientes</div>
+                  <div class="dm-stat-v v-green">348</div>
+                  <div class="dm-stat-c">↑ +12 hoje</div>
+                </div>
+                <div class="dm-stat">
+                  <div class="dm-stat-l">Consultas</div>
+                  <div class="dm-stat-v v-teal">94</div>
+                  <div class="dm-stat-c" style="color:#0891B2">↑ mês</div>
+                </div>
+                <div class="dm-stat">
+                  <div class="dm-stat-l">Receita</div>
+                  <div class="dm-stat-v v-plum">R$47k</div>
+                  <div class="dm-stat-c" style="color:#7C3AED">↑ +18%</div>
+                </div>
+              </div>
+              <div class="dm-chart-label">Agendamentos — últimos 7 dias</div>
+              <div class="dm-chart">
+                <div class="dc-bar dc-dim" style="height:40%"></div>
+                <div class="dc-bar dc-g"   style="height:55%"></div>
+                <div class="dc-bar dc-g"   style="height:70%"></div>
+                <div class="dc-bar dc-dim" style="height:45%"></div>
+                <div class="dc-bar dc-g"   style="height:85%"></div>
+                <div class="dc-bar dc-g"   style="height:95%"></div>
+                <div class="dc-bar dc-dim" style="height:50%"></div>
+              </div>
+              <div class="dm-rows-label">Próximos agendamentos</div>
+              <div class="dm-row">
+                <div class="dm-av" style="background:#DBEAFE;color:#1E40AF">AM</div>
+                <div class="dm-info"><div class="dm-name">Ana Mendes</div><div class="dm-date">Hoje, 09:00 · Implante</div></div>
+                <div class="dm-chip chip-g">Confirmado</div>
+              </div>
+              <div class="dm-row">
+                <div class="dm-av" style="background:#DBEAFE;color:#1E40AF">RS</div>
+                <div class="dm-info"><div class="dm-name">Rodrigo Silva</div><div class="dm-date">Hoje, 10:30 · Ortodontia</div></div>
+                <div class="dm-chip chip-y">Pendente</div>
+              </div>
+              <div class="dm-row">
+                <div class="dm-av" style="background:#F3E8FF;color:#6D28D9">MO</div>
+                <div class="dm-info"><div class="dm-name">Mariana Oliveira</div><div class="dm-date">Amanhã · Clareamento</div></div>
+                <div class="dm-chip chip-b">Novo lead</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-float hf-1">
+          <div class="hf-icon">📈</div>
+          <div>
+            <div class="hf-lbl">Conversão este mês</div>
+            <div class="hf-val">+42%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CALCULADORA ─── -->
+<section class="calc-section">
+  <div class="container">
+    <div class="calc-head fade-up">
+      <div class="section-eyebrow">Calculadora de resultado</div>
+      <h2 class="section-title">Quanto você ganha com o CRM Saúde?</h2>
+      <p class="section-sub" style="margin-top:14px">Ajuste os números da sua clínica e veja o impacto real no seu faturamento.</p>
+    </div>
+    <div class="calc-box fade-up" style="transition-delay:.1s">
+      <div class="calc-inner">
+        <div class="calc-inputs">
+          <div class="calc-inputs-title">Dados da sua clínica</div>
+
+          <div class="calc-field">
+            <div class="calc-label">
+              <span>Leads por mês</span>
+              <span class="calc-label-val" id="lbl-leads">80</span>
+            </div>
+            <input type="range" id="sl-leads" min="10" max="500" value="80" step="5">
+            <div class="calc-hint">Quantidade de novos contatos / interessados por mês</div>
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-label">
+              <span>Ticket médio por paciente</span>
+              <span class="calc-label-val" id="lbl-ticket">R$ 2.500</span>
+            </div>
+            <input type="range" id="sl-ticket" min="500" max="15000" value="2500" step="100">
+            <div class="calc-hint">Valor médio de cada tratamento fechado</div>
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-label">
+              <span>Taxa de conversão atual</span>
+              <span class="calc-label-val" id="lbl-conv">15%</span>
+            </div>
+            <input type="range" id="sl-conv" min="3" max="60" value="15" step="1">
+            <div class="calc-hint">% dos leads que viram pacientes hoje</div>
+          </div>
+        </div>
+
+        <div class="calc-result">
+          <div class="calc-now">
+            <div class="calc-result-label">Receita atual / mês</div>
+            <div class="calc-now-val" id="res-now">R$ 3.000</div>
+          </div>
+
+          <div class="calc-arrow">
+            <span style="font-size:11px;font-weight:600;white-space:nowrap">Com CRM Saúde (+42%)</span>
+            <div class="calc-arrow-line"></div>
+            <span class="calc-pct">↑ 42%</span>
+          </div>
+
+          <div class="calc-after">
+            <div class="calc-result-label">Nova receita estimada / mês</div>
+            <div class="calc-after-val" id="res-after">R$ 4.260</div>
+          </div>
+
+          <div class="calc-gain-box">
+            <div class="calc-gain-lbl">💰 Ganho extra por mês</div>
+            <div class="calc-gain-val" id="res-gain">R$ 1.260</div>
+            <div class="calc-gain-sub" id="res-year">ou R$ 15.120 a mais por ano</div>
+          </div>
+
+          <a href="#pricing" class="btn btn-green" style="width:100%;justify-content:center">Quero esse resultado →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRUST BAR ─── -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-label">Confiado por clínicas líderes em todo o Brasil</div>
+    <div class="trust-row">
+      <span class="trust-name">Odonto<span>Prime</span></span>
+      <span class="trust-name">Clínica<span>Vida</span></span>
+      <span class="trust-name">Sorriso<span>Total</span></span>
+      <span class="trust-name">Med<span>Care</span></span>
+      <span class="trust-name">Dental<span>Plus</span></span>
+      <span class="trust-name">Saúde<span>360</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURES ─── -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-head fade-up">
+      <div class="section-eyebrow">Funcionalidades</div>
+      <h2 class="section-title">Tudo que sua clínica precisa para crescer com consistência</h2>
+      <p class="section-sub" style="margin-top:14px">Ferramentas pensadas para profissionais da saúde que querem mais pacientes, menos burocracia e resultados reais.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card fade-up" style="transition-delay:.05s">
+        <div class="feat-icon fi-green">👥</div>
+        <h3 class="feat-title">Gestão de Pacientes</h3>
+        <p class="feat-desc">Prontuário digital completo, histórico de consultas, exames e documentos em um perfil único. Acesso rápido, seguro e a qualquer momento.</p>
+        <div class="feat-metric">
+          <div class="feat-num fn-green" data-count="87">0</div>
+          <div class="feat-meta">% de redução no<br>tempo de atendimento</div>
+        </div>
+        <div class="feat-vis">
+          <div class="mini-bars">
+            <div class="mb mb-d" style="height:35%"></div>
+            <div class="mb mb-g" style="height:50%"></div>
+            <div class="mb mb-g" style="height:68%"></div>
+            <div class="mb mb-g" style="height:48%"></div>
+            <div class="mb mb-g" style="height:82%"></div>
+            <div class="mb mb-g" style="height:93%"></div>
+            <div class="mb mb-d" style="height:40%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card fade-up" style="transition-delay:.1s">
+        <div class="feat-icon fi-blue">🤖</div>
+        <h3 class="feat-title">Funil de Leads com IA</h3>
+        <p class="feat-desc">Nossa IA classifica, nutre e prioriza seus leads automaticamente. Saiba exatamente quem está pronto para agendar e aja na hora certa.</p>
+        <div class="feat-metric">
+          <div class="feat-num fn-blue" data-count="42">0</div>
+          <div class="feat-meta">% de aumento na<br>taxa de conversão</div>
+        </div>
+        <div class="feat-vis">
+          <div class="mini-funnel">
+            <div class="mf-row"><span class="mf-lbl">Leads</span><div class="mf-track"><div class="mf-fill mff-g" style="width:100%"></div></div><span class="mf-n">240</span></div>
+            <div class="mf-row"><span class="mf-lbl">Contato</span><div class="mf-track"><div class="mf-fill mff-lg" style="width:75%"></div></div><span class="mf-n">180</span></div>
+            <div class="mf-row"><span class="mf-lbl">Agend.</span><div class="mf-track"><div class="mf-fill mff-lime" style="width:45%"></div></div><span class="mf-n">108</span></div>
+            <div class="mf-row"><span class="mf-lbl">Paciente</span><div class="mf-track"><div class="mf-fill mff-d" style="width:30%"></div></div><span class="mf-n">72</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card fade-up" style="transition-delay:.15s">
+        <div class="feat-icon fi-plum">💬</div>
+        <h3 class="feat-title">WhatsApp Multicanal</h3>
+        <p class="feat-desc">Múltiplos números, confirmações automáticas, lembretes de consulta e reativação de inativos — sem deixar nenhum paciente sem resposta.</p>
+        <div class="feat-metric">
+          <div class="feat-num fn-plum" data-count="94">0</div>
+          <div class="feat-meta">% de taxa de<br>resposta média</div>
+        </div>
+        <div class="feat-vis">
+          <div class="mini-chat">
+            <div class="mc-b mc-in">Quero agendar um implante 😊</div>
+            <div class="mc-b mc-out">Temos avaliação gratuita hoje às 16h. Confirmo?</div>
+            <div class="mc-b mc-in">Confirmado! Obrigada 👍</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRODUCT APP DEMO ─── -->
+<section class="product" id="product">
+  <div class="container">
+    <div class="product-head fade-up">
+      <div class="section-eyebrow">Veja como funciona</div>
+      <h2 class="section-title">Uma interface feita para quem trabalha com saúde</h2>
+      <p class="section-sub" style="margin-top:14px">Simples para a recepcionista. Poderoso para o gestor. Inteligente para a clínica crescer.</p>
+    </div>
+    <div class="fade-up" style="transition-delay:.1s">
+
+      <div class="app-frame">
+        <!-- SIDEBAR -->
+        <aside class="app-sb">
+          <div class="app-sb-top">
+            <div class="app-sb-logo-mark">
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+                <path d="M3 16L10 4L17 16" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 12.5h8" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="app-sb-logo-text">Saúde IA</span>
+          </div>
+          <div class="app-sb-nav">
+            <div class="app-sb-section">Principal</div>
+            <button class="app-nav-btn active" data-view="dash"><span class="app-nav-icon">📊</span>Visão Geral</button>
+            <button class="app-nav-btn" data-view="conv"><span class="app-nav-icon">💬</span>Conversas<span class="app-nav-badge">7</span></button>
+            <button class="app-nav-btn" data-view="kanban"><span class="app-nav-icon">🗂</span>Kanban</button>
+            <button class="app-nav-btn" data-view="agenda"><span class="app-nav-icon">📅</span>Agenda</button>
+            <div class="app-sb-section">Automação IA</div>
+            <button class="app-nav-btn" data-view="fluxos"><span class="app-nav-icon">⚡</span>Fluxos</button>
+            <button class="app-nav-btn" data-view="prompt"><span class="app-nav-icon">🧠</span>Assistente de Prompt</button>
+            <div class="app-sb-section">Gestão</div>
+            <button class="app-nav-btn" style="opacity:.45;pointer-events:none"><span class="app-nav-icon">👥</span>Pacientes</button>
+            <button class="app-nav-btn" style="opacity:.45;pointer-events:none"><span class="app-nav-icon">📋</span>Prontuário</button>
+          </div>
+          <div class="app-sb-user">
+            <div class="app-user-av">DS</div>
+            <div><div class="app-user-name">Dr. Santos</div><div class="app-user-role">Administrador</div></div>
+          </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="app-main">
+
+          <!-- VISÃO GERAL -->
+          <div class="app-view active" id="view-dash">
+            <div class="app-topbar">
+              <div><div class="app-topbar-title">Visão Geral</div><div class="app-topbar-sub">Abril 2026 · Atualizado agora</div></div>
+              <div class="app-topbar-actions"><button class="app-btn">Exportar</button><button class="app-btn primary">+ Novo Lead</button></div>
+            </div>
+            <div class="dash-scroll">
+              <div class="dash-metrics">
+                <div class="dash-metric"><div class="dml">Total Leads</div><div class="dmv mv-b">247</div><div class="dmc mc-up">↑ 18% vs mês passado</div></div>
+                <div class="dash-metric"><div class="dml">Cobertura IA</div><div class="dmv mv-t">92%</div><div class="dmc mc-up">↑ 4% esta semana</div></div>
+                <div class="dash-metric"><div class="dml">Forecast Mês</div><div class="dmv mv-p">R$38k</div><div class="dmc mc-up">↑ 12% no ritmo</div></div>
+                <div class="dash-metric"><div class="dml">Taxa Conversão</div><div class="dmv mv-g">31%</div><div class="dmc mc-up">↑ 42% com IA</div></div>
+              </div>
+              <div class="dash-charts">
+                <div class="dash-chart-box">
+                  <div class="dct">Funil de Leads</div>
+                  <div class="funnel-rows">
+                    <div class="fr-row"><span class="fr-lbl">Novo Lead</span><div class="fr-track"><div class="fr-fill" style="width:100%"></div></div><span class="fr-n">82</span></div>
+                    <div class="fr-row"><span class="fr-lbl">Contato Iniciado</span><div class="fr-track"><div class="fr-fill" style="width:78%"></div></div><span class="fr-n">64</span></div>
+                    <div class="fr-row"><span class="fr-lbl">Em Follow-up</span><div class="fr-track"><div class="fr-fill" style="width:55%"></div></div><span class="fr-n">45</span></div>
+                    <div class="fr-row"><span class="fr-lbl">Orç. Enviado</span><div class="fr-track"><div class="fr-fill" style="width:38%"></div></div><span class="fr-n">31</span></div>
+                    <div class="fr-row"><span class="fr-lbl">Negociação</span><div class="fr-track"><div class="fr-fill" style="width:22%"></div></div><span class="fr-n">18</span></div>
+                    <div class="fr-row"><span class="fr-lbl">Pós-venda</span><div class="fr-track"><div class="fr-fill" style="width:10%"></div></div><span class="fr-n">7</span></div>
+                  </div>
+                </div>
+                <div class="dash-chart-box">
+                  <div class="dct">Novos leads / semana</div>
+                  <div class="bar-chart">
+                    <div class="bc-b dim" style="height:38%"></div>
+                    <div class="bc-b dim" style="height:55%"></div>
+                    <div class="bc-b dim" style="height:42%"></div>
+                    <div class="bc-b dim" style="height:68%"></div>
+                    <div class="bc-b" style="height:82%"></div>
+                    <div class="bc-b" style="height:76%"></div>
+                    <div class="bc-b" style="height:91%"></div>
+                    <div class="bc-b" style="height:100%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONVERSAS -->
+          <div class="app-view" id="view-conv">
+            <div class="app-topbar">
+              <div><div class="app-topbar-title">Conversas Ativas</div><div class="app-topbar-sub">7 aguardando resposta</div></div>
+              <div class="app-topbar-actions"><button class="app-btn primary">+ Nova Conversa</button></div>
+            </div>
+            <div class="conv-layout">
+              <div class="conv-sb">
+                <div class="conv-filters">
+                  <button class="cf-btn active">Todos</button>
+                  <button class="cf-btn">IA Ativa</button>
+                  <button class="cf-btn">Urgente</button>
+                </div>
+                <div class="conv-list">
+                  <div class="conv-item sel" data-conv="0"><div class="conv-av" style="background:#DBEAFE;color:#1E40AF">AM</div><div class="conv-info"><div class="conv-name">Ana Mendes</div><div class="conv-preview">Confirmado! 👍</div></div><div class="conv-meta"><div class="conv-time">09:14</div></div></div>
+                  <div class="conv-item" data-conv="1"><div class="conv-av" style="background:#DBEAFE;color:#1E40AF">FA</div><div class="conv-info"><div class="conv-name">Fábio Almeida</div><div class="conv-preview">Qual o preço do impl...</div></div><div class="conv-meta"><div class="conv-time">08:52</div><div class="conv-unread">2</div></div></div>
+                  <div class="conv-item" data-conv="2"><div class="conv-av" style="background:#FEF9C3;color:#854D0E">TR</div><div class="conv-info"><div class="conv-name">Tânia Ramos</div><div class="conv-preview">Lembrete: consulta...</div></div><div class="conv-meta"><div class="conv-time">08:30</div><div class="conv-unread">1</div></div></div>
+                  <div class="conv-item" data-conv="3"><div class="conv-av" style="background:#F3E8FF;color:#6D28D9">PN</div><div class="conv-info"><div class="conv-name">Pedro Nunes</div><div class="conv-preview">Vi o anúncio de vocês...</div></div><div class="conv-meta"><div class="conv-time">Ontem</div></div></div>
+                  <div class="conv-item" data-conv="4"><div class="conv-av" style="background:#FFE4E6;color:#9F1239">CB</div><div class="conv-info"><div class="conv-name">Clara Baptista</div><div class="conv-preview">Tenho interesse no cla...</div></div><div class="conv-meta"><div class="conv-time">Ontem</div><div class="conv-unread">3</div></div></div>
+                </div>
+              </div>
+              <div class="chat-area" id="chat-area"></div>
+            </div>
+          </div>
+
+          <!-- KANBAN -->
+          <div class="app-view" id="view-kanban">
+            <div class="app-topbar">
+              <div><div class="app-topbar-title">Kanban de Leads</div><div class="app-topbar-sub">Arraste os cards entre as etapas</div></div>
+              <div class="app-topbar-actions"><button class="app-btn">Filtrar</button><button class="app-btn primary">+ Novo Lead</button></div>
+            </div>
+            <div class="kanban-view" id="kanban-board">
+              <div class="kb-col-wrap" data-col="novo">
+                <div class="kb-col-top"><span class="kb-col-label">Novo Lead</span><span class="kb-col-cnt" style="background:#EFF6FF;color:#2563EB" id="cnt-novo">3</span></div>
+                <div class="kb-col-cards" id="col-novo">
+                  <div class="kb-card" draggable="true" data-id="c1"><div class="kc-name">Clara Baptista</div><div class="kc-phone">Instagram · +55 11 99887-1234</div><div class="kc-tags"><span class="kc-tag kt-f">Implante</span><span class="kc-tag kt-ia">IA Ativa</span></div><div class="kc-days">Hoje, há 2h</div></div>
+                  <div class="kb-card" draggable="true" data-id="c2"><div class="kc-name">Fábio Almeida</div><div class="kc-phone">Google Ads · +55 21 98765-4321</div><div class="kc-tags"><span class="kc-tag kt-f">Ortodontia</span></div><div class="kc-days">Hoje, há 4h</div></div>
+                  <div class="kb-card" draggable="true" data-id="c3"><div class="kc-name">Tânia Ramos</div><div class="kc-phone">Indicação · +55 31 97654-3210</div><div class="kc-tags"><span class="kc-tag kt-f">Clareamento</span><span class="kc-tag kt-ia">IA Ativa</span></div><div class="kc-days">Hoje, há 6h</div></div>
+                </div>
+              </div>
+              <div class="kb-col-wrap" data-col="contato">
+                <div class="kb-col-top"><span class="kb-col-label">Contato Iniciado</span><span class="kb-col-cnt" style="background:#FEF9C3;color:#854D0E" id="cnt-contato">2</span></div>
+                <div class="kb-col-cards" id="col-contato">
+                  <div class="kb-card" draggable="true" data-id="c4"><div class="kc-name">Pedro Nunes</div><div class="kc-phone">WhatsApp · +55 11 91234-5678</div><div class="kc-tags"><span class="kc-tag kt-p">Aguardando</span></div><div class="kc-days">Ontem</div></div>
+                  <div class="kb-card" draggable="true" data-id="c5"><div class="kc-name">Beatriz Lopes</div><div class="kc-phone">Facebook · +55 11 93456-7890</div><div class="kc-tags"><span class="kc-tag kt-p">Retornar 15h</span></div><div class="kc-days">Ontem</div></div>
+                </div>
+              </div>
+              <div class="kb-col-wrap" data-col="followup">
+                <div class="kb-col-top"><span class="kb-col-label">Em Follow-up</span><span class="kb-col-cnt" style="background:#F3E8FF;color:#7C3AED" id="cnt-followup">2</span></div>
+                <div class="kb-col-cards" id="col-followup">
+                  <div class="kb-card" draggable="true" data-id="c6"><div class="kc-name">Marcos Vieira</div><div class="kc-phone">+55 11 94567-8901</div><div class="kc-tags"><span class="kc-tag kt-n">3º Follow-up</span><span class="kc-tag kt-hot">Quente</span></div><div class="kc-days">3 dias no funil</div></div>
+                  <div class="kb-card" draggable="true" data-id="c7"><div class="kc-name">Juliana Ferraz</div><div class="kc-phone">+55 21 95678-9012</div><div class="kc-tags"><span class="kc-tag kt-n">2º Follow-up</span></div><div class="kc-days">2 dias no funil</div></div>
+                </div>
+              </div>
+              <div class="kb-col-wrap" data-col="orcamento">
+                <div class="kb-col-top"><span class="kb-col-label">Orç. Enviado</span><span class="kb-col-cnt" style="background:#DBEAFE;color:#1E40AF" id="cnt-orcamento">2</span></div>
+                <div class="kb-col-cards" id="col-orcamento">
+                  <div class="kb-card" draggable="true" data-id="c8"><div class="kc-name">Carlos Melo</div><div class="kc-phone">+55 31 96789-0123</div><div class="kc-tags"><span class="kc-tag kt-f">R$ 6.300</span></div><div class="kc-days">Enviado há 1 dia</div></div>
+                  <div class="kb-card" draggable="true" data-id="c9"><div class="kc-name">Renata Costa</div><div class="kc-phone">+55 11 97890-1234</div><div class="kc-tags"><span class="kc-tag kt-f">R$ 4.500</span><span class="kc-tag kt-hot">Quente</span></div><div class="kc-days">Enviado há 2h</div></div>
+                </div>
+              </div>
+              <div class="kb-col-wrap" data-col="negociacao">
+                <div class="kb-col-top"><span class="kb-col-label">Negociação</span><span class="kb-col-cnt" style="background:#DCFCE7;color:#059669" id="cnt-negociacao">1</span></div>
+                <div class="kb-col-cards" id="col-negociacao">
+                  <div class="kb-card" draggable="true" data-id="c10"><div class="kc-name">Ana Mendes</div><div class="kc-phone">+55 11 98901-2345</div><div class="kc-tags"><span class="kc-tag kt-ia">Proposta aceita</span><span class="kc-tag kt-f">R$ 4.800</span></div><div class="kc-days">Fechar hoje</div></div>
+                </div>
+              </div>
+              <div class="kb-col-wrap" data-col="posvenda">
+                <div class="kb-col-top"><span class="kb-col-label">Pós-venda</span><span class="kb-col-cnt" style="background:#DCFCE7;color:#059669" id="cnt-posvenda">2</span></div>
+                <div class="kb-col-cards" id="col-posvenda">
+                  <div class="kb-card" draggable="true" data-id="c11"><div class="kc-name">Rodrigo Silva</div><div class="kc-phone">+55 21 99012-3456</div><div class="kc-tags"><span class="kc-tag kt-ia">Paciente ativo</span></div><div class="kc-days">Tratamento: Ortodontia</div></div>
+                  <div class="kb-card" draggable="true" data-id="c12"><div class="kc-name">Larissa Pinto</div><div class="kc-phone">+55 31 90123-4567</div><div class="kc-tags"><span class="kc-tag kt-ia">Reativação</span></div><div class="kc-days">Retorno programado</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AGENDA -->
+          <div class="app-view" id="view-agenda">
+            <div class="app-topbar">
+              <div><div class="app-topbar-title">Agenda</div><div class="app-topbar-sub">Semana de 14–18 Abr · 12 consultas</div></div>
+              <div class="app-topbar-actions"><button class="app-btn">Semana</button><button class="app-btn primary">+ Consulta</button></div>
+            </div>
+            <div class="agenda-layout">
+              <div class="agenda-left">
+                <div class="mini-cal">
+                  <div class="mc-head"><span class="mc-month">Abril 2026</span></div>
+                  <div class="mc-grid">
+                    <div class="mc-dl">D</div><div class="mc-dl">S</div><div class="mc-dl">T</div><div class="mc-dl">Q</div><div class="mc-dl">Q</div><div class="mc-dl">S</div><div class="mc-dl">S</div>
+                    <div class="mc-d om">30</div><div class="mc-d om">31</div><div class="mc-d">1</div><div class="mc-d">2</div><div class="mc-d">3</div><div class="mc-d">4</div><div class="mc-d">5</div>
+                    <div class="mc-d">6</div><div class="mc-d">7</div><div class="mc-d">8</div><div class="mc-d">9</div><div class="mc-d">10</div><div class="mc-d">11</div><div class="mc-d">12</div>
+                    <div class="mc-d">13</div><div class="mc-d">14</div><div class="mc-d">15</div><div class="mc-d today">16</div><div class="mc-d">17</div><div class="mc-d">18</div><div class="mc-d">19</div>
+                    <div class="mc-d">20</div><div class="mc-d">21</div><div class="mc-d">22</div><div class="mc-d">23</div><div class="mc-d">24</div><div class="mc-d">25</div><div class="mc-d">26</div>
+                    <div class="mc-d">27</div><div class="mc-d">28</div><div class="mc-d">29</div><div class="mc-d">30</div><div class="mc-d om">1</div><div class="mc-d om">2</div><div class="mc-d om">3</div>
+                  </div>
+                </div>
+                <div class="agenda-events-label">Hoje · 16 Abr</div>
+                <div class="agenda-ev"><div class="ae-dot" style="background:#0055FE"></div><div><div class="ae-name">Ana Mendes</div><div class="ae-time">09:00 · Implante</div></div></div>
+                <div class="agenda-ev"><div class="ae-dot" style="background:#0891B2"></div><div><div class="ae-name">Rodrigo Silva</div><div class="ae-time">10:30 · Ortodontia</div></div></div>
+                <div class="agenda-ev"><div class="ae-dot" style="background:#7C3AED"></div><div><div class="ae-name">Carlos Melo</div><div class="ae-time">14:00 · Prótese</div></div></div>
+                <div class="agenda-ev"><div class="ae-dot" style="background:#059669"></div><div><div class="ae-name">Juliana Ferraz</div><div class="ae-time">16:00 · Clareamento</div></div></div>
+              </div>
+              <div class="agenda-right">
+                <div class="week-hd">
+                  <div class="wh-item"></div>
+                  <div class="wh-item"><div class="wh-day-name">SEG</div><div class="wh-day-num">14</div></div>
+                  <div class="wh-item"><div class="wh-day-name">TER</div><div class="wh-day-num">15</div></div>
+                  <div class="wh-item"><div class="wh-day-name">QUA</div><div class="wh-day-num today">16</div></div>
+                  <div class="wh-item"><div class="wh-day-name">QUI</div><div class="wh-day-num">17</div></div>
+                  <div class="wh-item"><div class="wh-day-name">SEX</div><div class="wh-day-num">18</div></div>
+                </div>
+                <div class="week-body">
+                  <div class="wb-hour">8h</div><div class="wb-cell"></div><div class="wb-cell"></div><div class="wb-cell"></div><div class="wb-cell"></div><div class="wb-cell"></div>
+                  <div class="wb-hour">9h</div><div class="wb-cell"></div><div class="wb-cell"><div class="wb-event" style="background:#EFF6FF;color:#2563EB;height:56px">Marcos V. · Implante</div></div><div class="wb-cell"><div class="wb-event" style="background:#EFF6FF;color:#2563EB;height:56px">Ana M. · Implante</div></div><div class="wb-cell"></div><div class="wb-cell"></div>
+                  <div class="wb-hour">10h</div><div class="wb-cell"></div><div class="wb-cell"></div><div class="wb-cell"><div class="wb-event" style="background:#E0F2FE;color:#0891B2;height:56px">Rodrigo S. · Ortod.</div></div><div class="wb-cell"></div><div class="wb-cell"></div>
+                  <div class="wb-hour">11h</div><div class="wb-cell"><div class="wb-event" style="background:#F3E8FF;color:#7C3AED">Larissa P. · Canal</div></div><div class="wb-cell"></div><div class="wb-cell"></div><div class="wb-cell"></div><div class="wb-cell"></div>
+                  <div class="wb-hour">14h</div><div class="wb-cell"></div><div class="wb-cell"></div><div class="wb-cell"><div class="wb-event" style="background:#F3E8FF;color:#7C3AED;height:56px">Carlos M. · Prótese</div></div><div class="wb-cell"></div><div class="wb-cell"></div>
+                  <div class="wb-hour">15h</div><div class="wb-cell"></div><div class="wb-cell"></div><div class="wb-cell"></div><div class="wb-cell"><div class="wb-event" style="background:#DCFCE7;color:#059669">Beatriz L. · Clareamento</div></div><div class="wb-cell"></div>
+                  <div class="wb-hour">16h</div><div class="wb-cell"></div><div class="wb-cell"></div><div class="wb-cell"><div class="wb-event" style="background:#DCFCE7;color:#059669;height:56px">Juliana F. · Clareamento</div></div><div class="wb-cell"></div><div class="wb-cell"><div class="wb-event" style="background:#EFF6FF;color:#2563EB">Marcos V. · Consulta</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FLUXOS -->
+          <div class="app-view" id="view-fluxos">
+            <div class="app-topbar">
+              <div><div class="app-topbar-title">Fluxos de Automação</div><div class="app-topbar-sub">3 fluxos ativos · 847 execuções este mês</div></div>
+              <div class="app-topbar-actions"><button class="app-btn primary">+ Novo Fluxo</button></div>
+            </div>
+            <div class="flow-list">
+              <!-- Fluxo 1 -->
+              <div class="flow-card">
+                <div class="flow-card-hd">
+                  <div class="flow-icon fi-blue">⚡</div>
+                  <div><div class="flow-title">Abordagem Inicial — Novo Lead</div><div class="flow-sub">Ativa para todos os canais · Instagram, Google, Indicação</div></div>
+                  <div class="flow-stat"><div class="flow-stat-n">94%</div><div class="flow-stat-l">taxa de resposta</div></div>
+                </div>
+                <div class="flow-nodes">
+                  <div class="fn"><div class="fn-box fn-trigger">📲 Lead chega via canal</div><div class="fn-label">Gatilho</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-action">🤖 IA faz abordagem consultiva em até 3 min</div><div class="fn-label">Ação imediata</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-condition">Respondeu?</div><div class="fn-label">Condição</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-action">🎯 IA qualifica e oferece avaliação</div><div class="fn-label">Sim → qualifica</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-success">✅ Agenda consulta</div><div class="fn-label">Conversão</div></div>
+                </div>
+                <div class="flow-nodes" style="margin-top:6px">
+                  <div class="fn" style="visibility:hidden"><div class="fn-box fn-trigger">x</div></div>
+                  <div class="fn-arrow" style="visibility:hidden">→</div>
+                  <div class="fn" style="visibility:hidden"><div class="fn-box fn-action">x</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-condition" style="font-size:9px">Não respondeu em 4h</div><div class="fn-label">Condição</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-action">📩 Follow-up automático</div><div class="fn-label">Reativação</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-action" style="font-size:9px">🔔 Alerta equipe 24h sem resposta</div><div class="fn-label">Escalonamento</div></div>
+                </div>
+                <div class="flow-toggle"><div class="tog-track"><div class="tog-thumb"></div></div><span class="tog-label">Fluxo ativo · Última execução: há 8 min</span></div>
+              </div>
+              <!-- Fluxo 2 -->
+              <div class="flow-card">
+                <div class="flow-card-hd">
+                  <div class="flow-icon fi-teal">📅</div>
+                  <div><div class="flow-title">Confirmação de Consulta</div><div class="flow-sub">Lembrete 48h e 2h antes · Reduz faltas em 67%</div></div>
+                  <div class="flow-stat"><div class="flow-stat-n">91%</div><div class="flow-stat-l">taxa de confirmação</div></div>
+                </div>
+                <div class="flow-nodes">
+                  <div class="fn"><div class="fn-box fn-trigger">📋 Consulta agendada</div><div class="fn-label">Gatilho</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-action">💬 Lembrete 48h antes</div><div class="fn-label">D-2</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-action">💬 Lembrete 2h antes</div><div class="fn-label">D-0</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-condition">Confirmou?</div><div class="fn-label">Condição</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-success">✅ Confirmado</div><div class="fn-label">Fim</div></div>
+                </div>
+                <div class="flow-toggle"><div class="tog-track"><div class="tog-thumb"></div></div><span class="tog-label">Fluxo ativo · 12 consultas confirmadas hoje</span></div>
+              </div>
+              <!-- Fluxo 3 -->
+              <div class="flow-card">
+                <div class="flow-card-hd">
+                  <div class="flow-icon fi-purple">🔄</div>
+                  <div><div class="flow-title">Reativação de Pacientes Inativos</div><div class="flow-sub">Pacientes sem consulta há 6 meses · Rodada mensal</div></div>
+                  <div class="flow-stat"><div class="flow-stat-n">28%</div><div class="flow-stat-l">taxa de retorno</div></div>
+                </div>
+                <div class="flow-nodes">
+                  <div class="fn"><div class="fn-box fn-trigger">😴 Inativo 6 meses</div><div class="fn-label">Gatilho</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-action">💌 Mensagem personalizada IA</div><div class="fn-label">Reativação</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-condition">Interesse?</div><div class="fn-label">Condição</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-action">🎯 IA qualifica e agenda</div><div class="fn-label">Sim</div></div>
+                  <div class="fn-arrow">→</div>
+                  <div class="fn"><div class="fn-box fn-success">✅ Paciente reativado</div><div class="fn-label">Conversão</div></div>
+                </div>
+                <div class="flow-toggle"><div class="tog-track"><div class="tog-thumb"></div></div><span class="tog-label">Fluxo ativo · 34 pacientes reativados este mês</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ASSISTENTE DE PROMPT -->
+          <div class="app-view" id="view-prompt">
+            <div class="app-topbar">
+              <div><div class="app-topbar-title">Assistente de Prompt</div><div class="app-topbar-sub">Personalize como a IA se comporta com seus pacientes</div></div>
+              <div class="app-topbar-actions"><button class="app-btn">Restaurar padrão</button><button class="app-btn primary">Salvar e aplicar</button></div>
+            </div>
+            <div class="prompt-layout">
+              <div class="prompt-settings">
+                <div class="pt-section">
+                  <div class="pt-section-title">Tom de Voz</div>
+                  <div class="pt-chips">
+                    <span class="pt-chip on">Consultivo</span>
+                    <span class="pt-chip on">Empático</span>
+                    <span class="pt-chip on">Profissional</span>
+                    <span class="pt-chip">Descontraído</span>
+                    <span class="pt-chip">Direto</span>
+                  </div>
+                </div>
+                <div class="pt-section">
+                  <div class="pt-section-title">Especialidades da Clínica</div>
+                  <div class="pt-chips">
+                    <span class="pt-chip on">Implante</span>
+                    <span class="pt-chip on">Ortodontia</span>
+                    <span class="pt-chip on">Clareamento</span>
+                    <span class="pt-chip on">Prótese</span>
+                    <span class="pt-chip on">Canal</span>
+                    <span class="pt-chip">Estética</span>
+                    <span class="pt-chip">Periodontia</span>
+                  </div>
+                </div>
+                <div class="pt-section">
+                  <div class="pt-section-title">Tópicos Proibidos</div>
+                  <div class="pt-chips">
+                    <span class="pt-chip kill">✕ Preços e valores</span>
+                    <span class="pt-chip kill">✕ Prazo garantido</span>
+                    <span class="pt-chip kill">✕ Comparar concorrentes</span>
+                    <span class="pt-chip kill">✕ Diagnóstico por mensagem</span>
+                  </div>
+                </div>
+                <div class="pt-section">
+                  <div class="pt-section-title">Velocidade de Resposta</div>
+                  <div class="pt-range-row">
+                    <span style="font-size:9px;color:var(--dim)">Instantânea</span>
+                    <input type="range" class="pt-range" min="1" max="10" value="3">
+                    <span style="font-size:9px;color:var(--dim)">Humanizada</span>
+                    <span class="pt-range-val">3m</span>
+                  </div>
+                </div>
+                <div class="pt-section">
+                  <div class="pt-section-title">Instruções Personalizadas</div>
+                  <textarea class="pt-textarea" rows="5" placeholder="Ex: Sempre mencionar que oferecemos avaliação gratuita. Nunca agendar sem antes entender a queixa principal do paciente. Usar o nome do paciente em todas as mensagens...">Sempre iniciar com uma pergunta sobre a situação do paciente antes de qualquer indicação. Oferecer a avaliação gratuita como próximo passo. Não mencionar valores ou condições comerciais — encaminhar para a equipe. Usar linguagem acolhedora e evitar termos técnicos excessivos.</textarea>
+                </div>
+                <button class="pt-save">Salvar configurações</button>
+              </div>
+              <div class="prompt-preview">
+                <div class="pp-hd">
+                  <span class="pp-title">Preview — Como a IA responde</span>
+                  <span class="pp-badge">🤖 IA Ativa</span>
+                  <span style="margin-left:auto;font-size:10px;color:var(--dim)">Tom: Consultivo · Empático</span>
+                </div>
+                <div class="pp-msgs">
+                  <div class="pp-msg-wrap">
+                    <div class="pp-m pp-in">Oi! Tenho interesse em implante, mas tenho muitas dúvidas e um pouco de medo...</div>
+                    <div class="pp-lbl">Paciente · agora</div>
+                  </div>
+                  <div class="pp-msg-wrap">
+                    <div class="pp-m pp-ai">Olá! 😊 Fico muito feliz que entrou em contato. Implante é uma decisão importante, e é completamente normal ter dúvidas — isso mostra que você está pensando com cuidado, o que é ótimo! Antes de qualquer coisa, me conta: você já fez alguma avaliação antes, ou é a primeira vez que está considerando esse tratamento?</div>
+                    <div class="pp-lbl right">🤖 IA · respondeu em ~2 min · Tom consultivo aplicado</div>
+                  </div>
+                  <div class="pp-msg-wrap">
+                    <div class="pp-m pp-in">É a primeira vez. Tenho medo de dor e não sei se meu osso vai ser suficiente...</div>
+                    <div class="pp-lbl">Paciente · agora</div>
+                  </div>
+                  <div class="pp-msg-wrap">
+                    <div class="pp-m pp-ai">Entendo perfeitamente, e seu receio é muito comum! 💙 Posso te dar uma boa notícia: hoje temos tecnologia de ponta — inclusive tomografia 3D — que permite analisar com precisão a estrutura óssea antes de qualquer decisão. Muitos pacientes que achavam que não tinham osso suficiente ficaram surpresos com as opções disponíveis. O que te faria se sentir mais segura para dar o primeiro passo?</div>
+                    <div class="pp-lbl right">🤖 IA · ~2 min · Restrição: sem valores ✓</div>
+                  </div>
+                  <div class="pp-msg-wrap">
+                    <div class="pp-m pp-in">Se pudesse conversar com o dentista sem compromisso antes...</div>
+                    <div class="pp-lbl">Paciente · agora</div>
+                  </div>
+                  <div class="pp-msg-wrap">
+                    <div class="pp-m pp-ai">Perfeito — nossa avaliação é exatamente isso: uma conversa sem compromisso nenhum. O Dr. Santos vai ouvir você, analisar seu caso e mostrar todas as possibilidades. Você sai sabendo o que é possível, com todas as perguntas respondidas. Posso verificar a agenda para esta semana — qual turno funciona melhor para você? 🗓️</div>
+                    <div class="pp-lbl right">🤖 IA · ~2 min · Avaliação gratuita destacada ✓</div>
+                  </div>
+                </div>
+                <div class="pp-inp">
+                  <input class="pp-field" type="text" placeholder="Simule uma mensagem de paciente para ver como a IA responde..." readonly>
+                  <button class="pp-send">➤</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials" id="cases">
+  <div class="container">
+    <div class="test-head fade-up">
+      <div class="section-eyebrow">Casos de sucesso</div>
+      <h2 class="section-title">Clínicas que transformaram seus resultados</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card fade-up" style="transition-delay:.05s">
+        <div class="test-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="test-q">Em 3 meses, <span class="test-hl">triplicamos nossa conversão de leads</span>. A IA identifica quem está pronto para agendar antes mesmo de ligarmos. Incrível.</p>
+        <div class="test-author">
+          <div class="test-av" style="background:#DBEAFE;color:#1E40AF">DR</div>
+          <div><div class="test-nm">Dra. Renata Souza</div><div class="test-rl">Odonto Prime, São Paulo</div></div>
+        </div>
+      </div>
+      <div class="test-card fade-up" style="transition-delay:.1s;border-color:rgba(0,85,254,0.18)">
+        <div class="test-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="test-q">Antes eu tinha leads perdidos em três apps diferentes. Agora tudo centralizado. <span class="test-hl">Economizamos 4 horas por dia</span> só com automações de confirmação.</p>
+        <div class="test-author">
+          <div class="test-av" style="background:#DBEAFE;color:#1E40AF">FV</div>
+          <div><div class="test-nm">Dr. Felipe Vasconcelos</div><div class="test-rl">Clínica Vida, Rio de Janeiro</div></div>
+        </div>
+      </div>
+      <div class="test-card fade-up" style="transition-delay:.15s">
+        <div class="test-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="test-q">O funil com IA foi um divisor de águas. <span class="test-hl">Nossa receita cresceu 68% em 6 meses</span> sem contratar ninguém novo. Minha equipe foca no paciente.</p>
+        <div class="test-author">
+          <div class="test-av" style="background:#F3E8FF;color:#6D28D9">MA</div>
+          <div><div class="test-nm">Dra. Mariana Azevedo</div><div class="test-rl">MedCare, Belo Horizonte</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-head fade-up">
+      <div class="section-eyebrow">Planos e Preços</div>
+      <h2 class="section-title">Comece hoje, pague pelos resultados</h2>
+      <p class="section-sub" style="margin-top:14px">7 dias grátis em qualquer plano. Sem cartão de crédito para começar.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card fade-up" style="transition-delay:.05s">
+        <div class="plan-lbl dark">Starter</div>
+        <div class="plan-price-row">
+          <span class="p-cur dark">R$</span>
+          <span class="p-val dark">197</span>
+          <span class="p-per dark">/mês</span>
+        </div>
+        <p class="plan-desc dark">Para clínicas que estão começando a organizar seus processos.</p>
+        <div class="plan-div dark"></div>
+        <ul class="plan-feats">
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Até 300 pacientes ativos</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>1 número de WhatsApp</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Funil de leads básico</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Agendamento online</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Lembretes automáticos</li>
+          <li class="plan-f dark off"><span class="pf-ck dark">✕</span>IA de funil avançada</li>
+          <li class="plan-f dark off"><span class="pf-ck dark">✕</span>Multi-unidades</li>
+        </ul>
+        <button class="plan-cta cta-outline">Começar grátis</button>
+      </div>
+      <div class="price-card feat fade-up" style="transition-delay:.1s">
+        <div class="feat-pill">🔥 Mais popular</div>
+        <div class="plan-lbl light">Pro</div>
+        <div class="plan-price-row">
+          <span class="p-cur light">R$</span>
+          <span class="p-val light">447</span>
+          <span class="p-per light">/mês</span>
+        </div>
+        <p class="plan-desc light">Para clínicas em crescimento que querem automação real e mais conversões.</p>
+        <div class="plan-div light"></div>
+        <ul class="plan-feats">
+          <li class="plan-f light"><span class="pf-ck light">✓</span>Pacientes ilimitados</li>
+          <li class="plan-f light"><span class="pf-ck light">✓</span>Até 5 números de WhatsApp</li>
+          <li class="plan-f light"><span class="pf-ck light">✓</span>IA de funil avançada</li>
+          <li class="plan-f light"><span class="pf-ck light">✓</span>Prontuário digital completo</li>
+          <li class="plan-f light"><span class="pf-ck light">✓</span>Relatórios e dashboards</li>
+          <li class="plan-f light"><span class="pf-ck light">✓</span>Google Agenda integrado</li>
+          <li class="plan-f light"><span class="pf-ck light">✓</span>Suporte prioritário</li>
+        </ul>
+        <button class="plan-cta cta-light">Começar grátis</button>
+      </div>
+      <div class="price-card fade-up" style="transition-delay:.15s">
+        <div class="plan-lbl dark">Enterprise</div>
+        <div class="plan-price-row">
+          <span class="p-cur dark">R$</span>
+          <span class="p-val dark">997</span>
+          <span class="p-per dark">/mês</span>
+        </div>
+        <p class="plan-desc dark">Para redes de clínicas e grupos com múltiplas unidades.</p>
+        <div class="plan-div dark"></div>
+        <ul class="plan-feats">
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Tudo do plano Pro</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Multi-unidades ilimitadas</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>WhatsApp sem limites</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>API de integrações</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Onboarding dedicado</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Gerente de conta exclusivo</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>SLA 99.9% garantido</li>
+        </ul>
+        <button class="plan-cta cta-dark">Falar com consultor</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-head fade-up">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-title">Respondemos as perguntas mais comuns</h2>
+    </div>
+    <div class="faq-list fade-up" style="transition-delay:.1s">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Preciso de conhecimento técnico para usar?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-ain">Não. O CRM Saúde foi projetado para ser intuitivo para qualquer membro da equipe, da recepcionista ao gestor. Oferecemos onboarding guiado, tutoriais em vídeo e suporte em tempo real. A maioria das clínicas está operacional em menos de 1 dia.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Como funciona a integração com WhatsApp?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-ain">Usamos a API oficial do WhatsApp Business (Meta), garantindo estabilidade e conformidade total. Você conecta múltiplos números, cria fluxos automáticos, envia confirmações, lembretes e campanhas de reativação — tudo sem sair da plataforma.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Os dados dos meus pacientes são seguros?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-ain">Sim. Seguimos a LGPD e todas as regulamentações do CFO e CFM. Dados armazenados no Brasil, criptografia de ponta a ponta, backup diário automático e controle de acesso por perfis de usuário. Nenhum dado é compartilhado com terceiros.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Posso migrar minha base de pacientes atual?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-ain">Sim. Importamos sua base de qualquer sistema — planilhas Excel, CSV ou outros CRMs — sem custo adicional. Nossa equipe faz todo o processo de migração, garantindo que nenhum dado seja perdido na transição.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Como funciona o período de teste gratuito?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-ain">7 dias completos com acesso a todas as funcionalidades do plano escolhido, sem pedir cartão de crédito. Ao final, você decide se continua. Se não quiser, seus dados ficam disponíveis para exportação por mais 30 dias.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Posso cancelar quando quiser?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-ain">Sim, sem multa e sem burocracia. Cancele com um clique dentro da plataforma a qualquer momento. Acreditamos que você vai continuar porque os resultados falam por si — não porque está preso em contrato.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA FINAL ─── -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box fade-up">
+      <div class="cta-blob cb1"></div>
+      <div class="cta-blob cb2"></div>
+      <div class="cta-inner">
+        <div class="cta-eyebrow">Comece hoje mesmo</div>
+        <h2 class="cta-title">Sua clínica merece crescer com inteligência</h2>
+        <p class="cta-sub">Mais de 1.200 clínicas já transformaram seus resultados. Configure em minutos, veja resultados em dias.</p>
+        <div class="cta-btns">
+          <button class="cta-b-white">Começar grátis agora →</button>
+          <button class="cta-b-ghost">Falar com especialista</button>
+        </div>
+        <div class="cta-fine">Sem cartão de crédito · Cancela quando quiser · <strong>7 dias grátis</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <div class="foot-logo-mark">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 16L10 4L17 16" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 12.5h8" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M14.5 14.5L17.5 17.5" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+          <span class="foot-logo-text">CRM Saúde</span>
+        </div>
+        <p class="foot-desc">O sistema de gestão e crescimento para clínicas que querem resultados reais, não só software.</p>
+        <div class="foot-socials">
+          <a href="#" class="fsoc">in</a>
+          <a href="#" class="fsoc">𝕏</a>
+          <a href="#" class="fsoc">📸</a>
+          <a href="#" class="fsoc">▶</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-t">Produto</div>
+        <ul class="foot-links">
+          <li><a href="#">Funcionalidades</a></li>
+          <li><a href="#">Preços</a></li>
+          <li><a href="#">Integrações</a></li>
+          <li><a href="#">Novidades</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-t">Empresa</div>
+        <ul class="foot-links">
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Casos de sucesso</a></li>
+          <li><a href="#">Trabalhe conosco</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-t">Suporte</div>
+        <ul class="foot-links">
+          <li><a href="#">Central de ajuda</a></li>
+          <li><a href="#">Documentação</a></li>
+          <li><a href="#">Status do sistema</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div class="foot-copy">© 2026 CRM Saúde. Todos os direitos reservados.</div>
+      <div class="foot-legal">
+        <a href="#">Termos de uso</a>
+        <a href="#">Privacidade</a>
+        <a href="#">LGPD</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // NAV
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+
+  // APP SIDEBAR NAV
+  function switchView(viewId) {
+    document.querySelectorAll('.app-nav-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.app-view').forEach(v => v.classList.remove('active'));
+    document.querySelector(`[data-view="${viewId}"]`).classList.add('active');
+    document.getElementById('view-' + viewId).classList.add('active');
+    if (viewId === 'conv') renderChat(activeConv);
+  }
+  document.querySelectorAll('[data-view]').forEach(btn => {
+    if (!btn.style.pointerEvents) btn.addEventListener('click', () => switchView(btn.dataset.view));
+  });
+
+  // CONVERSATIONS
+  const convData = [
+    { name:'Ana Mendes', initials:'AM', bg:'#DBEAFE', col:'#1E40AF', stage:'Negociação', ia:true,
+      msgs:[
+        {d:'in',  t:'Oi! Vi o anúncio de vocês no Instagram. Tenho interesse em implante, mas tenho muitas dúvidas...',h:'08:32'},
+        {d:'out', t:'Olá, Ana! 😊 Fico muito feliz que entrou em contato. Implante é uma decisão muito importante e é completamente normal ter dúvidas — isso mostra que você está pensando com cuidado. Me conta: você já fez alguma avaliação antes, ou é a primeira vez que está considerando esse tratamento?',h:'08:35',ai:true},
+        {d:'in',  t:'É a primeira vez. Tenho medo do procedimento e não sei se meu osso vai ser suficiente...',h:'08:38'},
+        {d:'out', t:'Entendo perfeitamente, Ana. Esse receio é muito comum, especialmente em quem nunca passou por uma avaliação de implante. A boa notícia é que hoje temos tecnologia de ponta — inclusive tomografia 3D — que permite analisar a estrutura óssea com precisão total antes de qualquer decisão. Muitos pacientes que achavam que não tinham osso suficiente ficaram surpresos com as opções disponíveis. O que te faria se sentir mais segura para dar esse primeiro passo?',h:'08:40',ai:true},
+        {d:'in',  t:'Se eu pudesse conversar com o dentista antes, tirar essas dúvidas sem compromisso...',h:'08:51'},
+        {d:'out', t:'Perfeito — nossa avaliação inicial é exatamente isso: um momento de conversa tranquila, sem compromisso nenhum. O Dr. Santos vai te ouvir, entender sua situação e mostrar as possibilidades para o seu caso específico. Você sai da consulta sabendo exatamente o que é possível fazer, com todas as perguntas respondidas. Posso verificar a agenda para esta semana — qual o melhor turno para você, manhã ou tarde? 🗓️',h:'08:53',ai:true},
+        {d:'in',  t:'Tarde seria ideal. Tenho trabalho de manhã.',h:'09:02'},
+        {d:'out', t:'Ótimo! Tenho disponibilidade na quinta-feira às 15h ou na sexta-feira às 16h. Qual você prefere, Ana? 😊',h:'09:04',ai:true},
+        {d:'in',  t:'Sexta às 16h perfeito! Obrigada pela atenção 💙',h:'09:12'},
+        {d:'out', t:'Confirmado, Ana! Sua avaliação está agendada para sexta-feira às 16h com o Dr. Santos. Vou te enviar o endereço e um lembrete na véspera. Qualquer dúvida que surgir até lá, pode me chamar aqui mesmo. Te esperamos! 🙏',h:'09:14',ai:true}
+      ]},
+    { name:'Fábio Almeida', initials:'FA', bg:'#DBEAFE', col:'#1E40AF', stage:'Em Follow-up', ia:true,
+      msgs:[
+        {d:'in',  t:'Boa tarde! Quero corrigir meu sorriso. Já usei aparelho quando adolescente mas os dentes voltaram a ficar tortos...',h:'08:41'},
+        {d:'out', t:'Olá, Fábio! Que bom que entrou em contato. 😊 Isso é muito mais comum do que as pessoas imaginam — a recidiva ortodôntica acontece com frequência, geralmente quando o uso da contenção é interrompido cedo demais. A boa notícia é que você já tem histórico de tratamento, então o processo costuma ser mais previsível. Você tem alguma preferência de tipo de aparelho? Hoje temos opções bem discretas, como o alinhador invisível.',h:'08:43',ai:true},
+        {d:'in',  t:'Alinhador invisível seria perfeito! Trabalho em reuniões o dia todo...',h:'08:47'},
+        {d:'out', t:'Entendo completamente, Fábio. O alinhador é ideal para quem tem uma rotina profissional exigente — é removível, extremamente discreto, e a maioria das pessoas ao redor nem percebe que você está usando. Para confirmar se ele é indicado para o seu caso específico, precisamos de uma avaliação. Cada caso tem suas particularidades, e o importante é que você tenha o resultado que deseja. Você estaria disponível ainda essa semana?',h:'08:49',ai:true},
+        {d:'in',  t:'Sim! Tenho curiosidade também sobre quanto tempo leva...',h:'08:52'},
+        {d:'out', t:'Ótima pergunta! O tempo de tratamento varia de caso para caso — é exatamente uma das coisas que o Dr. Santos vai conseguir estimar com precisão na avaliação, após analisar as radiografias e fazer o mapeamento completo do seu sorriso. Casos de recidiva como o seu tendem a ter prazos menores que um tratamento inicial. Posso te encaixar essa semana?',h:'08:54',ai:true}
+      ]},
+    { name:'Tânia Ramos', initials:'TR', bg:'#FEF9C3', col:'#854D0E', stage:'Consulta agendada', ia:true,
+      msgs:[
+        {d:'out', t:'Olá, Tânia! 🌟 Lembrete carinhoso: sua avaliação de clareamento é amanhã às 14h. Tudo certo para você?',h:'08:00',ai:true},
+        {d:'in',  t:'Sim! Mas fiquei curiosa — o clareamento realmente funciona para dentes com manchas de café?',h:'08:15'},
+        {d:'out', t:'Ótima pergunta, Tânia! Manchas externas causadas por café, chá e vinho são exatamente as que respondem melhor ao clareamento — são chamadas de manchas extrínsecas. O resultado costuma ser bastante satisfatório. O Dr. Santos vai avaliar o tipo específico de mancha e o estado do seu esmalte para indicar o protocolo mais adequado ao seu caso. Você tem alguma sensibilidade nos dentes atualmente?',h:'08:17',ai:true},
+        {d:'in',  t:'Um pouco de sensibilidade ao frio sim...',h:'08:28'},
+        {d:'out', t:'Bom você mencionar isso! Existem protocolos específicos para pacientes com sensibilidade — com géis dessensibilizantes que permitem alcançar um resultado excelente sem desconforto. O Dr. Santos já vai considerar isso na avaliação de amanhã e trazer as opções ideais para você. Fica totalmente tranquila! 😊 Nosso endereço é Av. Paulista, 1000 — sala 802. Qualquer dúvida até lá, estou aqui!',h:'08:30',ai:true},
+        {d:'in',  t:'Ótimo! Me sinto bem mais segura agora. Obrigada 😄',h:'08:35'},
+        {d:'out', t:'Fico feliz em ouvir isso, Tânia! Até amanhã! 🙌',h:'08:36',ai:true}
+      ]},
+    { name:'Pedro Nunes', initials:'PN', bg:'#F3E8FF', col:'#6D28D9', stage:'Qualificando', ia:true,
+      msgs:[
+        {d:'in',  t:'Oi, vim pelo Instagram. Perdi um dente há 6 meses e preciso repor...',h:'Ontem 14:22'},
+        {d:'out', t:'Olá, Pedro! Obrigado por entrar em contato. 😊 Perda de dente é algo que realmente merece atenção — além do aspecto estético, o espaço vazio pode, ao longo do tempo, causar a movimentação dos dentes vizinhos e perda óssea na região. Existem diferentes alternativas para reposição, cada uma com suas indicações específicas. Há 6 meses já é um tempo razoável. Você sentiu alguma alteração na mordida ou nos dentes ao lado desde então?',h:'Ontem 14:24',ai:true},
+        {d:'in',  t:'Na verdade sim, parece que um dente do lado foi levemente para o espaço...',h:'Ontem 14:31'},
+        {d:'out', t:'Essa é exatamente o tipo de informação importante para o planejamento, Pedro. Quando o dente vizinho começa a se inclinar, isso pode influenciar as opções de tratamento e, em alguns casos, a janela de tempo para a solução ideal. A boa notícia é que você ainda está em um estágio em que as alternativas são amplas. O Dr. Santos faria uma avaliação completa — com radiografia e análise da mordida — para te mostrar exatamente o que está acontecendo e as melhores soluções para o seu caso específico. Consigo te encaixar ainda essa semana, o que acha?',h:'Ontem 14:33',ai:true},
+        {d:'in',  t:'Tenho disponibilidade na quinta de manhã...',h:'Ontem 16:10'},
+        {d:'out', t:'Perfeito! Vou reservar um horário na quinta de manhã para você, Pedro. Confirmo o horário exato e te envio o endereço completo. Se puder trazer qualquer radiografia recente que você tenha, isso vai agilizar bastante a avaliação! 📋',h:'Ontem 16:12',ai:true}
+      ]},
+    { name:'Clara Baptista', initials:'CB', bg:'#FFE4E6', col:'#9F1239', stage:'Em Follow-up', ia:true,
+      msgs:[
+        {d:'out', t:'Olá, Clara! 😊 Aqui é a equipe da Clínica Dr. Santos. Percebi que você demonstrou interesse em implante há alguns dias — queria saber se surgiu alguma dúvida que eu possa esclarecer, ou se posso te ajudar de alguma forma?',h:'Ontem 09:00',ai:true},
+        {d:'in',  t:'Oi! Estava pensando sim. Fico com receio de fazer algo e depois me arrepender...',h:'Ontem 10:18'},
+        {d:'out', t:'Entendo perfeitamente, Clara. Implante é um tratamento que merece reflexão e segurança. O que posso te dizer é que a avaliação não te compromete com absolutamente nada — é exatamente o momento para tirar todas as dúvidas, entender as opções para o seu caso e, só então, decidir com calma e segurança. Muitas pessoas chegam com receio e saem da avaliação com uma visão completamente diferente do que imaginavam. O que mais te preocupa quando pensa nesse tratamento?',h:'Ontem 10:20',ai:true},
+        {d:'in',  t:'Tenho medo da cirurgia em si... e se dói muito.',h:'Ontem 11:05'},
+        {d:'out', t:'Esse medo é muito comum e totalmente válido, Clara! A realidade que nossos pacientes relatam é que o procedimento é feito com anestesia local, e a grande maioria fica surpresa com o quanto foi mais tranquilo do que imaginava. O pós-operatório pode ter um leve desconforto nos primeiros dias, que é bem controlado com medicação. O Dr. Santos tem muita experiência com pacientes que chegam ansiosos e cria um ambiente muito acolhedor. Que tal uma conversa presencial, só para você ouvir da boca do especialista e se sentir mais segura? Sem compromisso nenhum 🤝',h:'Ontem 11:07',ai:true},
+        {d:'in',  t:'Assim fica muito mais fácil de decidir né! Pode marcar.',h:'Ontem 11:20'},
+        {d:'out', t:'Com certeza, Clara! 🙌 Vou verificar a agenda agora. Você tem preferência de dia da semana ou horário? Quero encontrar o momento perfeito para você.',h:'Ontem 11:21',ai:true},
+        {d:'in',  t:'Manhã de preferência. Segunda ou terça.',h:'Ontem 14:40'},
+        {d:'out', t:'Ótimo! Tenho disponibilidade na segunda-feira às 9h ou na terça às 10h. Qual fica melhor para você, Clara? 😊',h:'Ontem 14:42',ai:true}
+      ]}
+  ];
+  let activeConv = 0;
+  function renderChat(idx) {
+    const c = convData[idx];
+    const area = document.getElementById('chat-area');
+    if (!area) return;
+    area.innerHTML = `
+      <div class="chat-hd">
+        <div class="chat-hd-av" style="background:${c.bg};color:${c.col}">${c.initials}</div>
+        <div><div class="chat-hd-name">${c.name}</div><div class="chat-hd-sub">● Online agora</div></div>
+        <span class="chat-stage">${c.stage}</span>
+        ${c.ia ? '<span class="chat-ia">IA ATIVA</span>' : ''}
+      </div>
+      <div class="chat-msgs" id="chat-msgs">
+        ${c.msgs.map(m => `
+          <div>
+            <div class="cm ${m.d === 'in' ? 'in' : (m.ai ? 'ai' : 'out')}">${m.t}</div>
+            <div class="${m.d === 'in' ? 'cm-t' : 'cm-ia'}" style="text-align:${m.d === 'in' ? 'left' : 'right'}">${m.ai ? '🤖 IA · ' : ''}${m.h}</div>
+          </div>`).join('')}
+      </div>
+      <div class="chat-inp">
+        <input class="chat-field" type="text" placeholder="Digite uma mensagem ou use template IA..." readonly>
+        <button class="chat-send">➤</button>
+      </div>`;
+    const msgs = document.getElementById('chat-msgs');
+    if (msgs) msgs.scrollTop = msgs.scrollHeight;
+  }
+  document.querySelectorAll('.conv-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.conv-item').forEach(i => i.classList.remove('sel'));
+      item.classList.add('sel');
+      const unread = item.querySelector('.conv-unread');
+      if (unread) unread.remove();
+      activeConv = +item.dataset.conv;
+      renderChat(activeConv);
+    });
+  });
+  renderChat(0);
+
+  // KANBAN DRAG AND DROP
+  let dragging = null;
+  document.querySelectorAll('.kb-card').forEach(card => {
+    card.addEventListener('dragstart', e => {
+      dragging = card;
+      setTimeout(() => card.classList.add('dragging'), 0);
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    card.addEventListener('dragend', () => {
+      card.classList.remove('dragging');
+      dragging = null;
+      document.querySelectorAll('.kb-col-wrap').forEach(col => col.classList.remove('over'));
+      updateKbCounts();
+    });
+  });
+  document.querySelectorAll('.kb-col-wrap').forEach(col => {
+    col.addEventListener('dragover', e => { e.preventDefault(); col.classList.add('over'); });
+    col.addEventListener('dragleave', () => col.classList.remove('over'));
+    col.addEventListener('drop', e => {
+      e.preventDefault();
+      if (dragging) {
+        const target = col.querySelector('.kb-col-cards');
+        target.appendChild(dragging);
+        col.classList.remove('over');
+        dragging.setAttribute('draggable', 'true');
+        dragging.addEventListener('dragstart', () => {});
+      }
+    });
+  });
+  function updateKbCounts() {
+    document.querySelectorAll('.kb-col-wrap').forEach(col => {
+      const id = col.dataset.col;
+      const count = col.querySelectorAll('.kb-card').length;
+      const cnt = document.getElementById('cnt-' + id);
+      if (cnt) cnt.textContent = count;
+    });
+  }
+
+  // FAQ
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  }
+
+  // SCROLL REVEAL
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // COUNTERS
+  function counter(el) {
+    const t = parseInt(el.dataset.count), d = 1600, s = performance.now();
+    const tick = now => {
+      const p = Math.min((now - s) / d, 1);
+      const e = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.round(e * t) + '%';
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  const cObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { counter(e.target); cObs.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => cObs.observe(el));
+
+  // Hero immediate reveal
+  setTimeout(() => document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('in')), 80);
+
+  // CALCULADORA
+  const fmt = n => 'R$ ' + Math.round(n).toLocaleString('pt-BR');
+  function calcUpdate() {
+    const leads = +document.getElementById('sl-leads').value;
+    const ticket = +document.getElementById('sl-ticket').value;
+    const conv = +document.getElementById('sl-conv').value;
+
+    document.getElementById('lbl-leads').textContent = leads;
+    document.getElementById('lbl-ticket').textContent = 'R$ ' + ticket.toLocaleString('pt-BR');
+    document.getElementById('lbl-conv').textContent = conv + '%';
+
+    const now = leads * (conv / 100) * ticket;
+    const after = now * 1.42;
+    const gain = after - now;
+
+    document.getElementById('res-now').textContent = fmt(now);
+    document.getElementById('res-after').textContent = fmt(after);
+    document.getElementById('res-gain').textContent = fmt(gain);
+    document.getElementById('res-year').textContent = 'ou ' + fmt(gain * 12) + ' a mais por ano';
+
+    // atualiza track fill visual
+    ['sl-leads','sl-ticket','sl-conv'].forEach(id => {
+      const el = document.getElementById(id);
+      const min = +el.min, max = +el.max, val = +el.value;
+      const pct = ((val - min) / (max - min)) * 100;
+      el.style.background = `linear-gradient(to right, var(--green) ${pct}%, var(--border2) ${pct}%)`;
+    });
+  }
+  ['sl-leads','sl-ticket','sl-conv'].forEach(id =>
+    document.getElementById(id).addEventListener('input', calcUpdate)
+  );
+  calcUpdate();
+</script>
+</body>
+</html>
