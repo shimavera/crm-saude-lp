@@ -887,6 +887,114 @@
     .foot-legal { display: flex; gap: 22px; }
     .foot-legal a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
     .foot-legal a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ─── MOBILE RESPONSIVO ─── */
+    @media (max-width: 768px) {
+
+      /* NAV */
+      .nav-links { display: none; }
+      .nav-inner { padding: 0 20px; }
+      .nav-logo-text { font-size: 16px; }
+      nav { padding: 14px 0; }
+
+      /* HERO */
+      .hero { padding: 100px 0 60px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-badge { font-size: 11px; }
+      .hero-title { font-size: clamp(32px, 9vw, 44px); }
+      .hero-sub { font-size: 16px; }
+      .hero-ctas { flex-direction: column; gap: 12px; }
+      .hero-ctas .btn-primary, .hero-ctas .btn-ghost { width: 100%; justify-content: center; text-align: center; }
+      .hero-mockup-wrap { display: none; }
+
+      /* CALCULADORA */
+      .calc-section { padding: 60px 0; }
+      .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+      .calc-results { grid-template-columns: 1fr 1fr; }
+      .res-big { font-size: 22px; }
+
+      /* TRUST BAR */
+      .trust-logos { gap: 16px 24px; }
+      .trust-logo { font-size: 13px; }
+
+      /* FEATURES */
+      .features { padding: 60px 0; }
+      .feat-grid { grid-template-columns: 1fr; gap: 16px; }
+      .feat-card { padding: 24px 20px; }
+      .feat-num { font-size: 44px; }
+
+      /* PRODUCT SECTION */
+      .product { padding: 60px 0; }
+      .product-head { padding: 0 4px; }
+      .app-frame { grid-template-columns: 1fr; height: auto; border-radius: 14px; }
+      .app-sb { display: none; }
+      .app-main { height: auto; }
+      .app-view { height: auto; min-height: 420px; }
+      .app-topbar { padding: 10px 14px; }
+      .app-topbar-title { font-size: 13px; }
+      .app-topbar-sub { display: none; }
+      .dash-metrics { grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px 8px; }
+      .dash-charts { grid-template-columns: 1fr; gap: 8px; padding: 0 12px 12px; }
+      .dmv { font-size: 18px; }
+      .conv-layout { grid-template-columns: 1fr; }
+      .conv-sb { display: none; }
+      .chat-area { display: flex; }
+      .kanban-view { gap: 6px; padding: 10px; }
+      .kb-col-wrap { min-width: 130px; }
+      .agenda-layout { grid-template-columns: 1fr; }
+      .agenda-left { border-right: none; border-bottom: 1px solid var(--border); }
+      .agenda-right { overflow-x: auto; }
+      .flow-list { padding: 10px 12px; gap: 10px; }
+      .flow-nodes { overflow-x: auto; padding-bottom: 8px; }
+      .prompt-layout { grid-template-columns: 1fr; }
+      .prompt-preview { min-height: 300px; }
+
+      /* Mobile nav tabs for app-frame */
+      .app-frame::before { display: none; }
+
+      /* TESTIMONIALS */
+      .testimonials { padding: 60px 0; }
+      .test-grid { grid-template-columns: 1fr; gap: 16px; }
+
+      /* PRICING */
+      .pricing { padding: 60px 0; }
+      .price-grid { grid-template-columns: 1fr; gap: 16px; max-width: 400px; margin: 0 auto; }
+      .price-card.feat { transform: none; }
+
+      /* FAQ */
+      .faq-section { padding: 60px 0; }
+      .faq-q { font-size: 15px; padding: 16px 44px 16px 16px; }
+      .faq-a { font-size: 14px; padding: 0 16px 16px; }
+
+      /* CTA FINAL */
+      .cta-final { padding: 60px 0; }
+      .cta-final-title { font-size: clamp(26px, 7vw, 38px); }
+      .cta-final-btns { flex-direction: column; align-items: center; gap: 12px; }
+
+      /* FOOTER */
+      .footer { padding: 50px 0 30px; }
+      .foot-top { grid-template-columns: 1fr; gap: 32px; }
+      .foot-bot { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .foot-legal { flex-wrap: wrap; gap: 12px; }
+
+      /* CONTAINER */
+      .container { padding: 0 20px; }
+      .section-title { font-size: clamp(26px, 7vw, 38px); }
+
+      /* Show mobile tab bar for app */
+    }
+
+    /* Mobile app tab bar */
+    @media (max-width: 768px) {
+      .app-frame { display: flex; flex-direction: column; }
+      .app-mobile-tabs { display: flex; border-bottom: 1px solid var(--border); background: var(--white); overflow-x: auto; flex-shrink: 0; }
+      .app-mobile-tab { flex: 1; min-width: 70px; padding: 9px 6px; font-size: 10px; font-weight: 600; color: var(--muted); border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; font-family: var(--font-b); border-bottom: 2px solid transparent; white-space: nowrap; }
+      .app-mobile-tab.active { color: var(--green); border-bottom-color: var(--green); }
+      .app-mobile-tab-icon { font-size: 16px; }
+    }
+    @media (min-width: 769px) {
+      .app-mobile-tabs { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -1190,6 +1298,15 @@
     <div class="fade-up" style="transition-delay:.1s">
 
       <div class="app-frame">
+        <!-- MOBILE TAB BAR -->
+        <div class="app-mobile-tabs">
+          <button class="app-mobile-tab active" data-view="dash"><span class="app-mobile-tab-icon">📊</span>Visão Geral</button>
+          <button class="app-mobile-tab" data-view="conv"><span class="app-mobile-tab-icon">💬</span>Conversas</button>
+          <button class="app-mobile-tab" data-view="kanban"><span class="app-mobile-tab-icon">🗂</span>Kanban</button>
+          <button class="app-mobile-tab" data-view="agenda"><span class="app-mobile-tab-icon">📅</span>Agenda</button>
+          <button class="app-mobile-tab" data-view="fluxos"><span class="app-mobile-tab-icon">⚡</span>Fluxos</button>
+          <button class="app-mobile-tab" data-view="prompt"><span class="app-mobile-tab-icon">🧠</span>Prompt</button>
+        </div>
         <!-- SIDEBAR -->
         <aside class="app-sb">
           <div class="app-sb-top">
@@ -1803,11 +1920,12 @@
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
 
-  // APP SIDEBAR NAV
+  // APP SIDEBAR NAV + MOBILE TABS
   function switchView(viewId) {
     document.querySelectorAll('.app-nav-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.app-mobile-tab').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.app-view').forEach(v => v.classList.remove('active'));
-    document.querySelector(`[data-view="${viewId}"]`).classList.add('active');
+    document.querySelectorAll(`[data-view="${viewId}"]`).forEach(el => el.classList.add('active'));
     document.getElementById('view-' + viewId).classList.add('active');
     if (viewId === 'conv') renderChat(activeConv);
   }
