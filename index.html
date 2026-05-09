@@ -893,100 +893,105 @@
 
       /* NAV */
       .nav-links { display: none; }
-      .nav-inner { padding: 0 20px; }
-      .nav-logo-text { font-size: 16px; }
       nav { padding: 14px 0; }
+      .nav-logo-text { font-size: 16px; }
 
       /* HERO */
-      .hero { padding: 100px 0 60px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-      .hero-badge { font-size: 11px; }
-      .hero-title { font-size: clamp(32px, 9vw, 44px); }
-      .hero-sub { font-size: 16px; }
-      .hero-ctas { flex-direction: column; gap: 12px; }
-      .hero-ctas .btn-primary, .hero-ctas .btn-ghost { width: 100%; justify-content: center; text-align: center; }
+      .hero { padding: 88px 0 52px; min-height: 0; }
+      .hero-inner { grid-template-columns: 1fr; gap: 36px; }
       .hero-mockup-wrap { display: none; }
+      .hero-title { font-size: clamp(30px, 8.5vw, 42px); }
+      .hero-sub { font-size: 16px; max-width: 100%; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .hero-btns .btn { width: 100%; justify-content: center; }
 
-      /* CALCULADORA */
-      .calc-section { padding: 60px 0; }
-      .calc-grid { grid-template-columns: 1fr; gap: 24px; }
-      .calc-results { grid-template-columns: 1fr 1fr; }
-      .res-big { font-size: 22px; }
+      /* CALCULADORA — resultado primeiro, sliders abaixo */
+      .calc-section { padding: 48px 0; }
+      .calc-box { border-radius: 16px; }
+      .calc-inner { display: flex; flex-direction: column; }
+      .calc-result { order: 1; padding: 20px 20px 16px; border-right: none; border-bottom: 1px solid var(--border); }
+      .calc-inputs { order: 2; padding: 20px; }
+      .calc-inputs-title { font-size: 14px; margin-bottom: 16px; }
+      .calc-field { margin-bottom: 18px; }
+      .calc-hint { display: none; }
+      .calc-now { margin-bottom: 10px; }
+      .calc-now-val { font-size: 22px; }
+      .calc-arrow { margin-bottom: 10px; }
+      .calc-after { margin-bottom: 12px; }
+      .calc-after-val { font-size: 30px; }
+      .calc-gain-box { padding: 12px 16px; margin-bottom: 14px; }
+      .calc-gain-val { font-size: 20px; }
+      .calc-gain-sub { font-size: 11px; }
+      .calc-result-label { font-size: 11px; }
 
       /* TRUST BAR */
-      .trust-logos { gap: 16px 24px; }
-      .trust-logo { font-size: 13px; }
+      .trust-track-wrap { mask-image: none; -webkit-mask-image: none; overflow: visible; }
+      .trust-sep, .trust-dup { display: none; }
+      .trust-row { flex-wrap: wrap; justify-content: center; gap: 16px 28px; animation: none; width: 100%; }
 
       /* FEATURES */
-      .features { padding: 60px 0; }
+      .features { padding: 64px 0; }
       .feat-grid { grid-template-columns: 1fr; gap: 16px; }
       .feat-card { padding: 24px 20px; }
-      .feat-num { font-size: 44px; }
 
       /* PRODUCT SECTION */
-      .product { padding: 60px 0; }
-      .product-head { padding: 0 4px; }
-      .app-frame { grid-template-columns: 1fr; height: auto; border-radius: 14px; }
+      .product { padding: 64px 0; }
+      .app-frame { grid-template-columns: 1fr; height: auto; border-radius: 14px; display: flex; flex-direction: column; }
       .app-sb { display: none; }
       .app-main { height: auto; }
-      .app-view { height: auto; min-height: 420px; }
+      .app-view { height: auto; min-height: 400px; }
       .app-topbar { padding: 10px 14px; }
-      .app-topbar-title { font-size: 13px; }
       .app-topbar-sub { display: none; }
       .dash-metrics { grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px 8px; }
       .dash-charts { grid-template-columns: 1fr; gap: 8px; padding: 0 12px 12px; }
       .dmv { font-size: 18px; }
       .conv-layout { grid-template-columns: 1fr; }
       .conv-sb { display: none; }
-      .chat-area { display: flex; }
       .kanban-view { gap: 6px; padding: 10px; }
       .kb-col-wrap { min-width: 130px; }
       .agenda-layout { grid-template-columns: 1fr; }
       .agenda-left { border-right: none; border-bottom: 1px solid var(--border); }
       .agenda-right { overflow-x: auto; }
-      .flow-list { padding: 10px 12px; gap: 10px; }
       .flow-nodes { overflow-x: auto; padding-bottom: 8px; }
       .prompt-layout { grid-template-columns: 1fr; }
       .prompt-preview { min-height: 300px; }
 
-      /* Mobile nav tabs for app-frame */
-      .app-frame::before { display: none; }
-
       /* TESTIMONIALS */
-      .testimonials { padding: 60px 0; }
+      .testimonials { padding: 64px 0; }
       .test-grid { grid-template-columns: 1fr; gap: 16px; }
 
       /* PRICING */
-      .pricing { padding: 60px 0; }
+      .pricing { padding: 64px 0; }
       .price-grid { grid-template-columns: 1fr; gap: 16px; max-width: 400px; margin: 0 auto; }
       .price-card.feat { transform: none; }
 
       /* FAQ */
-      .faq-section { padding: 60px 0; }
+      .faq { padding: 64px 0; }
       .faq-q { font-size: 15px; padding: 16px 44px 16px 16px; }
-      .faq-a { font-size: 14px; padding: 0 16px 16px; }
 
       /* CTA FINAL */
-      .cta-final { padding: 60px 0; }
-      .cta-final-title { font-size: clamp(26px, 7vw, 38px); }
-      .cta-final-btns { flex-direction: column; align-items: center; gap: 12px; }
+      .cta-box { padding: 48px 24px; border-radius: 20px; }
+      .cta-title { font-size: clamp(26px, 7.5vw, 38px); }
+      .cta-btns { flex-direction: column; align-items: stretch; }
 
       /* FOOTER */
-      .footer { padding: 50px 0 30px; }
-      .foot-top { grid-template-columns: 1fr; gap: 32px; }
-      .foot-bot { flex-direction: column; align-items: flex-start; gap: 12px; }
+      footer { padding: 44px 0 28px; }
+      .foot-grid { grid-template-columns: 1fr 1fr; gap: 28px 24px; }
+      .foot-brand { grid-column: 1 / -1; }
+      .foot-desc { font-size: 13px; max-width: 100%; }
+      .foot-links a { font-size: 13px; }
+      .foot-col-t { margin-bottom: 12px; }
+      .foot-bot { flex-direction: column; align-items: flex-start; gap: 10px; }
       .foot-legal { flex-wrap: wrap; gap: 12px; }
 
-      /* CONTAINER */
+      /* SHARED */
       .container { padding: 0 20px; }
       .section-title { font-size: clamp(26px, 7vw, 38px); }
-
-      /* Show mobile tab bar for app */
+      .section-sub { font-size: 15px; }
     }
 
     /* Mobile app tab bar */
     @media (max-width: 768px) {
-      .app-frame { display: flex; flex-direction: column; }
       .app-mobile-tabs { display: flex; border-bottom: 1px solid var(--border); background: var(--white); overflow-x: auto; flex-shrink: 0; }
       .app-mobile-tab { flex: 1; min-width: 70px; padding: 9px 6px; font-size: 10px; font-weight: 600; color: var(--muted); border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; font-family: var(--font-b); border-bottom: 2px solid transparent; white-space: nowrap; }
       .app-mobile-tab.active { color: var(--green); border-bottom-color: var(--green); }
@@ -995,9 +1000,118 @@
     @media (min-width: 769px) {
       .app-mobile-tabs { display: none; }
     }
+  /* ─── SCROLL HINT ─── */
+  .scroll-hint {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .scroll-hint {
+      display: flex;
+      justify-content: center;
+      margin-top: 28px;
+      color: var(--dim);
+      animation: sh-bounce 1.7s ease-in-out infinite;
+    }
+    @keyframes sh-bounce {
+      0%,100% { transform: translateY(0); opacity: 0.45; }
+      50%      { transform: translateY(7px); opacity: 1; }
+    }
+    .hero { padding: 88px 0 16px; min-height: 0; }
+  }
+
+  /* ─── SCROLL PROGRESS ─── */
+  #scroll-progress {
+    position: fixed; top: 0; left: 0; z-index: 200;
+    height: 3px; width: 0%;
+    background: linear-gradient(90deg, var(--green), var(--green-xl));
+    transition: width 0.08s linear;
+    pointer-events: none;
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* ─── BLOB ANIMATION ─── */
+  .blob-1 { animation: blob-drift-1 9s ease-in-out infinite; }
+  .blob-2 { animation: blob-drift-2 11s ease-in-out infinite; }
+  @keyframes blob-drift-1 {
+    0%,100% { transform: translate(0,0) scale(1); }
+    40%     { transform: translate(-28px,22px) scale(1.07); }
+    70%     { transform: translate(18px,-14px) scale(0.95); }
+  }
+  @keyframes blob-drift-2 {
+    0%,100% { transform: translate(0,0) scale(1); }
+    35%     { transform: translate(24px,-20px) scale(1.1); }
+    65%     { transform: translate(-16px,16px) scale(0.93); }
+  }
+
+  /* ─── CTA PULSE ─── */
+  .btn-pulse { position: relative; }
+  .btn-pulse::after {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    border: 2px solid var(--green);
+    animation: cta-pulse 2.4s ease-out infinite;
+    pointer-events: none;
+  }
+  @keyframes cta-pulse {
+    0%   { transform: scale(1); opacity: 0.65; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  /* ─── TRUST MARQUEE ─── */
+  .trust-track-wrap {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+  .trust-sep { color: var(--border2); font-size: 20px; flex-shrink: 0; }
+  @media (min-width: 768px) {
+    .trust-row {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      gap: 56px;
+      width: max-content;
+      animation: trust-scroll 24s linear infinite;
+    }
+    .trust-row:hover { animation-play-state: paused; }
+  }
+  @media (max-width: 767px) {
+    .trust-sep, .trust-dup { display: none; }
+  }
+  @keyframes trust-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ─── NAV ACTIVE LINK ─── */
+  .nav-links a { transition: color 0.2s; }
+  .nav-links a.active { color: var(--green); font-weight: 600; }
+
+  /* ─── PRICE CARD HOVER ─── */
+  .price-card:not(.feat):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 44px rgba(0,85,254,0.1);
+    border-color: rgba(0,85,254,0.22);
+  }
+  .price-card.feat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 54px rgba(0,85,254,0.3);
+  }
+
+  /* ─── TYPEWRITER ─── */
+  .tw-cursor {
+    display: none;
+    color: var(--green);
+    font-style: normal;
+    font-weight: 700;
+    animation: tw-blink 0.65s step-start infinite;
+  }
+  @keyframes tw-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  .tw-cursor { display: inline; }
   </style>
 </head>
 <body>
+<div id="scroll-progress"></div>
 
 <!-- ─── NAV ─── -->
 <nav id="nav">
@@ -1019,7 +1133,7 @@
         <li><a href="#cases">Casos</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
-      <a href="#pricing" class="btn btn-green" style="font-size:14px;padding:10px 20px;">Começar grátis</a>
+      <a href="https://saudecrm.com/cadastro" class="btn btn-green" style="font-size:14px;padding:10px 20px;">Começar grátis</a>
     </div>
   </div>
 </nav>
@@ -1035,11 +1149,11 @@
           <span class="tag"><span class="tag-dot"></span>IA integrada ao funil de leads</span>
         </div>
         <h1 class="hero-title">
-          Transforme sua clínica em uma <em>máquina de resultados</em>
+          Transforme sua clínica em uma <em>máquina de <span id="tw-word">resultados</span><span class="tw-cursor">|</span></em>
         </h1>
         <p class="hero-sub">O único CRM feito para clínicas que precisam crescer. Pacientes, leads, agendamentos e WhatsApp — tudo em um lugar só.</p>
         <div class="hero-btns">
-          <a href="#pricing" class="btn btn-green">Começar grátis <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://saudecrm.com/cadastro" class="btn btn-green btn-pulse">Começar grátis <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <a href="#product" class="btn btn-outline">Ver como funciona</a>
         </div>
         <div class="hero-proof">
@@ -1050,6 +1164,9 @@
             <div class="proof-av" style="background:linear-gradient(135deg,#DDD6FE,#7C3AED)">JP</div>
           </div>
           <span class="proof-txt">Mais de <strong>1.200 clínicas</strong> usam hoje</span>
+        </div>
+        <div class="scroll-hint">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </div>
       </div>
       <div class="hero-mockup-wrap fade-up" style="transition-delay:.15s;">
@@ -1199,7 +1316,7 @@
             <div class="calc-gain-sub" id="res-year">ou R$ 15.120 a mais por ano</div>
           </div>
 
-          <a href="#pricing" class="btn btn-green" style="width:100%;justify-content:center">Quero esse resultado →</a>
+          <a href="https://saudecrm.com/cadastro" class="btn btn-green" style="width:100%;justify-content:center">Quero esse resultado →</a>
         </div>
       </div>
     </div>
@@ -1210,13 +1327,23 @@
 <section class="trust">
   <div class="container">
     <div class="trust-label">Confiado por clínicas líderes em todo o Brasil</div>
-    <div class="trust-row">
-      <span class="trust-name">Odonto<span>Prime</span></span>
-      <span class="trust-name">Clínica<span>Vida</span></span>
-      <span class="trust-name">Sorriso<span>Total</span></span>
-      <span class="trust-name">Med<span>Care</span></span>
-      <span class="trust-name">Dental<span>Plus</span></span>
-      <span class="trust-name">Saúde<span>360</span></span>
+    <div class="trust-track-wrap">
+      <div class="trust-row">
+        <span class="trust-name">Odonto<span>Prime</span></span>
+        <span class="trust-name">Clínica<span>Vida</span></span>
+        <span class="trust-name">Sorriso<span>Total</span></span>
+        <span class="trust-name">Med<span>Care</span></span>
+        <span class="trust-name">Dental<span>Plus</span></span>
+        <span class="trust-name">Saúde<span>360</span></span>
+        <span class="trust-sep" aria-hidden="true">✦</span>
+        <span class="trust-name trust-dup">Odonto<span>Prime</span></span>
+        <span class="trust-name trust-dup">Clínica<span>Vida</span></span>
+        <span class="trust-name trust-dup">Sorriso<span>Total</span></span>
+        <span class="trust-name trust-dup">Med<span>Care</span></span>
+        <span class="trust-name trust-dup">Dental<span>Plus</span></span>
+        <span class="trust-name trust-dup">Saúde<span>360</span></span>
+        <span class="trust-sep trust-dup" aria-hidden="true">✦</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1750,7 +1877,7 @@
           <li class="plan-f dark off"><span class="pf-ck dark">✕</span>IA de funil avançada</li>
           <li class="plan-f dark off"><span class="pf-ck dark">✕</span>Multi-unidades</li>
         </ul>
-        <button class="plan-cta cta-outline">Começar grátis</button>
+        <a href="https://saudecrm.com/cadastro" class="plan-cta cta-outline" style="display:inline-block;text-align:center;text-decoration:none">Começar grátis</a>
       </div>
       <div class="price-card feat fade-up" style="transition-delay:.1s">
         <div class="feat-pill">🔥 Mais popular</div>
@@ -1771,7 +1898,7 @@
           <li class="plan-f light"><span class="pf-ck light">✓</span>Google Agenda integrado</li>
           <li class="plan-f light"><span class="pf-ck light">✓</span>Suporte prioritário</li>
         </ul>
-        <button class="plan-cta cta-light">Começar grátis</button>
+        <a href="https://saudecrm.com/cadastro" class="plan-cta cta-light" style="display:inline-block;text-align:center;text-decoration:none">Começar grátis</a>
       </div>
       <div class="price-card fade-up" style="transition-delay:.15s">
         <div class="plan-lbl dark">Enterprise</div>
@@ -1791,7 +1918,7 @@
           <li class="plan-f dark"><span class="pf-ck dark">✓</span>Gerente de conta exclusivo</li>
           <li class="plan-f dark"><span class="pf-ck dark">✓</span>SLA 99.9% garantido</li>
         </ul>
-        <button class="plan-cta cta-dark">Falar com consultor</button>
+        <a href="https://saudecrm.com/cadastro" class="plan-cta cta-dark" style="display:inline-block;text-align:center;text-decoration:none">Falar com consultor</a>
       </div>
     </div>
   </div>
@@ -1844,8 +1971,8 @@
         <h2 class="cta-title">Sua clínica merece crescer com inteligência</h2>
         <p class="cta-sub">Mais de 1.200 clínicas já transformaram seus resultados. Configure em minutos, veja resultados em dias.</p>
         <div class="cta-btns">
-          <button class="cta-b-white">Começar grátis agora →</button>
-          <button class="cta-b-ghost">Falar com especialista</button>
+          <a href="https://saudecrm.com/cadastro" class="cta-b-white" style="display:inline-block;text-decoration:none">Começar grátis agora →</a>
+          <a href="https://saudecrm.com/cadastro" class="cta-b-ghost" style="display:inline-block;text-decoration:none">Falar com especialista</a>
         </div>
         <div class="cta-fine">Sem cartão de crédito · Cancela quando quiser · <strong>7 dias grátis</strong></div>
       </div>
@@ -1857,7 +1984,7 @@
 <footer>
   <div class="container">
     <div class="foot-grid">
-      <div>
+      <div class="foot-brand">
         <div class="foot-logo">
           <div class="foot-logo-mark">
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2098,8 +2225,68 @@
   // Hero immediate reveal
   setTimeout(() => document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('in')), 80);
 
+  // TYPEWRITER
+  {
+    const words = ['resultados', 'faturamento', 'conversões', 'agendamentos', 'crescimento'];
+    const el = document.getElementById('tw-word');
+    let wi = 0, ci = words[0].length, typing = false;
+
+    function tick() {
+      const word = words[wi];
+      if (typing) {
+        ci++;
+        el.textContent = word.slice(0, ci);
+        if (ci === word.length) { typing = false; setTimeout(tick, 2000); }
+        else { setTimeout(tick, 75); }
+      } else {
+        ci--;
+        el.textContent = word.slice(0, ci);
+        if (ci === 0) { typing = true; wi = (wi + 1) % words.length; setTimeout(tick, 350); }
+        else { setTimeout(tick, 40); }
+      }
+    }
+    setTimeout(tick, 2200);
+  }
+
+  // SCROLL PROGRESS BAR
+  const progBar = document.getElementById('scroll-progress');
+  window.addEventListener('scroll', () => {
+    const max = document.body.scrollHeight - window.innerHeight;
+    progBar.style.width = (window.scrollY / max * 100) + '%';
+  }, { passive: true });
+
+  // NAV ACTIVE SECTION
+  const navSections = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  const secObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navAs.forEach(a => a.classList.remove('active'));
+        const link = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -40% 0px' });
+  navSections.forEach(s => secObs.observe(s));
+
   // CALCULADORA
   const fmt = n => 'R$ ' + Math.round(n).toLocaleString('pt-BR');
+  let calcPrev = { now: 0, after: 0, gain: 0 };
+  const calcRafs = {};
+
+  function animNum(id, from, to) {
+    if (calcRafs[id]) cancelAnimationFrame(calcRafs[id]);
+    const el = document.getElementById(id);
+    const d = 550, s = performance.now();
+    const run = now => {
+      const p = Math.min((now - s) / d, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = 'R$ ' + Math.round(from + (to - from) * ease).toLocaleString('pt-BR');
+      if (p < 1) calcRafs[id] = requestAnimationFrame(run);
+    };
+    calcRafs[id] = requestAnimationFrame(run);
+  }
+
   function calcUpdate() {
     const leads = +document.getElementById('sl-leads').value;
     const ticket = +document.getElementById('sl-ticket').value;
@@ -2113,12 +2300,13 @@
     const after = now * 1.42;
     const gain = after - now;
 
-    document.getElementById('res-now').textContent = fmt(now);
-    document.getElementById('res-after').textContent = fmt(after);
-    document.getElementById('res-gain').textContent = fmt(gain);
+    animNum('res-now', calcPrev.now, now);
+    animNum('res-after', calcPrev.after, after);
+    animNum('res-gain', calcPrev.gain, gain);
+    calcPrev = { now, after, gain };
+
     document.getElementById('res-year').textContent = 'ou ' + fmt(gain * 12) + ' a mais por ano';
 
-    // atualiza track fill visual
     ['sl-leads','sl-ticket','sl-conv'].forEach(id => {
       const el = document.getElementById(id);
       const min = +el.min, max = +el.max, val = +el.value;
