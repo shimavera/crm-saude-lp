@@ -2331,5 +2331,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   );
   calcUpdate();
 </script>
+
+<script>
+  document.querySelectorAll('a[href*="saudecrm.com/cadastro"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'begin_trial_signup' });
+    });
+  });
+</script>
 </body>
 </html>
