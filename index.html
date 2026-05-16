@@ -11,7 +11,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CRM Saúde — Transforme sua clínica em uma máquina de resultados</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -160,11 +160,20 @@
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo-mark {
       width: 34px; height: 34px;
-      background: var(--green);
       border-radius: 10px;
+      overflow: hidden;
       display: flex; align-items: center; justify-content: center;
-      font-size: 17px;
+      flex-shrink: 0;
     }
+    .nav-logo-mark img { width: 34px; height: 34px; object-fit: cover; display: block; }
+    .hero-brand-video {
+      width: 72px; height: 72px;
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0,85,254,0.2);
+    }
+    .hero-brand-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
     .nav-logo-text {
       font-family: var(--font-h);
       font-size: 18px;
@@ -1131,11 +1140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <div class="nav-logo-mark">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 16L10 4L17 16" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 12.5h8" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M14.5 14.5L17.5 17.5" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-          </svg>
+          <img src="/logo.webp" alt="SaudeCRM logo">
         </div>
         <span class="nav-logo-text">CRM Saúde</span>
       </a>
@@ -1157,6 +1162,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="hero-inner">
       <div class="fade-up">
+        <div class="hero-brand-video">
+          <video autoplay muted loop playsinline>
+            <source src="/logo-animado.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="hero-tag">
           <span class="tag"><span class="tag-dot"></span>IA integrada ao funil de leads</span>
         </div>
@@ -1881,7 +1891,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="plan-desc dark">Para clínicas que estão começando a organizar seus processos.</p>
         <div class="plan-div dark"></div>
         <ul class="plan-feats">
-          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Até 300 pacientes ativos</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Até 400 leads ativos</li>
           <li class="plan-f dark"><span class="pf-ck dark">✓</span>1 número de WhatsApp</li>
           <li class="plan-f dark"><span class="pf-ck dark">✓</span>Funil de leads básico</li>
           <li class="plan-f dark"><span class="pf-ck dark">✓</span>Agendamento online</li>
@@ -1902,7 +1912,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="plan-desc light">Para clínicas em crescimento que querem automação real e mais conversões.</p>
         <div class="plan-div light"></div>
         <ul class="plan-feats">
-          <li class="plan-f light"><span class="pf-ck light">✓</span>Pacientes ilimitados</li>
+          <li class="plan-f light"><span class="pf-ck light">✓</span>Até 1.200 leads ativos</li>
           <li class="plan-f light"><span class="pf-ck light">✓</span>Até 5 números de WhatsApp</li>
           <li class="plan-f light"><span class="pf-ck light">✓</span>IA de funil avançada</li>
           <li class="plan-f light"><span class="pf-ck light">✓</span>Prontuário digital completo</li>
@@ -1913,7 +1923,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="https://saudecrm.com/cadastro" class="plan-cta cta-light" style="display:inline-block;text-align:center;text-decoration:none">Começar grátis</a>
       </div>
       <div class="price-card fade-up" style="transition-delay:.15s">
-        <div class="plan-lbl dark">Enterprise</div>
+        <div class="plan-lbl dark">Scale</div>
         <div class="plan-price-row">
           <span class="p-cur dark">R$</span>
           <span class="p-val dark">687</span>
@@ -1923,8 +1933,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="plan-div dark"></div>
         <ul class="plan-feats">
           <li class="plan-f dark"><span class="pf-ck dark">✓</span>Tudo do plano Pro</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Até 2.500 leads ativos</li>
           <li class="plan-f dark"><span class="pf-ck dark">✓</span>Multi-unidades ilimitadas</li>
-          <li class="plan-f dark"><span class="pf-ck dark">✓</span>WhatsApp sem limites</li>
+          <li class="plan-f dark"><span class="pf-ck dark">✓</span>Cloud API WhatsApp oficial</li>
           <li class="plan-f dark"><span class="pf-ck dark">✓</span>API de integrações</li>
           <li class="plan-f dark"><span class="pf-ck dark">✓</span>Onboarding dedicado</li>
           <li class="plan-f dark"><span class="pf-ck dark">✓</span>Gerente de conta exclusivo</li>
@@ -1998,13 +2009,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="foot-logo">
-          <div class="foot-logo-mark">
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 16L10 4L17 16" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 12.5h8" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M14.5 14.5L17.5 17.5" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-          </svg>
-        </div>
+          <div class="foot-logo-mark" style="background:none;padding:0;">
+            <img src="/logo.webp" alt="SaudeCRM logo" style="width:32px;height:32px;border-radius:9px;object-fit:cover;display:block;">
+          </div>
           <span class="foot-logo-text">CRM Saúde</span>
         </div>
         <p class="foot-desc">O sistema de gestão e crescimento para clínicas que querem resultados reais, não só software.</p>
