@@ -41,6 +41,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Schema.org -->
@@ -1169,6 +1170,7 @@
   @keyframes tw-blink { 0%,100%{opacity:1} 50%{opacity:0} }
   .tw-cursor { display: inline; }
   .tw-cursor::after { content: "|"; }
+  #tw-word { display: inline-block; text-align: left; }
   </style>
 </head>
 <body>
@@ -2332,6 +2334,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const words = ['resultados', 'faturamento', 'conversões', 'agendamentos', 'crescimento'];
     const el = document.getElementById('tw-word');
     let wi = 0, ci = words[0].length, typing = false;
+
+    // Reserva a largura da palavra mais longa para evitar layout shift (CLS) ao trocar de palavra
+    function lockWidth() {
+      const probe = document.createElement('span');
+      const cs = getComputedStyle(el);
+      probe.style.cssText = `position:absolute;visibility:hidden;white-space:nowrap;font:${cs.font};letter-spacing:${cs.letterSpacing}`;
+      document.body.appendChild(probe);
+      let max = 0;
+      for (const w of words) { probe.textContent = w; max = Math.max(max, probe.offsetWidth); }
+      probe.remove();
+      el.style.minWidth = Math.ceil(max) + 'px';
+    }
+    lockWidth();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(lockWidth);
+    addEventListener('resize', lockWidth);
 
     function tick() {
       const word = words[wi];
