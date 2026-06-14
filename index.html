@@ -1171,6 +1171,24 @@
   .tw-cursor { display: inline; }
   .tw-cursor::after { content: "|"; }
   #tw-word { display: inline-block; text-align: left; }
+
+  /* ─── PERFORMANCE: reduzir jank de scroll no mobile ─── */
+  /* Blobs decorativos com blur grande animado são caríssimos no mobile:
+     no celular paramos a animação e reduzimos o blur. */
+  @media (max-width: 767px) {
+    .blob-1, .blob-2, .cta-blob { animation: none !important; }
+    .hero-blob { filter: blur(48px); }
+    .cta-blob { filter: blur(40px); }
+    /* nav: backdrop-filter (blur ao vivo) repinta a cada scroll no mobile.
+       Trocamos por fundo quase sólido — sem blur, sem repaint. */
+    nav.scrolled { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: rgba(242,245,240,0.98); }
+  }
+  /* Promove os blobs para camada própria de composição (evita re-blur a cada frame) */
+  .hero-blob, .cta-blob { will-change: transform; transform: translateZ(0); }
+  /* Respeita usuários que pedem menos animação */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
   </style>
 </head>
 <body>
@@ -2149,7 +2167,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   // NAV
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), { passive: true });
 
   // APP SIDEBAR NAV + MOBILE TABS
   function switchView(viewId) {
@@ -2369,9 +2387,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // SCROLL PROGRESS BAR
   const progBar = document.getElementById('scroll-progress');
+  let progTicking = false;
   window.addEventListener('scroll', () => {
-    const max = document.body.scrollHeight - window.innerHeight;
-    progBar.style.width = (window.scrollY / max * 100) + '%';
+    if (progTicking) return;
+    progTicking = true;
+    requestAnimationFrame(() => {
+      const max = document.body.scrollHeight - window.innerHeight;
+      progBar.style.width = (window.scrollY / max * 100) + '%';
+      progTicking = false;
+    });
   }, { passive: true });
 
   // NAV ACTIVE SECTION
