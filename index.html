@@ -39,10 +39,9 @@
   <meta name="twitter:image" content="https://lp.saudecrm.com/og-image.jpg">
 
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Fontes auto-hospedadas (same-origin) — preload das 2 críticas above-the-fold -->
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/plus-jakarta-sans-800.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -60,6 +59,17 @@
   </script>
 
   <style>
+    /* ─── Fontes auto-hospedadas (subset latin, same-origin) ─── */
+    @font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/inter-300.woff2') format('woff2')}
+    @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/inter-400.woff2') format('woff2')}
+    @font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/inter-500.woff2') format('woff2')}
+    @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/inter-600.woff2') format('woff2')}
+    @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/plus-jakarta-sans-400.woff2') format('woff2')}
+    @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/plus-jakarta-sans-500.woff2') format('woff2')}
+    @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/plus-jakarta-sans-600.woff2') format('woff2')}
+    @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/plus-jakarta-sans-700.woff2') format('woff2')}
+    @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:800;font-display:swap;src:url('/fonts/plus-jakarta-sans-800.woff2') format('woff2')}
+
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
