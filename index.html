@@ -1195,6 +1195,13 @@
   }
   /* Promove os blobs para camada própria de composição (evita re-blur a cada frame) */
   .hero-blob, .cta-blob { will-change: transform; transform: translateZ(0); }
+
+  /* LCP: o conteúdo do hero NÃO pode depender de JS para aparecer (o H1 é o LCP).
+     Anima via CSS puro no load — fica visível em 0.65s mesmo se o JS de analytics
+     estiver ocupando a main-thread. */
+  @keyframes heroReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+  .hero .fade-up { animation: heroReveal 0.65s ease both; }
+  .hero .hero-mockup-wrap.fade-up { animation-delay: 0.15s; }
   /* Respeita usuários que pedem menos animação */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
