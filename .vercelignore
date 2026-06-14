@@ -1,0 +1,4 @@
+*.py
+**/_bodies/
+.blog-build/
+blog/_bodies/
