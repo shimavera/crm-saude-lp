@@ -1,0 +1,32 @@
+# CRM Saúde
+
+> CRM com inteligência artificial feito para clínicas (odontológicas, médicas e de estética). Capta, atende e converte leads no WhatsApp automaticamente, centralizando pacientes, agendamentos, follow-ups e vendas em um só lugar.
+
+## O que é
+
+CRM Saúde é uma plataforma de gestão de relacionamento e vendas para clínicas. O produto unifica atendimento via WhatsApp, funil de leads (Kanban), agendamentos, automação de follow-up com IA e relatórios de conversão. Objetivo: parar de perder paciente por falha de atendimento e transformar a clínica em uma operação previsível de captação e fechamento.
+
+## Para quem
+
+- Donos de clínica odontológica, médica ou estética
+- Gestores comerciais e secretárias/recepção que atendem leads no WhatsApp
+- Clínicas que investem em tráfego pago e precisam converter os leads gerados
+
+## Principais recursos
+
+- Atendimento centralizado no WhatsApp (multiatendente)
+- Funil de leads em Kanban com etapas de venda
+- Agendamento e gestão de pacientes
+- Follow-up automático com IA para leads que não responderam
+- Disparos/broadcast e mensagens em massa
+- Relatórios de conversão e desempenho da equipe
+
+## Links
+
+- Site: https://lp.saudecrm.com/
+- Cadastro / teste grátis: https://saudecrm.com/cadastro
+- Blog: https://lp.saudecrm.com/blog/
+
+## Contato
+
+CRM Saúde é um produto da SP3 Company (marketing e tecnologia para clínicas da área da saúde).
