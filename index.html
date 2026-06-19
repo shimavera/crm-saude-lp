@@ -195,6 +195,12 @@
     }
     .fade-up.in { opacity: 1; transform: translateY(0); }
 
+    /* Pula renderização de seções fora da viewport (página longa, DOM pesado) */
+    .features, .product, .testimonials, .pricing, .faq {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 700px;
+    }
+
     /* ─── NAV ─── */
     nav {
       position: fixed;
@@ -205,8 +211,8 @@
     }
     nav.scrolled {
       background: rgba(242,245,240,0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
       padding: 13px 0;
     }
@@ -261,6 +267,9 @@
       border-radius: 50%;
       filter: blur(80px);
       pointer-events: none;
+      transform: translateZ(0);
+      will-change: transform;
+      contain: paint;
     }
     .blob-1 {
       width: 500px; height: 500px;
