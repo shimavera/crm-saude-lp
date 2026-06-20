@@ -2642,17 +2642,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   .cf-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.96);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 44px rgba(0,0,0,.45);transition:transform .25s ease}
   .cf-video-card:hover .cf-play{transform:translate(-50%,-50%) scale(1.08)}
   .cf-video-label{position:absolute;bottom:16px;left:16px;background:rgba(7,22,58,.82);color:#fff;font-weight:700;font-size:14px;padding:9px 16px;border-radius:11px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);letter-spacing:.2px}
-  .cf-modal{position:fixed;inset:0;z-index:99999;background:rgba(4,12,34,.88);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:24px}
+  .cf-modal{position:fixed;inset:0;z-index:99999;background:rgba(4,12,34,.92);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:24px}
   .cf-modal.open{display:flex}
   .cf-modal-inner{position:relative;width:min(1120px,100%)}
-  .cf-modal-inner video{width:100%;border-radius:14px;display:block;box-shadow:0 30px 90px rgba(0,0,0,.6);background:#000}
-  .cf-modal-close{position:absolute;top:-52px;right:0;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#0D1117;font-size:24px;line-height:1;cursor:pointer;font-weight:700}
-  @media(max-width:640px){.cf-modal-close{top:auto;bottom:-56px;right:50%;transform:translateX(50%)}}
+  .cf-modal-inner video{width:100%;max-height:82vh;border-radius:14px;display:block;box-shadow:0 30px 90px rgba(0,0,0,.6);background:#000;object-fit:contain}
+  .cf-modal-close{position:fixed;top:14px;right:14px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:#0D1117;font-size:26px;line-height:1;cursor:pointer;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.45);z-index:100000}
+  @media(max-width:640px){
+    .cf-modal{padding:0}
+    .cf-modal-inner{width:100%}
+    .cf-modal-inner video{border-radius:0;max-height:100vh}
+    .cf-play{width:72px;height:72px}
+    .cf-video-label{font-size:12px;padding:7px 12px}
+  }
 </style>
 <div class="cf-modal" id="cfModal" onclick="closeVideoModal(event)">
   <div class="cf-modal-inner">
     <button class="cf-modal-close" type="button" onclick="closeVideoModal(event,true)" aria-label="Fechar vídeo">&times;</button>
-    <video id="cfVideo" controls playsinline preload="none" poster="/como-funciona-poster.webp">
+    <video id="cfVideo" controls playsinline webkit-playsinline preload="metadata" poster="/como-funciona-poster.webp">
       <source src="/como-funciona.mp4" type="video/mp4">
     </video>
   </div>
