@@ -1270,7 +1270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="hero-sub">O único CRM feito para clínicas que precisam crescer. Pacientes, leads, agendamentos e WhatsApp, tudo em um lugar só.</p>
         <div class="hero-btns">
           <a href="https://saudecrm.com/cadastro" class="btn btn-green btn-pulse">Começar grátis <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a href="#product" class="btn btn-outline">Ver como funciona</a>
+          <a href="#product" class="btn btn-outline" onclick="openVideoModal();return false;">▶ Ver como funciona</a>
         </div>
         <div class="hero-proof">
           <div class="proof-avs">
@@ -1544,7 +1544,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--text2)"><span style="color:var(--green);font-weight:800;flex-shrink:0">✓</span>O dono enxerga o consolidado de todas as clínicas</li>
           <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--text2)"><span style="color:var(--green);font-weight:800;flex-shrink:0">✓</span>Troca de unidade em um clique, sem trocar de login</li>
         </ul>
-        <a href="https://saudecrm.com/cadastro" class="btn btn-green">Quero controlar minha rede</a>
+        <a href="https://saudecrm.com/cadastro-rede" class="btn btn-green">Quero controlar minha rede</a>
       </div>
       <div class="fade-up" style="transition-delay:.1s">
         <div class="dash-card" style="padding:22px">
@@ -1602,6 +1602,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="section-title">Uma interface feita para quem trabalha com saúde</h2>
       <p class="section-sub" style="margin-top:14px">Simples para a recepcionista. Poderoso para o gestor. Inteligente para a clínica crescer.</p>
     </div>
+
+    <!-- VÍDEO EXPLICATIVO -->
+    <div class="cf-video-wrap fade-up" style="transition-delay:.05s">
+      <button class="cf-video-card" type="button" onclick="openVideoModal()" aria-label="Assistir vídeo: veja como o Saúde CRM funciona">
+        <img src="/como-funciona-poster.webp" alt="Veja o Saúde CRM funcionando — atendimento com IA, funil e follow-up" loading="lazy" width="1280" height="720">
+        <span class="cf-play" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="#0055FE"><path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.3-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14Z"/></svg></span>
+        <span class="cf-video-label">▶ Veja como funciona · 1 min</span>
+      </button>
+    </div>
+
     <div class="fade-up" style="transition-delay:.1s">
 
       <div class="app-frame">
@@ -2621,6 +2631,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.dataLayer.push({ event: 'begin_trial_signup' });
     });
   });
+</script>
+
+<!-- ─── VÍDEO "COMO FUNCIONA" (modal) ─── -->
+<style>
+  .cf-video-wrap{margin:0 auto 44px;max-width:920px}
+  .cf-video-card{display:block;position:relative;width:100%;border:0;padding:0;cursor:pointer;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(13,17,23,.28);background:#04246E;line-height:0}
+  .cf-video-card img{width:100%;height:auto;display:block;transition:transform .45s ease}
+  .cf-video-card:hover img{transform:scale(1.035)}
+  .cf-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.96);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 44px rgba(0,0,0,.45);transition:transform .25s ease}
+  .cf-video-card:hover .cf-play{transform:translate(-50%,-50%) scale(1.08)}
+  .cf-video-label{position:absolute;bottom:16px;left:16px;background:rgba(7,22,58,.82);color:#fff;font-weight:700;font-size:14px;padding:9px 16px;border-radius:11px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);letter-spacing:.2px}
+  .cf-modal{position:fixed;inset:0;z-index:99999;background:rgba(4,12,34,.88);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:24px}
+  .cf-modal.open{display:flex}
+  .cf-modal-inner{position:relative;width:min(1120px,100%)}
+  .cf-modal-inner video{width:100%;border-radius:14px;display:block;box-shadow:0 30px 90px rgba(0,0,0,.6);background:#000}
+  .cf-modal-close{position:absolute;top:-52px;right:0;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#0D1117;font-size:24px;line-height:1;cursor:pointer;font-weight:700}
+  @media(max-width:640px){.cf-modal-close{top:auto;bottom:-56px;right:50%;transform:translateX(50%)}}
+</style>
+<div class="cf-modal" id="cfModal" onclick="closeVideoModal(event)">
+  <div class="cf-modal-inner">
+    <button class="cf-modal-close" type="button" onclick="closeVideoModal(event,true)" aria-label="Fechar vídeo">&times;</button>
+    <video id="cfVideo" controls playsinline preload="none" poster="/como-funciona-poster.webp">
+      <source src="/como-funciona.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+<script>
+  function openVideoModal(){var m=document.getElementById('cfModal'),v=document.getElementById('cfVideo');m.classList.add('open');document.body.style.overflow='hidden';try{v.currentTime=0;v.play();}catch(e){}}
+  function closeVideoModal(e,force){var m=document.getElementById('cfModal');if(force||(e&&e.target===m)){var v=document.getElementById('cfVideo');try{v.pause();}catch(e2){}m.classList.remove('open');document.body.style.overflow='';}}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVideoModal(null,true);});
 </script>
 </body>
 </html>
