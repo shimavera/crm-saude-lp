@@ -47,14 +47,97 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "CRM Saúde",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "CRM com IA para clínicas: capta, atende e converte leads no WhatsApp automaticamente, com agendamentos, follow-ups e vendas centralizados.",
-    "url": "https://lp.saudecrm.com/",
-    "image": "https://lp.saudecrm.com/logo.webp",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://lp.saudecrm.com/#organization",
+        "name": "CRM Saúde",
+        "alternateName": "SaudeCRM",
+        "url": "https://lp.saudecrm.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lp.saudecrm.com/logo.webp",
+          "width": 512,
+          "height": 512
+        },
+        "description": "CRM com IA para clínicas odontológicas, médicas e de estética. Capta, atende e converte leads no WhatsApp automaticamente."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lp.saudecrm.com/#website",
+        "url": "https://lp.saudecrm.com/",
+        "name": "CRM Saúde",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://lp.saudecrm.com/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://lp.saudecrm.com/#software",
+        "name": "CRM Saúde",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "CRM com IA para clínicas: capta, atende e converte leads no WhatsApp automaticamente, com agendamentos, follow-ups e vendas centralizados.",
+        "url": "https://lp.saudecrm.com/",
+        "image": "https://lp.saudecrm.com/og-image.jpg",
+        "publisher": { "@id": "https://lp.saudecrm.com/#organization" },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "BRL",
+          "lowPrice": "297.00",
+          "highPrice": "687.00",
+          "offerCount": 3,
+          "availability": "https://schema.org/InStock",
+          "url": "https://lp.saudecrm.com/#precos",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Starter",
+              "price": "297.00",
+              "priceCurrency": "BRL",
+              "availability": "https://schema.org/InStock",
+              "url": "https://saudecrm.com/cadastro",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "297.00",
+                "priceCurrency": "BRL",
+                "billingIncrement": 1,
+                "unitCode": "MON"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Pro",
+              "price": "497.00",
+              "priceCurrency": "BRL",
+              "availability": "https://schema.org/InStock",
+              "url": "https://saudecrm.com/cadastro",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "497.00",
+                "priceCurrency": "BRL",
+                "billingIncrement": 1,
+                "unitCode": "MON"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Scale",
+              "price": "687.00",
+              "priceCurrency": "BRL",
+              "availability": "https://schema.org/InStock",
+              "url": "https://saudecrm.com/cadastro",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "687.00",
+                "priceCurrency": "BRL",
+                "billingIncrement": 1,
+                "unitCode": "MON"
+              }
+            }
+          ]
+        }
+      }
+    ]
   }
   </script>
 
@@ -968,11 +1051,71 @@
     .foot-legal a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
     .foot-legal a:hover { color: rgba(255,255,255,0.6); }
 
+    /* ─── MENU MOBILE ─── */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--line, rgba(255,255,255,0.12));
+      border-radius: 10px;
+      background: transparent;
+      cursor: pointer;
+    }
+    .nav-toggle-bar {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 0 auto;
+      border-radius: 2px;
+      background: var(--text);
+      transition: transform 0.22s ease, opacity 0.22s ease;
+    }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-mobile {
+      display: none;
+      padding: 12px 20px 22px;
+      border-top: 1px solid var(--line, rgba(255,255,255,0.1));
+      background: var(--bg, #050a18);
+      max-height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .nav-mobile[hidden] { display: none; }
+    .nav-mobile-links { list-style: none; margin: 0 0 14px; padding: 0; }
+    .nav-mobile-links a {
+      display: block;
+      padding: 13px 4px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line, rgba(255,255,255,0.07));
+    }
+    .nav-mobile-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-mobile.is-open { display: block; }
+    }
+
     /* ─── MOBILE RESPONSIVO ─── */
     @media (max-width: 768px) {
 
       /* NAV */
       .nav-links { display: none; }
+      .nav-cta-desk { display: none; }
+      .nav-toggle { display: flex; }
       nav { padding: 14px 0; }
       .nav-logo-text { font-size: 16px; }
 
@@ -1207,17 +1350,92 @@
   .hero-blob, .cta-blob { will-change: transform; transform: translateZ(0); }
 
   /* LCP: o conteúdo do hero NÃO pode depender de JS para aparecer (o H1 é o LCP).
-     Anima via CSS puro no load — fica visível em 0.65s mesmo se o JS de analytics
-     estiver ocupando a main-thread. */
-  @keyframes heroReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
-  .hero .fade-up { animation: heroReveal 0.65s ease both; }
-  .hero .hero-mockup-wrap.fade-up { animation-delay: 0.15s; }
+     O H1 nasce opaco e anima só o transform: o Chrome não contabiliza como pintado
+     nada com opacity:0, então animar opacidade aqui empurraria o LCP para o fim da
+     animação. O mockup, que não é o LCP, mantém o fade completo. */
+  @keyframes heroReveal { from { transform: translateY(28px); } to { transform: none; } }
+  @keyframes heroRevealFade { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+  .hero .fade-up { opacity: 1; animation: heroReveal 0.65s ease both; }
+  .hero .hero-mockup-wrap.fade-up { opacity: 0; animation: heroRevealFade 0.65s ease both; animation-delay: 0.15s; }
   /* Respeita usuários que pedem menos animação */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
   }
   </style>
   <style>/* anti swipe-back trackpad (padrão SP3/Juan) */html,body{overscroll-behavior:none}*{overscroll-behavior-x:none}</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://lp.saudecrm.com/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Preciso de conhecimento técnico para usar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O CRM Saúde foi projetado para ser intuitivo para qualquer membro da equipe, da recepcionista ao gestor. Oferecemos onboarding guiado, tutoriais em vídeo e suporte em tempo real. A maioria das clínicas está operacional em menos de 1 dia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona a integração com WhatsApp?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usamos a API oficial do WhatsApp Business (Meta), garantindo estabilidade e conformidade total. Você conecta múltiplos números, cria fluxos automáticos, envia confirmações, lembretes e campanhas de reativação, tudo sem sair da plataforma."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Tenho mais de uma unidade. Dá pra controlar tudo junto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Cada unidade tem seu próprio número de WhatsApp e sua equipe, todos na mesma conta. O comercial de cada clínica enxerga apenas os leads dela, enquanto você, dono, acompanha o resultado consolidado da rede inteira. A troca entre unidades é feita em um clique, sem precisar trocar de login."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso adicionar números de WhatsApp depois?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Você começa com os números do seu plano e adiciona números extras conforme a clínica cresce, direto na sua conta, sem precisar trocar de plano. Ideal para quem abre uma nova unidade ou separa o atendimento por equipe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Os dados dos meus pacientes são seguros?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Seguimos a LGPD e todas as regulamentações do CFO e CFM. Dados armazenados no Brasil, criptografia de ponta a ponta, backup diário automático e controle de acesso por perfis de usuário. Nenhum dado é compartilhado com terceiros."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso migrar minha base de pacientes atual?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Importamos sua base de qualquer sistema, seja Excel, CSV ou outros CRMs, sem custo adicional. Nossa equipe faz todo o processo de migração, garantindo que nenhum dado seja perdido na transição."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona o período de teste gratuito?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "7 dias completos com acesso a todas as funcionalidades do plano escolhido, sem pedir cartão de crédito. Ao final, você decide se continua. Se não quiser, seus dados ficam disponíveis para exportação por mais 30 dias."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso cancelar quando quiser?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, sem multa e sem burocracia. Cancele com um clique dentro da plataforma a qualquer momento. Acreditamos que você vai continuar porque os resultados falam por si, não porque está preso em contrato."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1230,9 +1448,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav id="nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">
+      <a href="/" class="nav-logo">
         <div class="nav-logo-mark">
-          <img src="/logo.webp" alt="SaudeCRM logo" width="140" height="32" loading="eager" decoding="async">
+          <img src="/logo.webp" alt="SaudeCRM logo" width="34" height="34" loading="eager" decoding="async">
         </div>
         <span class="nav-logo-text">CRM Saúde</span>
       </a>
@@ -1245,8 +1463,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="/blog/">Blog</a></li>
       </ul>
-      <a href="https://saudecrm.com/cadastro" class="btn btn-green" style="font-size:14px;padding:10px 20px;">Começar grátis</a>
+      <a href="https://saudecrm.com/cadastro" class="btn btn-green nav-cta-desk" style="font-size:14px;padding:10px 20px;">Começar grátis</a>
+      <button type="button" id="nav-toggle" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </div>
+  </div>
+  <div id="nav-mobile" class="nav-mobile" hidden>
+    <ul class="nav-mobile-links">
+      <li><a href="#features">Funcionalidades</a></li>
+      <li><a href="#redes">Redes</a></li>
+      <li><a href="#integracoes">Integrações</a></li>
+      <li><a href="#pricing">Preços</a></li>
+      <li><a href="#cases">Casos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <a href="https://saudecrm.com/cadastro" class="btn btn-green nav-mobile-cta">Começar grátis</a>
   </div>
 </nav>
 
@@ -2626,6 +2861,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 <script>
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var panel  = document.getElementById('nav-mobile');
+    if (!toggle || !panel) return;
+
+    function setOpen(open) {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      panel.classList.toggle('is-open', open);
+      if (open) { panel.removeAttribute('hidden'); } else { panel.setAttribute('hidden', ''); }
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    toggle.addEventListener('click', function () {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    panel.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+
+    // Sair do breakpoint mobile com o menu aberto travaria o scroll do desktop.
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768 && toggle.getAttribute('aria-expanded') === 'true') setOpen(false);
+    });
+  })();
+
   document.querySelectorAll('a[href*="saudecrm.com/cadastro"]').forEach(function(el) {
     el.addEventListener('click', function() {
       window.dataLayer = window.dataLayer || [];

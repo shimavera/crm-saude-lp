@@ -2,19 +2,22 @@
 # -*- coding: utf-8 -*-
 import re, os, html
 
-BLOG = os.path.dirname(os.path.abspath(__file__))
+# HERE = onde vivem os fontes do build (_bodies). OUT = onde os .html publicados ficam.
+HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(os.path.dirname(HERE), "blog")
 BASE = "https://lp.saudecrm.com"
 DATE_ISO = "2026-06-14"
 DATE_HUMAN = "14 de junho de 2026"
 
 # Extrai o CSS do artigo de referência
-ref = open(os.path.join(BLOG, "crm-para-clinica-odontologica.html"), encoding="utf-8").read()
+ref = open(os.path.join(OUT, "crm-para-clinica-odontologica.html"), encoding="utf-8").read()
 css = re.search(r"<style>(.*?)</style>", ref, re.S).group(1)
 
 ARTICLES = [
     {
         "slug": "como-atrair-pacientes-clinica-odontologica",
         "title": "Como Atrair Pacientes para Clínica Odontológica: 12 Estratégias para 2026",
+        "seoTitle": "Como Atrair Pacientes para Clínica Odontológica",
         "desc": "Descubra como atrair pacientes para clínica odontológica com 12 estratégias práticas de captação: presença digital, conteúdo, tráfego pago e conversão de leads.",
         "category": "Captação de Pacientes",
         "readTime": 6,
@@ -24,6 +27,7 @@ ARTICLES = [
     {
         "slug": "como-nao-perder-leads-no-whatsapp",
         "title": "Como Não Perder Leads no WhatsApp: O Guia para Clínicas",
+        "seoTitle": "Como Não Perder Leads no WhatsApp",
         "desc": "Sua clínica perde leads no WhatsApp? Veja como organizar o atendimento, responder rápido e fazer follow-up para transformar contatos em pacientes agendados.",
         "category": "WhatsApp & Atendimento",
         "readTime": 7,
@@ -33,6 +37,7 @@ ARTICLES = [
     {
         "slug": "funil-de-vendas-para-clinicas",
         "title": "Funil de Vendas para Clínicas: Como Transformar Leads em Pacientes",
+        "seoTitle": "Funil de Vendas para Clínicas: Guia Completo",
         "desc": "Entenda o que é um funil de vendas para clínicas e como mapear cada etapa — do lead ao paciente fiel — para parar de perder oportunidades e vender mais.",
         "category": "Vendas & Conversão",
         "readTime": 7,
@@ -42,6 +47,7 @@ ARTICLES = [
     {
         "slug": "automacao-de-whatsapp-para-clinicas",
         "title": "Automação de WhatsApp para Clínicas: O Que É e Como Implementar",
+        "seoTitle": "Automação de WhatsApp para Clínicas",
         "desc": "O que é automação de WhatsApp para clínicas, o que dá para automatizar (confirmação, lembrete, follow-up) e como implementar sem parecer robô nem tomar ban.",
         "category": "Automação",
         "readTime": 7,
@@ -51,6 +57,7 @@ ARTICLES = [
     {
         "slug": "follow-up-de-pacientes",
         "title": "Follow-up de Pacientes: Como Recuperar Leads que Sumiram",
+        "seoTitle": "Follow-up de Pacientes: Recupere Leads Sumidos",
         "desc": "Aprenda a fazer follow-up de pacientes e recuperar leads que sumiram: cadência ideal, modelos de mensagem prontos e como automatizar sem perder o tom humano.",
         "category": "Relacionamento",
         "readTime": 7,
@@ -60,6 +67,7 @@ ARTICLES = [
     {
         "slug": "como-reduzir-faltas-no-show-consultas",
         "title": "Como Reduzir Faltas (No-Show) em Consultas: 9 Estratégias Práticas",
+        "seoTitle": "Como Reduzir Faltas (No-Show) em Consultas",
         "desc": "Como reduzir faltas (no-show) em consultas: 9 estratégias práticas de confirmação, lembrete e relacionamento para manter a agenda da sua clínica cheia.",
         "category": "Gestão de Clínica",
         "readTime": 7,
@@ -69,6 +77,7 @@ ARTICLES = [
     {
         "slug": "indicadores-clinica-odontologica",
         "title": "Indicadores de uma Clínica Odontológica: O Que Medir para Crescer",
+        "seoTitle": "Indicadores de Clínica Odontológica: O Que Medir",
         "desc": "Conheça os indicadores que toda clínica odontológica deveria acompanhar — captação, conversão, no-show, ticket médio e retenção — e como medir cada um.",
         "category": "Gestão de Clínica",
         "readTime": 7,
@@ -78,6 +87,7 @@ ARTICLES = [
     {
         "slug": "trafego-pago-para-dentistas",
         "title": "Tráfego Pago para Dentistas: Como Transformar Cliques em Pacientes",
+        "seoTitle": "Tráfego Pago para Dentistas: Guia Prático",
         "desc": "Tráfego pago para dentistas: por que gerar leads não basta e como transformar cliques do Meta e Google Ads em pacientes que realmente fecham tratamento.",
         "category": "Marketing Digital",
         "readTime": 7,
@@ -87,6 +97,7 @@ ARTICLES = [
     {
         "slug": "crm-para-clinica-de-estetica",
         "title": "CRM para Clínica de Estética: Como Organizar Leads e Vender Mais",
+        "seoTitle": "CRM para Clínica de Estética: Guia Completo",
         "desc": "CRM para clínica de estética: como organizar os leads do Instagram e WhatsApp, estruturar o funil de vendas e aumentar a recompra e a fidelização.",
         "category": "Guia Completo",
         "readTime": 7,
@@ -96,6 +107,7 @@ ARTICLES = [
     {
         "slug": "secretaria-ou-crm-atendimento-clinica",
         "title": "Secretária ou CRM? Como Organizar o Atendimento da Sua Clínica",
+        "seoTitle": "Secretária ou CRM? Como Organizar o Atendimento",
         "desc": "Secretária ou CRM? Entenda como organizar o atendimento da sua clínica unindo a recepção a um CRM para responder rápido, fazer follow-up e não perder pacientes.",
         "category": "Gestão de Clínica",
         "readTime": 7,
@@ -116,11 +128,20 @@ CLARITY = '''  <!-- Microsoft Clarity -->
   </script>
   <!-- End Microsoft Clarity -->'''
 
+# Mesmo container da home. Sem isto o blog inteiro fica fora do GA4.
+GTM = '''  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5FR2KHPK');</script>
+  <!-- End Google Tag Manager -->'''
+
 def esc(s): return html.escape(s, quote=True)
 
 def build(a, idx):
     slug = a["slug"]; url = f"{BASE}/blog/{slug}.html"
-    body = open(os.path.join(BLOG, "_bodies", f"{slug}.body.html"), encoding="utf-8").read().strip()
+    body = open(os.path.join(HERE, "_bodies", f"{slug}.body.html"), encoding="utf-8").read().strip()
     toc_items = "\n".join(f'            <li><a href="#{t["id"]}">{esc(t["label"])}</a></li>' for t in a["toc"])
     pills = a["heroPills"]
     # related: 3 outros artigos (rotativo entre os novos + 1 existente)
@@ -137,19 +158,28 @@ def build(a, idx):
     return f'''<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+{GTM}
 {CLARITY}
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{esc(a["title"])} — SaudeCRM</title>
+  <title>{esc(a.get("seoTitle", a["title"]))} — SaudeCRM</title>
   <meta name="description" content="{esc(a["desc"])}">
   <meta property="og:title" content="{esc(a["title"])}">
   <meta property="og:description" content="{esc(a["desc"])}">
   <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="CRM Saúde">
   <meta property="og:url" content="{url}">
   <meta property="og:image" content="{BASE}/og-blog.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Blog do CRM Saúde: conteúdo prático para clínicas crescerem">
   <meta property="article:published_time" content="{DATE_ISO}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{esc(a["title"])}">
+  <meta name="twitter:description" content="{esc(a["desc"])}">
+  <meta name="twitter:image" content="{BASE}/og-blog.jpg">
   <link rel="canonical" href="{url}">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,7 +192,14 @@ def build(a, idx):
     "@type": "Article",
     "headline": "{esc(a["title"])}",
     "description": "{esc(a["desc"])}",
-    "author": {{ "@type": "Organization", "name": "SaudeCRM" }},
+    "image": {{
+      "@type": "ImageObject",
+      "url": "{BASE}/og-blog.jpg",
+      "width": 1200,
+      "height": 630
+    }},
+    "inLanguage": "pt-BR",
+    "author": {{ "@type": "Organization", "name": "SaudeCRM", "url": "{BASE}/" }},
     "publisher": {{ "@type": "Organization", "name": "SaudeCRM", "logo": {{ "@type": "ImageObject", "url": "{BASE}/logo.webp" }} }},
     "datePublished": "{DATE_ISO}",
     "dateModified": "{DATE_ISO}",
@@ -274,7 +311,7 @@ def build(a, idx):
 
 for i, a in enumerate(ARTICLES):
     out = build(a, i)
-    with open(os.path.join(BLOG, f'{a["slug"]}.html'), "w", encoding="utf-8") as f:
+    with open(os.path.join(OUT, f'{a["slug"]}.html'), "w", encoding="utf-8") as f:
         f.write(out)
     print(f'OK {a["slug"]}.html ({len(out)} bytes)')
 print("Total:", len(ARTICLES), "artigos gerados")
