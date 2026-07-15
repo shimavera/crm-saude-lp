@@ -21,11 +21,34 @@ CRM Saúde é uma plataforma de gestão de relacionamento e vendas para clínica
 - Disparos/broadcast e mensagens em massa
 - Relatórios de conversão e desempenho da equipe
 
+## Planos
+
+Teste grátis de 7 dias em qualquer plano, sem cartão de crédito.
+
+- Starter: R$ 297/mês. Até 400 leads ativos, 1 número de WhatsApp, funil básico, agendamento online, lembretes automáticos.
+- Pro: R$ 497/mês. Até 1.200 leads ativos, até 5 números de WhatsApp, IA de funil avançada, prontuário digital, relatórios, Google Agenda.
+- Scale: R$ 687/mês. Tudo do Pro, até 2.500 leads ativos, multi-unidades ilimitadas, Cloud API oficial do WhatsApp, API de integrações, SLA 99.9%.
+
 ## Links
 
-- Site: https://lp.saudecrm.com/
-- Cadastro / teste grátis: https://saudecrm.com/cadastro
-- Blog: https://lp.saudecrm.com/blog/
+- [Site](https://lp.saudecrm.com/): página principal do produto, com funcionalidades, integrações, planos e FAQ.
+- [Cadastro / teste grátis](https://saudecrm.com/cadastro): criar conta e iniciar o teste de 7 dias.
+- [Blog](https://lp.saudecrm.com/blog/): índice de todos os artigos.
+
+## Blog
+
+- [CRM para Clínica Odontológica: o guia completo](https://lp.saudecrm.com/blog/crm-para-clinica-odontologica.html): o que é, por que usar, como funciona na prática, como escolher e quanto custa.
+- [CRM para Clínica de Estética](https://lp.saudecrm.com/blog/crm-para-clinica-de-estetica.html): como organizar leads e vender mais em clínicas de estética.
+- [Como Não Perder Leads no WhatsApp](https://lp.saudecrm.com/blog/como-nao-perder-leads-no-whatsapp.html): organizar o atendimento, responder rápido e fazer follow-up para converter contatos em pacientes.
+- [Automação de WhatsApp para Clínicas](https://lp.saudecrm.com/blog/automacao-de-whatsapp-para-clinicas.html): o que dá para automatizar (confirmação, lembrete, follow-up) e como implementar sem parecer robô nem tomar ban.
+- [Follow-up de Pacientes](https://lp.saudecrm.com/blog/follow-up-de-pacientes.html): cadência ideal, modelos de mensagem e como recuperar leads que sumiram.
+- [Funil de Vendas para Clínicas](https://lp.saudecrm.com/blog/funil-de-vendas-para-clinicas.html): as etapas do funil, gargalos comuns e taxa de conversão por etapa.
+- [Equipe Não Consegue Acompanhar Leads?](https://lp.saudecrm.com/blog/equipe-nao-consegue-acompanhar-leads.html): como resolver o conflito entre marketing e recepção com um processo de follow-up.
+- [Secretária ou CRM?](https://lp.saudecrm.com/blog/secretaria-ou-crm-atendimento-clinica.html): como organizar o atendimento da clínica unindo a recepção a um CRM.
+- [Como Atrair Pacientes para Clínica Odontológica](https://lp.saudecrm.com/blog/como-atrair-pacientes-clinica-odontologica.html): 12 estratégias de captação, de presença digital a tráfego pago.
+- [Tráfego Pago para Dentistas](https://lp.saudecrm.com/blog/trafego-pago-para-dentistas.html): por que gerar lead não basta e como transformar cliques em pacientes que fecham.
+- [Como Reduzir Faltas (No-Show) em Consultas](https://lp.saudecrm.com/blog/como-reduzir-faltas-no-show-consultas.html): 9 estratégias de confirmação, lembrete e relacionamento.
+- [Indicadores de uma Clínica Odontológica](https://lp.saudecrm.com/blog/indicadores-clinica-odontologica.html): captação, conversão, no-show, ticket médio e retenção, e como medir cada um.
 
 ## Contato
 
