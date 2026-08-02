@@ -2,7 +2,20 @@
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/blog/index.html", "destination": "/blog/", "permanent": true },
-    { "source": "/blog", "destination": "/blog/", "permanent": true }
+    { "source": "/blog", "destination": "/blog/", "permanent": true },
+    { "source": "/cadastro", "destination": "https://app.saudecrm.com/cadastro", "permanent": false },
+    { "source": "/cadastro-rede", "destination": "https://app.saudecrm.com/cadastro-rede", "permanent": false },
+    { "source": "/pagamento-confirmado", "destination": "https://app.saudecrm.com/pagamento-confirmado", "permanent": false },
+    { "source": "/pagamento-cancelado", "destination": "https://app.saudecrm.com/pagamento-cancelado", "permanent": false },
+    { "source": "/login", "destination": "https://app.saudecrm.com/", "permanent": false },
+    { "source": "/conta", "destination": "https://app.saudecrm.com/conta", "permanent": false },
+    { "source": "/admin/:path*", "destination": "https://app.saudecrm.com/admin/:path*", "permanent": false },
+    { "source": "/", "has": [{ "type": "query", "key": "billing", "value": "(?<b>.*)" }], "destination": "https://app.saudecrm.com/?billing=:b", "permanent": false },
+    { "source": "/", "has": [{ "type": "query", "key": "org", "value": "(?<o>.*)" }], "destination": "https://app.saudecrm.com/?org=:o", "permanent": false },
+    { "source": "/", "has": [{ "type": "query", "key": "upgrade", "value": "(?<u>.*)" }], "destination": "https://app.saudecrm.com/?upgrade=:u", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/api/:path((?!material).*)", "destination": "https://app.saudecrm.com/api/:path" }
   ],
   "headers": [
     {
