@@ -5,7 +5,7 @@ import re, os, html
 # HERE = onde vivem os fontes do build (_bodies). OUT = onde os .html publicados ficam.
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(os.path.dirname(HERE), "blog")
-BASE = "https://lp.saudecrm.com"
+BASE = "https://saudecrm.com"
 DATE_ISO = "2026-06-14"
 DATE_HUMAN = "14 de junho de 2026"
 
