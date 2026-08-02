@@ -641,7 +641,74 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Por que clínicas perdem tantos leads no WhatsApp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque o WhatsApp comum não foi feito para gerenciar atendimento comercial. A conversa desce na lista, ninguém sabe quem já foi respondido, cada pessoa da equipe atende de um jeito e não existe registro de quem ficou sem retorno. O lead não é rejeitado, ele simplesmente some no meio das mensagens."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual o tempo ideal para responder um lead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O mais rápido possível, porque quem procura clínica raramente procura só a sua. A chance de conversão cai conforme os minutos passam, e o paciente costuma fechar com quem responde primeiro e tira a dúvida dele com clareza. Responder na hora vale mais do que responder perfeito depois."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quantas vezes fazer follow-up antes de desistir de um lead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mais do que a maioria das clínicas faz. Boa parte para no primeiro contato sem resposta, mas grande parte dos agendamentos aparece a partir da segunda ou terceira tentativa. O que muda o resultado é ter uma sequência definida, com espaçamento e mensagem pensada, em vez de insistir aleatoriamente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "WhatsApp comum serve para gerenciar os leads da clínica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Serve para conversar, não para gerenciar. Ele não mostra em que etapa cada paciente está, não avisa quem precisa de retorno hoje, não guarda histórico organizado e some junto com o celular de quem atendia. É por isso que clínicas em crescimento migram para um CRM com o WhatsApp integrado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como saber quantos leads a clínica está perdendo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Comparando quantos contatos chegaram com quantos viraram consulta marcada e comparecida, etapa por etapa. Sem esse registro, a perda fica invisível e a sensação de que está tudo certo se mantém. Quando o funil fica visível, normalmente aparece um gargalo específico, e não um problema geral."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -811,6 +878,32 @@
 
 <p>Não perder leads no WhatsApp é menos sobre trabalhar mais e mais sobre trabalhar com estrutura. Responder rápido, organizar por etapas, fazer follow-up consistente, sair da dependência do celular pessoal, automatizar o repetitivo e medir os resultados: junte essas peças e a clínica para de jogar pacientes fora todos os dias. O potencial de crescimento, na maioria das vezes, já está nas conversas que você tem hoje, mas que se perdem por falta de processo.</p>
 
+
+          <!-- FAQ -->
+          <section class="faq-block" id="perguntas-frequentes">
+            <h2>Perguntas frequentes</h2>
+            <div class="faq-q-item">
+              <h3>Por que clínicas perdem tantos leads no WhatsApp?</h3>
+              <p>Porque o WhatsApp comum não foi feito para gerenciar atendimento comercial. A conversa desce na lista, ninguém sabe quem já foi respondido, cada pessoa da equipe atende de um jeito e não existe registro de quem ficou sem retorno. O lead não é rejeitado, ele simplesmente some no meio das mensagens.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Qual o tempo ideal para responder um lead?</h3>
+              <p>O mais rápido possível, porque quem procura clínica raramente procura só a sua. A chance de conversão cai conforme os minutos passam, e o paciente costuma fechar com quem responde primeiro e tira a dúvida dele com clareza. Responder na hora vale mais do que responder perfeito depois.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Quantas vezes fazer follow-up antes de desistir de um lead?</h3>
+              <p>Mais do que a maioria das clínicas faz. Boa parte para no primeiro contato sem resposta, mas grande parte dos agendamentos aparece a partir da segunda ou terceira tentativa. O que muda o resultado é ter uma sequência definida, com espaçamento e mensagem pensada, em vez de insistir aleatoriamente.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>WhatsApp comum serve para gerenciar os leads da clínica?</h3>
+              <p>Serve para conversar, não para gerenciar. Ele não mostra em que etapa cada paciente está, não avisa quem precisa de retorno hoje, não guarda histórico organizado e some junto com o celular de quem atendia. É por isso que clínicas em crescimento migram para um CRM com o WhatsApp integrado.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Como saber quantos leads a clínica está perdendo?</h3>
+              <p>Comparando quantos contatos chegaram com quantos viraram consulta marcada e comparecida, etapa por etapa. Sem esse registro, a perda fica invisível e a sensação de que está tudo certo se mantém. Quando o funil fica visível, normalmente aparece um gargalo específico, e não um problema geral.</p>
+            </div>
+          </section>
+
 <div class="cta-inline"><h3>Transforme cada conversa em paciente agendado</h3><p>O SaúdeCRM reúne WhatsApp, IA e organização de leads em uma única plataforma feita para clínicas. Comece agora e veja na prática quantos contatos você estava deixando escapar.</p><a href="https://app.saudecrm.com/cadastro" class="btn-white">Criar minha conta grátis →</a></div>
         </article>
       </main>
@@ -828,7 +921,8 @@
             <li><a href="#automacao">Automação inteligente</a></li>
             <li><a href="#como-medir">Como medir</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
-          </ul>
+            <li><a href="#perguntas-frequentes">Perguntas frequentes</a></li>
+            </ul>
         </div>
 
         <div class="sidebar-cta">

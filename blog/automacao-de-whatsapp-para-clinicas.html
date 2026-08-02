@@ -641,7 +641,74 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é automação de WhatsApp para clínicas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É o uso de um sistema que responde, organiza e acompanha as conversas do WhatsApp da clínica sem depender de alguém digitando tudo manualmente. Na prática, ela cuida das tarefas repetitivas, como responder o primeiro contato, confirmar consulta e lembrar o paciente, enquanto a equipe fica livre para o atendimento que exige gente de verdade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Automatizar o WhatsApp da clínica pode gerar bloqueio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pode, se for feito errado. Disparo em massa para quem não pediu contato, volume alto de mensagens em pouco tempo e número novo já saindo atirando são os principais gatilhos de bloqueio. O caminho seguro é responder quem procurou a clínica, respeitar ritmo humano de conversa e aquecer o número antes de escalar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre automação e IA de atendimento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Automação segue uma regra fixa: se acontecer isso, envie aquilo. A IA interpreta o que o paciente escreveu e responde de forma diferente conforme o caso, tirando dúvida sobre procedimento, valor ou horário. As duas se complementam, e a maioria das clínicas usa automação para lembretes e IA para a conversa em si."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso da API oficial do WhatsApp para automatizar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não para começar. Dá para operar conectando o número da clínica ao sistema, que é o suficiente para a maior parte das clínicas. A API oficial faz sentido quando o volume cresce, quando se quer mais estabilidade e quando a clínica precisa de vários atendentes no mesmo número com segurança."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que dá para automatizar sem o atendimento ficar robótico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Resposta imediata ao primeiro contato, confirmação de consulta, lembrete antes do horário, retomada de quem sumiu e pesquisa de satisfação. O que não se automatiza é negociação, contorno de objeção e acolhimento de paciente inseguro. A régua é simples: automatize o previsível, mantenha humano o que envolve decisão."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -756,6 +823,32 @@
 <h2 id="conclusao">Conclusão</h2>
 <p>Automação de WhatsApp para clínicas não é sobre robotizar o atendimento, e sim sobre garantir que nenhum paciente fique sem resposta e que a equipe pare de se afogar no operacional. Feita com tom humano, respeito ao consentimento e uma ferramenta que centraliza tudo, ela vira uma das maiores alavancas de agenda cheia e relacionamento sólido. O caminho é começar simples, pelos lembretes e confirmações, e evoluir para qualificação, follow-up e reativação.</p>
 
+
+          <!-- FAQ -->
+          <section class="faq-block" id="perguntas-frequentes">
+            <h2>Perguntas frequentes</h2>
+            <div class="faq-q-item">
+              <h3>O que é automação de WhatsApp para clínicas?</h3>
+              <p>É o uso de um sistema que responde, organiza e acompanha as conversas do WhatsApp da clínica sem depender de alguém digitando tudo manualmente. Na prática, ela cuida das tarefas repetitivas, como responder o primeiro contato, confirmar consulta e lembrar o paciente, enquanto a equipe fica livre para o atendimento que exige gente de verdade.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Automatizar o WhatsApp da clínica pode gerar bloqueio?</h3>
+              <p>Pode, se for feito errado. Disparo em massa para quem não pediu contato, volume alto de mensagens em pouco tempo e número novo já saindo atirando são os principais gatilhos de bloqueio. O caminho seguro é responder quem procurou a clínica, respeitar ritmo humano de conversa e aquecer o número antes de escalar.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Qual a diferença entre automação e IA de atendimento?</h3>
+              <p>Automação segue uma regra fixa: se acontecer isso, envie aquilo. A IA interpreta o que o paciente escreveu e responde de forma diferente conforme o caso, tirando dúvida sobre procedimento, valor ou horário. As duas se complementam, e a maioria das clínicas usa automação para lembretes e IA para a conversa em si.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Preciso da API oficial do WhatsApp para automatizar?</h3>
+              <p>Não para começar. Dá para operar conectando o número da clínica ao sistema, que é o suficiente para a maior parte das clínicas. A API oficial faz sentido quando o volume cresce, quando se quer mais estabilidade e quando a clínica precisa de vários atendentes no mesmo número com segurança.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>O que dá para automatizar sem o atendimento ficar robótico?</h3>
+              <p>Resposta imediata ao primeiro contato, confirmação de consulta, lembrete antes do horário, retomada de quem sumiu e pesquisa de satisfação. O que não se automatiza é negociação, contorno de objeção e acolhimento de paciente inseguro. A régua é simples: automatize o previsível, mantenha humano o que envolve decisão.</p>
+            </div>
+          </section>
+
 <div class="cta-inline"><h3>Pare de perder paciente por falta de resposta</h3><p>Crie sua conta no SaúdeCRM e tenha automação e IA de WhatsApp prontas para a rotina da sua clínica, com atendimento humano sempre que precisar.</p><a href="https://app.saudecrm.com/cadastro" class="btn-white">Criar minha conta grátis →</a></div>
         </article>
       </main>
@@ -772,7 +865,8 @@
             <li><a href="#passo-a-passo-de-implementacao">Passo a passo</a></li>
             <li><a href="#como-o-saudecrm-faz">Como o SaúdeCRM faz</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
-          </ul>
+            <li><a href="#perguntas-frequentes">Perguntas frequentes</a></li>
+            </ul>
         </div>
 
         <div class="sidebar-cta">
