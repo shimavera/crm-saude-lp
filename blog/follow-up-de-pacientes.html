@@ -641,7 +641,74 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é follow-up de pacientes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É o acompanhamento ativo de quem demonstrou interesse e não fechou. Envolve retomar o contato de forma planejada, lembrar o paciente do que ficou pendente e oferecer o próximo passo, em vez de esperar que ele volte sozinho, o que raramente acontece."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que os pacientes somem depois do orçamento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quase nunca é falta de interesse. Normalmente o paciente adia a decisão, se assusta com o valor, precisa conversar com alguém antes ou simplesmente se distrai com a rotina. Sem alguém retomando, o assunto morre por inércia, não por recusa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quando e quantas vezes fazer follow-up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O primeiro retorno deve ser rápido, ainda com o assunto quente, e os seguintes espaçados ao longo dos dias e semanas seguintes. O erro mais comum é parar cedo demais: boa parte dos fechamentos acontece depois da primeira tentativa sem resposta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que escrever no follow-up para não parecer insistência?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mensagem curta, pessoal e com um motivo real para o contato, como tirar uma dúvida específica, informar uma condição ou oferecer um horário. O que soa chato é a cobrança repetida e igual. O que funciona é lembrar do contexto daquele paciente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vale a pena automatizar o follow-up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale para garantir que ele aconteça, que é onde a maioria falha. O sistema lembra a equipe de quem precisa de retorno hoje e dispara as etapas previsíveis, deixando o toque pessoal para os casos que exigem conversa. Follow-up que depende só de memória não sobrevive à rotina da clínica."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -779,6 +846,32 @@
 <h2 id="conclusao">Conclusão</h2>
 <p>Follow-up de pacientes não é insistência, é cuidado com método. A maior parte do dinheiro que clínicas acham que "não veio" está na verdade parado na caixa de mensagens, esperando um segundo, terceiro ou quarto contato bem feito. Defina uma cadência, use mensagens curtas com próximo passo claro, reative sua base antiga e meça os resultados. Faça isso de forma consistente e a sua agenda muda de patamar, sem gastar um real a mais em anúncios.</p>
 
+
+          <!-- FAQ -->
+          <section class="faq-block" id="perguntas-frequentes">
+            <h2>Perguntas frequentes</h2>
+            <div class="faq-q-item">
+              <h3>O que é follow-up de pacientes?</h3>
+              <p>É o acompanhamento ativo de quem demonstrou interesse e não fechou. Envolve retomar o contato de forma planejada, lembrar o paciente do que ficou pendente e oferecer o próximo passo, em vez de esperar que ele volte sozinho, o que raramente acontece.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Por que os pacientes somem depois do orçamento?</h3>
+              <p>Quase nunca é falta de interesse. Normalmente o paciente adia a decisão, se assusta com o valor, precisa conversar com alguém antes ou simplesmente se distrai com a rotina. Sem alguém retomando, o assunto morre por inércia, não por recusa.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Quando e quantas vezes fazer follow-up?</h3>
+              <p>O primeiro retorno deve ser rápido, ainda com o assunto quente, e os seguintes espaçados ao longo dos dias e semanas seguintes. O erro mais comum é parar cedo demais: boa parte dos fechamentos acontece depois da primeira tentativa sem resposta.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>O que escrever no follow-up para não parecer insistência?</h3>
+              <p>Mensagem curta, pessoal e com um motivo real para o contato, como tirar uma dúvida específica, informar uma condição ou oferecer um horário. O que soa chato é a cobrança repetida e igual. O que funciona é lembrar do contexto daquele paciente.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Vale a pena automatizar o follow-up?</h3>
+              <p>Vale para garantir que ele aconteça, que é onde a maioria falha. O sistema lembra a equipe de quem precisa de retorno hoje e dispara as etapas previsíveis, deixando o toque pessoal para os casos que exigem conversa. Follow-up que depende só de memória não sobrevive à rotina da clínica.</p>
+            </div>
+          </section>
+
 <div class="cta-inline"><h3>Transforme seus leads parados em consultas</h3><p>O SaúdeCRM junta WhatsApp, IA e follow-up automático em um só lugar para sua clínica nunca mais perder um paciente por esquecimento.</p><a href="https://app.saudecrm.com/cadastro" class="btn-white">Criar minha conta grátis →</a></div>
         </article>
       </main>
@@ -796,7 +889,8 @@
             <li><a href="#erros-que-afastam">Erros que afastam</a></li>
             <li><a href="#como-medir">Como medir</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
-          </ul>
+            <li><a href="#perguntas-frequentes">Perguntas frequentes</a></li>
+            </ul>
         </div>
 
         <div class="sidebar-cta">

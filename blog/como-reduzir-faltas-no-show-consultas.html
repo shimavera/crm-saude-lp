@@ -641,7 +641,74 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é no-show em uma clínica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É o paciente que marca a consulta e não aparece, sem avisar a tempo de encaixar outra pessoa. O custo não é só o horário vago: entra a estrutura parada, a equipe disponível e o paciente que poderia ter ocupado aquele espaço e ficou esperando vaga."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que os pacientes faltam à consulta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Esquecimento é a causa mais comum, mas não é a única. Também pesam o medo do procedimento, a insegurança com o valor, a marcação feita com muita antecedência e a falta de qualquer contato entre o agendamento e o dia. Cada motivo pede uma ação diferente, por isso lembrete sozinho não resolve tudo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como reduzir faltas em consultas na prática?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Combinando confirmação ativa, lembrete no canal que o paciente realmente usa, contato mais próximo do horário, lista de espera para preencher a vaga que abriu e atenção especial a quem já faltou antes. O ganho vem do conjunto, não de uma medida isolada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lembrete por WhatsApp funciona para reduzir faltas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Funciona, e costuma ser o canal com melhor retorno, porque é onde o paciente já está e responde. O detalhe que faz diferença é permitir resposta: o lembrete que aceita um simples confirmar ou remarcar transforma uma falta silenciosa em um horário que a clínica consegue reaproveitar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para automatizar a confirmação de consulta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, e é justamente onde a automação rende mais, porque é uma tarefa repetitiva, previsível e que ninguém gosta de fazer manualmente. O sistema dispara na hora certa, registra quem confirmou e destaca quem não respondeu, deixando para a equipe apenas os casos que exigem contato pessoal."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -783,6 +850,32 @@
 
 <p>Reduzir faltas em consultas não depende de sorte nem de pacientes mais disciplinados. Depende de processo: confirmar de forma ativa, lembrar em cadência, ter política clara, manter lista de espera, agilizar encaixes, cultivar relacionamento e medir tudo. Comece com duas ou três estratégias, acompanhe os números e vá ampliando. Em poucas semanas, a agenda mais cheia e estável fala por si.</p>
 
+
+          <!-- FAQ -->
+          <section class="faq-block" id="perguntas-frequentes">
+            <h2>Perguntas frequentes</h2>
+            <div class="faq-q-item">
+              <h3>O que é no-show em uma clínica?</h3>
+              <p>É o paciente que marca a consulta e não aparece, sem avisar a tempo de encaixar outra pessoa. O custo não é só o horário vago: entra a estrutura parada, a equipe disponível e o paciente que poderia ter ocupado aquele espaço e ficou esperando vaga.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Por que os pacientes faltam à consulta?</h3>
+              <p>Esquecimento é a causa mais comum, mas não é a única. Também pesam o medo do procedimento, a insegurança com o valor, a marcação feita com muita antecedência e a falta de qualquer contato entre o agendamento e o dia. Cada motivo pede uma ação diferente, por isso lembrete sozinho não resolve tudo.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Como reduzir faltas em consultas na prática?</h3>
+              <p>Combinando confirmação ativa, lembrete no canal que o paciente realmente usa, contato mais próximo do horário, lista de espera para preencher a vaga que abriu e atenção especial a quem já faltou antes. O ganho vem do conjunto, não de uma medida isolada.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Lembrete por WhatsApp funciona para reduzir faltas?</h3>
+              <p>Funciona, e costuma ser o canal com melhor retorno, porque é onde o paciente já está e responde. O detalhe que faz diferença é permitir resposta: o lembrete que aceita um simples confirmar ou remarcar transforma uma falta silenciosa em um horário que a clínica consegue reaproveitar.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Dá para automatizar a confirmação de consulta?</h3>
+              <p>Sim, e é justamente onde a automação rende mais, porque é uma tarefa repetitiva, previsível e que ninguém gosta de fazer manualmente. O sistema dispara na hora certa, registra quem confirmou e destaca quem não respondeu, deixando para a equipe apenas os casos que exigem contato pessoal.</p>
+            </div>
+          </section>
+
 <div class="cta-inline"><h3>Sua agenda merece previsibilidade</h3><p>Coloque confirmação, lembretes em cadência e reagendamento automático para rodar no piloto automático com o SaudeCRM. Menos faltas, mais atendimentos, sem esforço extra da equipe.</p><a href="https://app.saudecrm.com/cadastro" class="btn-white">Criar minha conta grátis →</a></div>
         </article>
       </main>
@@ -796,7 +889,8 @@
             <li><a href="#as-9-estrategias">As 9 estratégias</a></li>
             <li><a href="#como-juntar-tudo">Como juntar tudo</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
-          </ul>
+            <li><a href="#perguntas-frequentes">Perguntas frequentes</a></li>
+            </ul>
         </div>
 
         <div class="sidebar-cta">

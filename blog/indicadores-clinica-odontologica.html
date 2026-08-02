@@ -641,7 +641,74 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quais indicadores uma clínica odontológica deve acompanhar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os essenciais se dividem em captação, conversão, atendimento, operação, financeiro e retenção. Na prática, começa por quantos contatos chegam, quantos viram consulta, quantos comparecem, quantos fecham tratamento e quantos voltam. Esse encadeamento já mostra a saúde do negócio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por onde começar a medir se a clínica não mede nada hoje?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pelo caminho do paciente: contatos recebidos, consultas agendadas, comparecimento e tratamentos fechados. Esses quatro números revelam o principal gargalo e podem ser levantados sem sistema nenhum no começo. Complexidade demais logo de cara costuma fazer a medição ser abandonada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é taxa de conversão em uma clínica odontológica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É a proporção de pessoas que avançam de uma etapa para a seguinte, por exemplo de contato para consulta agendada, ou de orçamento apresentado para tratamento fechado. Medir por etapa é mais útil que medir só o resultado final, porque mostra exatamente onde intervir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Com que frequência acompanhar os indicadores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os operacionais, como contatos sem resposta e confirmações pendentes, no dia a dia. Os de conversão e financeiro, mensalmente, para enxergar tendência sem reagir a oscilação de uma semana. O erro comum é olhar tudo todo dia e tomar decisão em cima de ruído."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para acompanhar indicadores sem planilha manual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, quando o registro acontece na própria operação. Se cada contato e cada etapa ficam no sistema durante o atendimento, os números saem sozinhos. A planilha manual costuma ser abandonada justamente porque exige um trabalho extra que ninguém sustenta."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -755,6 +822,32 @@
 <h2 id="conclusao">Conclusão</h2>
 <p>Crescer não é sobre olhar o faturamento e torcer. É sobre medir captação, conversão, atendimento, operação, finanças e retenção de forma constante, entender onde está o gargalo e agir sobre ele. Comece com poucos indicadores, acompanhe todo mês e deixe os números mostrarem o próximo passo da sua clínica.</p>
 
+
+          <!-- FAQ -->
+          <section class="faq-block" id="perguntas-frequentes">
+            <h2>Perguntas frequentes</h2>
+            <div class="faq-q-item">
+              <h3>Quais indicadores uma clínica odontológica deve acompanhar?</h3>
+              <p>Os essenciais se dividem em captação, conversão, atendimento, operação, financeiro e retenção. Na prática, começa por quantos contatos chegam, quantos viram consulta, quantos comparecem, quantos fecham tratamento e quantos voltam. Esse encadeamento já mostra a saúde do negócio.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Por onde começar a medir se a clínica não mede nada hoje?</h3>
+              <p>Pelo caminho do paciente: contatos recebidos, consultas agendadas, comparecimento e tratamentos fechados. Esses quatro números revelam o principal gargalo e podem ser levantados sem sistema nenhum no começo. Complexidade demais logo de cara costuma fazer a medição ser abandonada.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>O que é taxa de conversão em uma clínica odontológica?</h3>
+              <p>É a proporção de pessoas que avançam de uma etapa para a seguinte, por exemplo de contato para consulta agendada, ou de orçamento apresentado para tratamento fechado. Medir por etapa é mais útil que medir só o resultado final, porque mostra exatamente onde intervir.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Com que frequência acompanhar os indicadores?</h3>
+              <p>Os operacionais, como contatos sem resposta e confirmações pendentes, no dia a dia. Os de conversão e financeiro, mensalmente, para enxergar tendência sem reagir a oscilação de uma semana. O erro comum é olhar tudo todo dia e tomar decisão em cima de ruído.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Dá para acompanhar indicadores sem planilha manual?</h3>
+              <p>Sim, quando o registro acontece na própria operação. Se cada contato e cada etapa ficam no sistema durante o atendimento, os números saem sozinhos. A planilha manual costuma ser abandonada justamente porque exige um trabalho extra que ninguém sustenta.</p>
+            </div>
+          </section>
+
 <div class="cta-inline"><h3>Tenha todos os indicadores da sua clínica em um painel só</h3><p>Com o SaúdeCRM você mede captação, conversão, no-show, ticket médio e retenção automaticamente, com WhatsApp e IA integrados. Sem planilha, sem achismo.</p><a href="https://app.saudecrm.com/cadastro" class="btn-white">Criar minha conta grátis →</a></div>
         </article>
       </main>
@@ -772,7 +865,8 @@
             <li><a href="#indicadores-de-retencao">Retenção</a></li>
             <li><a href="#como-acompanhar">Como acompanhar</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
-          </ul>
+            <li><a href="#perguntas-frequentes">Perguntas frequentes</a></li>
+            </ul>
         </div>
 
         <div class="sidebar-cta">
