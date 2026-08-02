@@ -227,7 +227,7 @@ def build(a, idx):
           <img src="/logo.webp" alt="SaúdeCRM">
           <span class="logo-text">CRM <span>Saúde</span></span>
         </a>
-        <a href="https://saudecrm.com/cadastro" class="btn-cta">Começar grátis →</a>
+        <a href="https://app.saudecrm.com/cadastro" class="btn-cta">Começar grátis →</a>
       </div>
     </div>
   </header>
@@ -281,7 +281,7 @@ def build(a, idx):
         <div class="sidebar-cta">
           <h4>SaúdeCRM</h4>
           <p>CRM com WhatsApp integrado para clínicas. Teste grátis por 7 dias.</p>
-          <a href="https://saudecrm.com/cadastro">Começar grátis →</a>
+          <a href="https://app.saudecrm.com/cadastro">Começar grátis →</a>
         </div>
 
         <div class="sidebar-card" style="margin-top:20px;">
@@ -300,7 +300,7 @@ def build(a, idx):
         <div class="footer-links">
           <a href="/">Início</a>
           <a href="/blog/">Blog</a>
-          <a href="https://saudecrm.com/cadastro">Começar grátis</a>
+          <a href="https://app.saudecrm.com/cadastro">Começar grátis</a>
         </div>
       </div>
     </div>
