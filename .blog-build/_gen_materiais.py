@@ -22,7 +22,7 @@ def style_header_row(ws, row, ncols, fill=AZUL, color=WHITE):
 def titulo(ws, texto, sub):
     ws["A1"] = texto; ws["A1"].font = Font(bold=True, size=16, color=AZUL, name="Calibri")
     ws["A2"] = sub; ws["A2"].font = Font(size=10, color=CINZA, italic=True)
-    ws["A3"] = "SaudeCRM — CRM com WhatsApp para clínicas · lp.saudecrm.com"
+    ws["A3"] = "SaudeCRM — CRM com WhatsApp para clínicas · saudecrm.com"
     ws["A3"].font = Font(size=8, color=CINZA)
 
 # ───────────────────────────────────────────────────────────────────

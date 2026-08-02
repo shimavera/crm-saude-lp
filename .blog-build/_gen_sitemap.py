@@ -19,7 +19,7 @@ from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-BASE = "https://lp.saudecrm.com"
+BASE = "https://saudecrm.com"
 
 
 def last_commit_date(path):

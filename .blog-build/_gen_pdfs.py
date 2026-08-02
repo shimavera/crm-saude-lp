@@ -37,12 +37,12 @@ def cover(title, subtitle):
     el.append(Spacer(1, 0.5*cm))
     el.append(Paragraph(subtitle, COVER_SUB))
     el.append(Spacer(1, 0.8*cm))
-    el.append(Paragraph("Material gratuito para clínicas · lp.saudecrm.com", SMALL))
+    el.append(Paragraph("Material gratuito para clínicas · saudecrm.com", SMALL))
     el.append(PageBreak())
     return el
 
 def cta_box():
-    t = Table([[Paragraph("<b>Quer parar de fazer isso na mão?</b><br/>O SaudeCRM organiza leads, WhatsApp, follow-up e relatórios em um só lugar — com 7 dias grátis. Teste em lp.saudecrm.com.", ParagraphStyle("cta", parent=BODY, textColor=ESCURO))]],
+    t = Table([[Paragraph("<b>Quer parar de fazer isso na mão?</b><br/>O SaudeCRM organiza leads, WhatsApp, follow-up e relatórios em um só lugar — com 7 dias grátis. Teste em saudecrm.com.", ParagraphStyle("cta", parent=BODY, textColor=ESCURO))]],
               colWidths=[16*cm])
     t.setStyle(TableStyle([("BACKGROUND",(0,0),(-1,-1),CLARO),("BOX",(0,0),(-1,-1),0.5,AZUL),
                            ("LEFTPADDING",(0,0),(-1,-1),12),("RIGHTPADDING",(0,0),(-1,-1),12),
@@ -108,7 +108,7 @@ def pdf_spin():
         Spacer(1, 0.4*cm),
         cta_box(),
         Spacer(1, 0.4*cm),
-        Paragraph("SaudeCRM — CRM com WhatsApp e IA para clínicas. lp.saudecrm.com", SMALL),
+        Paragraph("SaudeCRM — CRM com WhatsApp e IA para clínicas. saudecrm.com", SMALL),
     ]
     build(os.path.join(OUT, "treinamento-recepcao-spin-selling-saudecrm.pdf"), e)
 
@@ -179,7 +179,7 @@ def pdf_marketing():
         Spacer(1, 0.4*cm),
         cta_box(),
         Spacer(1, 0.4*cm),
-        Paragraph("SaudeCRM — meça leads, conversão e ROI do seu marketing em um só lugar. lp.saudecrm.com", SMALL),
+        Paragraph("SaudeCRM — meça leads, conversão e ROI do seu marketing em um só lugar. saudecrm.com", SMALL),
     ]
     build(os.path.join(OUT, "checklist-o-que-cobrar-do-marketing-saudecrm.pdf"), e)
 
