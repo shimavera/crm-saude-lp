@@ -52,7 +52,7 @@ ARTICLES = [
         "category": "Automação",
         "readTime": 7,
         "heroPills": ["Automação de WhatsApp", "Atendimento com IA", "Menos faltas"],
-        "toc": [{"id":"o-que-e-automacao-de-whatsapp","label":"O que é automação de WhatsApp"},{"id":"o-que-da-pra-automatizar-na-clinica","label":"O que dá pra automatizar"},{"id":"automacao-x-ia-de-atendimento","label":"Automação x IA"},{"id":"riscos-de-fazer-errado","label":"Riscos de fazer errado"},{"id":"api-oficial-vs-nao-oficial","label":"API oficial vs não-oficial"},{"id":"passo-a-passo-de-implementacao","label":"Passo a passo"},{"id":"como-o-saudecrm-faz","label":"Como o SaudeCRM faz"},{"id":"conclusao","label":"Conclusão"}],
+        "toc": [{"id":"o-que-e-automacao-de-whatsapp","label":"O que é automação de WhatsApp"},{"id":"o-que-da-pra-automatizar-na-clinica","label":"O que dá pra automatizar"},{"id":"automacao-x-ia-de-atendimento","label":"Automação x IA"},{"id":"riscos-de-fazer-errado","label":"Riscos de fazer errado"},{"id":"api-oficial-vs-nao-oficial","label":"API oficial vs não-oficial"},{"id":"passo-a-passo-de-implementacao","label":"Passo a passo"},{"id":"como-o-saudecrm-faz","label":"Como o SaúdeCRM faz"},{"id":"conclusao","label":"Conclusão"}],
     },
     {
         "slug": "follow-up-de-pacientes",
@@ -163,18 +163,18 @@ def build(a, idx):
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{esc(a.get("seoTitle", a["title"]))} — SaudeCRM</title>
+  <title>{esc(a.get("seoTitle", a["title"]))} — SaúdeCRM</title>
   <meta name="description" content="{esc(a["desc"])}">
   <meta property="og:title" content="{esc(a["title"])}">
   <meta property="og:description" content="{esc(a["desc"])}">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="CRM Saúde">
+  <meta property="og:site_name" content="SaúdeCRM">
   <meta property="og:url" content="{url}">
   <meta property="og:image" content="{BASE}/og-blog.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Blog do CRM Saúde: conteúdo prático para clínicas crescerem">
+  <meta property="og:image:alt" content="Blog do SaúdeCRM: conteúdo prático para clínicas crescerem">
   <meta property="article:published_time" content="{DATE_ISO}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{esc(a["title"])}">
@@ -199,8 +199,8 @@ def build(a, idx):
       "height": 630
     }},
     "inLanguage": "pt-BR",
-    "author": {{ "@type": "Organization", "name": "SaudeCRM", "url": "{BASE}/" }},
-    "publisher": {{ "@type": "Organization", "name": "SaudeCRM", "logo": {{ "@type": "ImageObject", "url": "{BASE}/logo.webp" }} }},
+    "author": {{ "@type": "Organization", "name": "SaúdeCRM", "url": "{BASE}/" }},
+    "publisher": {{ "@type": "Organization", "name": "SaúdeCRM", "logo": {{ "@type": "ImageObject", "url": "{BASE}/logo.webp" }} }},
     "datePublished": "{DATE_ISO}",
     "dateModified": "{DATE_ISO}",
     "url": "{url}",
@@ -224,7 +224,7 @@ def build(a, idx):
     <div class="container">
       <div class="header-inner">
         <a href="/" class="logo">
-          <img src="/logo.webp" alt="SaudeCRM">
+          <img src="/logo.webp" alt="SaúdeCRM">
           <span class="logo-text">CRM <span>Saúde</span></span>
         </a>
         <a href="https://saudecrm.com/cadastro" class="btn-cta">Começar grátis →</a>
@@ -253,7 +253,7 @@ def build(a, idx):
             <span class="article-meta-sep">·</span>
             <span>{a["readTime"]} min de leitura</span>
             <span class="article-meta-sep">·</span>
-            <span>Por SaudeCRM</span>
+            <span>Por SaúdeCRM</span>
           </div>
         </div>
 
@@ -279,7 +279,7 @@ def build(a, idx):
         </div>
 
         <div class="sidebar-cta">
-          <h4>SaudeCRM</h4>
+          <h4>SaúdeCRM</h4>
           <p>CRM com WhatsApp integrado para clínicas. Teste grátis por 7 dias.</p>
           <a href="https://saudecrm.com/cadastro">Começar grátis →</a>
         </div>
@@ -296,7 +296,7 @@ def build(a, idx):
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <p class="footer-copy">© 2026 SaudeCRM. Todos os direitos reservados.</p>
+        <p class="footer-copy">© 2026 SaúdeCRM. Todos os direitos reservados.</p>
         <div class="footer-links">
           <a href="/">Início</a>
           <a href="/blog/">Blog</a>
