@@ -3032,5 +3032,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function closeVideoModal(e,force){var m=document.getElementById('cfModal');if(force||(e&&e.target===m)){var v=document.getElementById('cfVideo');try{v.pause();}catch(e2){}m.classList.remove('open');document.body.style.overflow='';}}
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVideoModal(null,true);});
 </script>
+
+<script>
+  /* Propaga a origem do lead para o app.
+     A LP fica em saudecrm.com e o cadastro em app.saudecrm.com — domínios
+     diferentes, então localStorage não atravessa. A única forma de a
+     atribuição sobreviver ao clique é ir na própria URL do CTA.
+     Guardamos o primeiro toque na sessão: se a pessoa navegar pelo blog
+     antes de clicar em "Começar grátis", a query string original já se perdeu. */
+  (function () {
+    var CHAVE = 'sp3_origem_v1';
+    var CAMPOS = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
+
+    function capturar() {
+      try {
+        if (sessionStorage.getItem(CHAVE)) return;
+        var q = new URLSearchParams(location.search), dados = {}, achou = false;
+        CAMPOS.forEach(function (c) {
+          var v = q.get(c);
+          if (v) { dados[c] = v.slice(0, 200); achou = true; }
+        });
+        if (document.referrer && document.referrer.indexOf(location.hostname) === -1) {
+          dados.referrer = document.referrer.slice(0, 300);
+          achou = true;
+        }
+        if (!achou) return;
+        dados.landing_page = (location.origin + location.pathname).slice(0, 300);
+        sessionStorage.setItem(CHAVE, JSON.stringify(dados));
+      } catch (e) { /* storage bloqueado: sem atribuição, sem quebrar a página */ }
+    }
+
+    function anexarNosLinks() {
+      var bruto;
+      try { bruto = sessionStorage.getItem(CHAVE); } catch (e) { return; }
+      if (!bruto) return;
+
+      var dados;
+      try { dados = JSON.parse(bruto); } catch (e) { return; }
+
+      var chaves = Object.keys(dados);
+      if (!chaves.length) return;
+
+      var links = document.querySelectorAll('a[href*="app.saudecrm.com"]');
+      for (var i = 0; i < links.length; i++) {
+        try {
+          var u = new URL(links[i].href);
+          chaves.forEach(function (k) {
+            if (!u.searchParams.has(k)) u.searchParams.set(k, dados[k]);
+          });
+          links[i].href = u.toString();
+        } catch (e) { /* href inválido: ignora esse link */ }
+      }
+    }
+
+    capturar();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', anexarNosLinks);
+    } else {
+      anexarNosLinks();
+    }
+  })();
+</script>
 </body>
 </html>
