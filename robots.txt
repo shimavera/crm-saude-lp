@@ -1,10 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /materiais/
 
-# Crawlers de IA: liberados de propósito. O objetivo é ser citado por
-# ChatGPT, Perplexity, Claude e AI Overviews, não só ranquear no Google.
-# Já estavam liberados pelo "*" acima; aqui a intenção fica explícita.
 User-agent: GPTBot
 Allow: /
 
