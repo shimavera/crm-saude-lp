@@ -65,7 +65,7 @@ def source_for(path):
 
 
 def main():
-    paths = [os.path.join(ROOT, "index.html")]
+    paths = [os.path.join(ROOT, "index.html"), os.path.join(ROOT, "sobre.html")]
     paths += sorted(glob.glob(os.path.join(ROOT, "blog", "*.html")))
 
     entries = []

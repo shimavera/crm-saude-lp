@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import re, os, html
+import re, os, html, json
+from _faq_main import FAQ as FAQ_PUBLICADO
 
 # HERE = onde vivem os fontes do build (_bodies). OUT = onde os .html publicados ficam.
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -8,6 +9,9 @@ OUT = os.path.join(os.path.dirname(HERE), "blog")
 BASE = "https://saudecrm.com"
 DATE_ISO = "2026-06-14"
 DATE_HUMAN = "14 de junho de 2026"
+# Atualizar quando o conteúdo dos posts for revisado de verdade (não a cada build de template)
+DATE_MODIFIED = "2026-08-15"
+DATE_MODIFIED_HUMAN = "15 de agosto de 2026"
 
 # Extrai o CSS do artigo de referência
 ref = open(os.path.join(OUT, "crm-para-clinica-odontologica.html"), encoding="utf-8").read()
@@ -139,11 +143,55 @@ GTM = '''  <!-- Google Tag Manager -->
 
 def esc(s): return html.escape(s, quote=True)
 
+
+def faq_de(a):
+    """FAQ do artigo: o declarado em ARTICLES, ou o que já estava publicado."""
+    return a.get("faq") or FAQ_PUBLICADO.get(a["slug"])
+
+
+def faq_schema(a):
+    """
+    Bloco FAQPage separado, quando o artigo declara "faq".
+
+    Fica em um <script> próprio de propósito: se o JSON do Article quebrar, o FAQ
+    continua válido, e vice-versa. As perguntas precisam existir visíveis no corpo
+    (o _bodies traz a mesma pergunta como H3), senão o Google desqualifica o rich result.
+    """
+    faq = faq_de(a)
+    if not faq:
+        return ""
+    itens = ",\n".join(
+        '      {{"@type": "Question", "name": {q}, "acceptedAnswer": {{"@type": "Answer", "text": {r}}}}}'.format(
+            q=json.dumps(p, ensure_ascii=False), r=json.dumps(r, ensure_ascii=False))
+        for p, r in faq)
+    return ('\n  <script type="application/ld+json">\n'
+            '  {\n    "@context": "https://schema.org",\n    "@type": "FAQPage",\n'
+            '    "mainEntity": [\n' + itens + '\n    ]\n  }\n  </script>\n')
+
+
+def faq_html(a):
+    faq = faq_de(a)
+    if not faq:
+        return ""
+    blocos = "".join(
+        f'          <h3 id="faq-{i+1}">{esc(p)}</h3>\n          <p>{esc(r)}</p>\n'
+        for i, (p, r) in enumerate(faq))
+    return ('\n        <h2 id="faq">Perguntas frequentes</h2>\n' + blocos)
+
+
 def build(a, idx):
     slug = a["slug"]; url = f"{BASE}/blog/{slug}.html"
     body = open(os.path.join(HERE, "_bodies", f"{slug}.body.html"), encoding="utf-8").read().strip()
-    toc_items = "\n".join(f'            <li><a href="#{t["id"]}">{esc(t["label"])}</a></li>' for t in a["toc"])
+    toc = list(a["toc"])
+    # o bloco de fontes é injetado por _add_sources.py; reflete na TOC quando existir
+    if faq_de(a) and not any(t["id"] == "faq" for t in toc):
+        toc.append({"id": "faq", "label": "Perguntas frequentes"})
+    if 'id="fontes"' in body and not any(t["id"] == "fontes" for t in toc):
+        toc.append({"id": "fontes", "label": "Fontes"})
+    toc_items = "\n".join(f'            <li><a href="#{t["id"]}">{esc(t["label"])}</a></li>' for t in toc)
     pills = a["heroPills"]
+    faq_ld = faq_schema(a)
+    faq_visivel = faq_html(a)
     # related: 3 outros artigos (rotativo entre os novos + 1 existente)
     others = [x["slug"] for x in ARTICLES if x["slug"] != slug]
     rel = others[idx % len(others):idx % len(others)+2] + ["crm-para-clinica-odontologica"]
@@ -199,10 +247,18 @@ def build(a, idx):
       "height": 630
     }},
     "inLanguage": "pt-BR",
-    "author": {{ "@type": "Organization", "name": "SaúdeCRM", "url": "{BASE}/" }},
-    "publisher": {{ "@type": "Organization", "name": "SaúdeCRM", "logo": {{ "@type": "ImageObject", "url": "{BASE}/logo.webp" }} }},
+    "author": {{
+      "@type": "Person",
+      "@id": "{BASE}/sobre.html#juan-lourenco",
+      "name": "Juan Lourenço",
+      "url": "{BASE}/sobre.html",
+      "jobTitle": "Fundador do SaúdeCRM",
+      "description": "Acelerador de clínicas odontológicas. Trabalha dentro da operação, em agenda, recepção e funil de leads.",
+      "sameAs": ["https://www.instagram.com/juansaraivalourenco/"]
+    }},
+    "publisher": {{ "@type": "Organization", "name": "SaúdeCRM", "legalName": "TDF Negócios Digitais LTDA", "url": "{BASE}/", "logo": {{ "@type": "ImageObject", "url": "{BASE}/logo.webp" }} }},
     "datePublished": "{DATE_ISO}",
-    "dateModified": "{DATE_ISO}",
+    "dateModified": "{DATE_MODIFIED}",
     "url": "{url}",
     "mainEntityOfPage": {{ "@type": "WebPage", "@id": "{url}" }},
     "breadcrumb": {{
@@ -215,7 +271,7 @@ def build(a, idx):
     }}
   }}
   </script>
-
+{faq_ld}
   <style>{css}</style>
 </head>
 <body>
@@ -253,7 +309,9 @@ def build(a, idx):
             <span class="article-meta-sep">·</span>
             <span>{a["readTime"]} min de leitura</span>
             <span class="article-meta-sep">·</span>
-            <span>Por SaúdeCRM</span>
+            <span>Por <a href="/sobre.html" rel="author" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Juan Lourenço</a></span>
+            <span class="article-meta-sep">·</span>
+            <span>Atualizado em {DATE_MODIFIED_HUMAN}</span>
           </div>
         </div>
 
@@ -266,8 +324,18 @@ def build(a, idx):
         </div>
 
         <article class="article-content">
-{body}
+{body}{faq_visivel}
         </article>
+
+        <div class="author-box" style="display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid #E3E8F2;border-radius:14px;padding:22px 24px;margin:34px 0 8px">
+          <img src="/logo.webp" alt="Juan Lourenço" width="56" height="56" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none">
+          <div style="font-size:15px;line-height:1.6">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;margin-bottom:2px">Juan Lourenço</div>
+            <div style="font-size:13px;color:#5A6472;margin-bottom:10px">Fundador do SaúdeCRM · acelerador de clínicas odontológicas</div>
+            <p style="margin:0 0 10px;color:#232B39">Trabalha dentro da operação de clínicas: agenda, recepção, funil de leads e fechamento de tratamento. Escreve a partir do que vê se repetir em clínicas diferentes, não de teoria.</p>
+            <p style="margin:0;color:#232B39"><a href="/sobre.html" rel="author">Sobre o autor</a> · <a href="https://www.instagram.com/juansaraivalourenco/" rel="me nofollow">@juansaraivalourenco</a></p>
+          </div>
+        </div>
       </main>
 
       <aside class="sidebar">
@@ -300,6 +368,7 @@ def build(a, idx):
         <div class="footer-links">
           <a href="/">Início</a>
           <a href="/blog/">Blog</a>
+          <a href="/sobre.html">Sobre</a>
           <a href="https://app.saudecrm.com/cadastro">Começar grátis</a>
         </div>
       </div>

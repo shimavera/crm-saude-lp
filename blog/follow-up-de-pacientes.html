@@ -52,10 +52,18 @@
       "height": 630
     },
     "inLanguage": "pt-BR",
-    "author": { "@type": "Organization", "name": "SaúdeCRM", "url": "https://saudecrm.com/" },
-    "publisher": { "@type": "Organization", "name": "SaúdeCRM", "logo": { "@type": "ImageObject", "url": "https://saudecrm.com/logo.webp" } },
+    "author": {
+      "@type": "Person",
+      "@id": "https://saudecrm.com/sobre.html#juan-lourenco",
+      "name": "Juan Lourenço",
+      "url": "https://saudecrm.com/sobre.html",
+      "jobTitle": "Fundador do SaúdeCRM",
+      "description": "Acelerador de clínicas odontológicas. Trabalha dentro da operação, em agenda, recepção e funil de leads.",
+      "sameAs": ["https://www.instagram.com/juansaraivalourenco/"]
+    },
+    "publisher": { "@type": "Organization", "name": "SaúdeCRM", "legalName": "TDF Negócios Digitais LTDA", "url": "https://saudecrm.com/", "logo": { "@type": "ImageObject", "url": "https://saudecrm.com/logo.webp" } },
     "datePublished": "2026-06-14",
-    "dateModified": "2026-06-14",
+    "dateModified": "2026-08-15",
     "url": "https://saudecrm.com/blog/follow-up-de-pacientes.html",
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://saudecrm.com/blog/follow-up-de-pacientes.html" },
     "breadcrumb": {
@@ -66,6 +74,20 @@
         {"@type": "ListItem", "position": 3, "name": "Follow-up de Pacientes: Como Recuperar Leads que Sumiram"}
       ]
     }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "O que é follow-up de pacientes?", "acceptedAnswer": {"@type": "Answer", "text": "É o acompanhamento ativo de quem demonstrou interesse e não fechou. Envolve retomar o contato de forma planejada, lembrar o paciente do que ficou pendente e oferecer o próximo passo, em vez de esperar que ele volte sozinho, o que raramente acontece."}},
+      {"@type": "Question", "name": "Por que os pacientes somem depois do orçamento?", "acceptedAnswer": {"@type": "Answer", "text": "Quase nunca é falta de interesse. Normalmente o paciente adia a decisão, se assusta com o valor, precisa conversar com alguém antes ou simplesmente se distrai com a rotina. Sem alguém retomando, o assunto morre por inércia, não por recusa."}},
+      {"@type": "Question", "name": "Quando e quantas vezes fazer follow-up?", "acceptedAnswer": {"@type": "Answer", "text": "O primeiro retorno deve ser rápido, ainda com o assunto quente, e os seguintes espaçados ao longo dos dias e semanas seguintes. O erro mais comum é parar cedo demais: boa parte dos fechamentos acontece depois da primeira tentativa sem resposta."}},
+      {"@type": "Question", "name": "O que escrever no follow-up para não parecer insistência?", "acceptedAnswer": {"@type": "Answer", "text": "Mensagem curta, pessoal e com um motivo real para o contato, como tirar uma dúvida específica, informar uma condição ou oferecer um horário. O que soa chato é a cobrança repetida e igual. O que funciona é lembrar do contexto daquele paciente."}},
+      {"@type": "Question", "name": "Vale a pena automatizar o follow-up?", "acceptedAnswer": {"@type": "Answer", "text": "Vale para garantir que ele aconteça, que é onde a maioria falha. O sistema lembra a equipe de quem precisa de retorno hoje e dispara as etapas previsíveis, deixando o toque pessoal para os casos que exigem conversa. Follow-up que depende só de memória não sobrevive à rotina da clínica."}}
+    ]
   }
   </script>
 
@@ -661,54 +683,6 @@
     .faq-q-item p { color: var(--muted); margin: 0; }
     @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "O que é follow-up de pacientes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É o acompanhamento ativo de quem demonstrou interesse e não fechou. Envolve retomar o contato de forma planejada, lembrar o paciente do que ficou pendente e oferecer o próximo passo, em vez de esperar que ele volte sozinho, o que raramente acontece."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que os pacientes somem depois do orçamento?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quase nunca é falta de interesse. Normalmente o paciente adia a decisão, se assusta com o valor, precisa conversar com alguém antes ou simplesmente se distrai com a rotina. Sem alguém retomando, o assunto morre por inércia, não por recusa."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quando e quantas vezes fazer follow-up?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O primeiro retorno deve ser rápido, ainda com o assunto quente, e os seguintes espaçados ao longo dos dias e semanas seguintes. O erro mais comum é parar cedo demais: boa parte dos fechamentos acontece depois da primeira tentativa sem resposta."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que escrever no follow-up para não parecer insistência?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mensagem curta, pessoal e com um motivo real para o contato, como tirar uma dúvida específica, informar uma condição ou oferecer um horário. O que soa chato é a cobrança repetida e igual. O que funciona é lembrar do contexto daquele paciente."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Vale a pena automatizar o follow-up?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Vale para garantir que ele aconteça, que é onde a maioria falha. O sistema lembra a equipe de quem precisa de retorno hoje e dispara as etapas previsíveis, deixando o toque pessoal para os casos que exigem conversa. Follow-up que depende só de memória não sobrevive à rotina da clínica."
-      }
-    }
-  ]
-}
-  </script>
 </head>
 <body>
 
@@ -745,7 +719,9 @@
             <span class="article-meta-sep">·</span>
             <span>7 min de leitura</span>
             <span class="article-meta-sep">·</span>
-            <span>Por SaúdeCRM</span>
+            <span>Por <a href="/sobre.html" rel="author" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Juan Lourenço</a></span>
+            <span class="article-meta-sep">·</span>
+            <span>Atualizado em 15 de agosto de 2026</span>
           </div>
         </div>
 
@@ -769,7 +745,7 @@
 <p>A palavra-chave é estrutura. Mandar "e aí, vai querer?" uma vez e desistir não é follow-up. Follow-up é uma sequência planejada de contatos, com objetivo claro, espaçamento definido e mensagens pensadas para reduzir a fricção que travou a decisão. É a diferença entre torcer para o paciente voltar e construir um processo que faz ele voltar.</p>
 
 <h2 id="por-que-leads-somem">Por que os leads somem</h2>
-<p>Antes de recuperar, é preciso entender o que aconteceu. Na prática, leads somem por motivos bem previsíveis:</p>
+<p>Leads somem por quatro motivos previsíveis: demora na resposta, preço enviado sem contexto, dúvida que o paciente não verbalizou e ausência de retorno da clínica depois do "vou ver". Nenhum deles é desinteresse, e essa é a parte que mais surpreende quem olha o próprio funil pela primeira vez: a maior parte do que a clínica marca como lead frio é, na verdade, conversa interrompida no meio. Entender qual dos quatro predomina indica onde ajustar o atendimento. Veja cada um:</p>
 <ul>
 <li><strong>Demora na resposta.</strong> Quem pergunta no WhatsApp espera retorno rápido. Se a clínica responde horas depois, o paciente já falou com a concorrência.</li>
 <li><strong>Preço sem contexto.</strong> Mandar só o valor, sem explicar o que está incluído nem o benefício, faz o paciente comparar como se fosse commodity.</li>
@@ -779,7 +755,7 @@
 <p>Repare que a maioria desses motivos não tem a ver com falta de interesse. Tem a ver com falta de acompanhamento. E isso é exatamente o que o follow-up resolve.</p>
 
 <h2 id="quando-e-quantas-vezes">Quando e quantas vezes fazer follow-up</h2>
-<p>O erro mais comum é desistir cedo demais. Muita gente manda uma mensagem, não recebe resposta e considera o lead perdido. Decisão sobre saúde envolve dinheiro e emoção, então quase nunca acontece no primeiro toque.</p>
+<p>A cadência que funciona em clínica tem quatro toques mais a reativação: resposta imediata ao primeiro contato, retomada no mesmo dia ou no dia seguinte, um terceiro contato dois a três dias depois com ângulo novo, um quarto por volta de uma semana oferecendo horário concreto, e reativação a cada 30, 60 ou 90 dias para quem esfriou. O erro mais comum é desistir cedo demais, no primeiro silêncio: decisão sobre saúde envolve dinheiro e emoção, e quase nunca acontece no primeiro toque.</p>
 <p>Uma cadência que funciona bem para clínicas, sem ser invasiva, é:</p>
 <ul>
 <li><strong>1º contato:</strong> resposta imediata à dúvida ou ao pedido de informação (minutos, não horas).</li>
@@ -793,7 +769,7 @@
 <div class="callout"><p><strong>Regra prática:</strong> nunca encerre um lead por silêncio. Encerre por uma resposta clara ("não tenho interesse") ou após esgotar a cadência de follow-up. Silêncio quase sempre significa "agora não", e não "nunca".</p></div>
 
 <h2 id="o-que-escrever">O que escrever no follow-up (modelos prontos)</h2>
-<p>A mensagem precisa ser curta, pessoal e ter sempre um próximo passo claro. Evite textão e evite parecer cobrança. Abaixo, modelos que a clínica pode copiar e adaptar.</p>
+<p>Uma boa mensagem de follow-up é curta, chama o paciente pelo nome, traz um motivo legítimo para o contato e termina com uma pergunta ou um convite concreto. Evite textão, evite mandar só "e aí?" e evite qualquer coisa que soe como cobrança de vendedor, porque em saúde isso quebra a confiança que sustenta a decisão. Abaixo estão quatro modelos prontos, um para cada momento da cadência, que a clínica pode copiar e adaptar ao próprio tom.</p>
 
 <p><strong>Retomada simples (2º contato):</strong></p>
 <blockquote>Oi, [nome]! Aqui é a [clínica]. Vi que você se interessou pela [avaliação/tratamento]. Ficou alguma dúvida que eu possa esclarecer? Estou por aqui para te ajudar.</blockquote>
@@ -824,6 +800,7 @@
 <p>Segmente a base por tipo de paciente e crie uma mensagem específica para cada grupo. Genérico converte pouco; relevante converte muito.</p>
 
 <h2 id="erros-que-afastam">Erros que afastam o paciente</h2>
+<p>Cinco erros de follow-up queimam o contato em vez de recuperá-lo: insistir várias vezes no mesmo dia, repetir a mesma mensagem sem trazer ângulo novo, cobrar em vez de ajudar, sumir logo depois do "vou pensar" e mandar mensagem genérica, sem nome e sem o tratamento certo. Os dois primeiros custam o bloqueio do número; os três últimos custam a confiança, que é mais difícil de recuperar do que o contato em si. Veja cada um:</p>
 <ul>
 <li><strong>Insistir demais no mesmo dia.</strong> Três mensagens em uma hora parece desespero e queima o contato.</li>
 <li><strong>Repetir a mesma mensagem.</strong> Sem novo ângulo, o paciente lê como spam.</li>
@@ -834,7 +811,7 @@
 <p>Um efeito colateral de um bom follow-up é a queda nas faltas, porque o paciente acompanhado se sente esperado. Sobre isso, vale ver <a href="/blog/como-reduzir-faltas-no-show-consultas.html">como reduzir faltas e no-show nas consultas</a>.</p>
 
 <h2 id="como-medir">Como medir o follow-up</h2>
-<p>Sem medição, follow-up vira achismo. Acompanhe indicadores simples e olhe para eles toda semana:</p>
+<p>Quatro indicadores dizem se o follow-up está funcionando: taxa de resposta por toque, taxa de conversão de lead em follow-up para consulta agendada, tempo até a primeira resposta e quantidade de leads parados sem nenhum retorno, que deveria ser zero. São números simples de levantar semanalmente e revelam coisas diferentes: os dois primeiros medem a qualidade da mensagem, e os dois últimos medem a disciplina da operação. Sem eles, follow-up vira achismo.</p>
 <ul>
 <li><strong>Taxa de resposta:</strong> de cada toque de follow-up, quantos pacientes responderam.</li>
 <li><strong>Taxa de conversão:</strong> quantos leads em follow-up viraram consulta agendada.</li>
@@ -846,34 +823,38 @@
 <h2 id="conclusao">Conclusão</h2>
 <p>Follow-up de pacientes não é insistência, é cuidado com método. A maior parte do dinheiro que clínicas acham que "não veio" está na verdade parado na caixa de mensagens, esperando um segundo, terceiro ou quarto contato bem feito. Defina uma cadência, use mensagens curtas com próximo passo claro, reative sua base antiga e meça os resultados. Faça isso de forma consistente e a sua agenda muda de patamar, sem gastar um real a mais em anúncios.</p>
 
-
-          <!-- FAQ -->
-          <section class="faq-block" id="perguntas-frequentes">
-            <h2>Perguntas frequentes</h2>
-            <div class="faq-q-item">
-              <h3>O que é follow-up de pacientes?</h3>
-              <p>É o acompanhamento ativo de quem demonstrou interesse e não fechou. Envolve retomar o contato de forma planejada, lembrar o paciente do que ficou pendente e oferecer o próximo passo, em vez de esperar que ele volte sozinho, o que raramente acontece.</p>
-            </div>
-            <div class="faq-q-item">
-              <h3>Por que os pacientes somem depois do orçamento?</h3>
-              <p>Quase nunca é falta de interesse. Normalmente o paciente adia a decisão, se assusta com o valor, precisa conversar com alguém antes ou simplesmente se distrai com a rotina. Sem alguém retomando, o assunto morre por inércia, não por recusa.</p>
-            </div>
-            <div class="faq-q-item">
-              <h3>Quando e quantas vezes fazer follow-up?</h3>
-              <p>O primeiro retorno deve ser rápido, ainda com o assunto quente, e os seguintes espaçados ao longo dos dias e semanas seguintes. O erro mais comum é parar cedo demais: boa parte dos fechamentos acontece depois da primeira tentativa sem resposta.</p>
-            </div>
-            <div class="faq-q-item">
-              <h3>O que escrever no follow-up para não parecer insistência?</h3>
-              <p>Mensagem curta, pessoal e com um motivo real para o contato, como tirar uma dúvida específica, informar uma condição ou oferecer um horário. O que soa chato é a cobrança repetida e igual. O que funciona é lembrar do contexto daquele paciente.</p>
-            </div>
-            <div class="faq-q-item">
-              <h3>Vale a pena automatizar o follow-up?</h3>
-              <p>Vale para garantir que ele aconteça, que é onde a maioria falha. O sistema lembra a equipe de quem precisa de retorno hoje e dispara as etapas previsíveis, deixando o toque pessoal para os casos que exigem conversa. Follow-up que depende só de memória não sobrevive à rotina da clínica.</p>
-            </div>
-          </section>
-
 <div class="cta-inline"><h3>Transforme seus leads parados em consultas</h3><p>O SaúdeCRM junta WhatsApp, IA e follow-up automático em um só lugar para sua clínica nunca mais perder um paciente por esquecimento.</p><a href="https://app.saudecrm.com/cadastro" class="btn-white">Criar minha conta grátis →</a></div>
+
+<!-- fontes-externas -->
+        <h2 id="fontes">Fontes</h2>
+        <p>As afirmações sobre regras de plataforma, legislação e normas do conselho neste artigo podem ser conferidas nas fontes primárias abaixo.</p>
+        <ul>
+            <li><a href="https://whatsappbusiness.com/pt-br/policy/" target="_blank" rel="noopener nofollow">Política de Mensagens do WhatsApp Business</a> — regras de consentimento (opt-in) e de suspensão de conta.</li>
+            <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener nofollow">Lei nº 13.709/2018 (LGPD)</a> — texto integral da lei de proteção de dados.</li>
+        </ul>
+        <h2 id="faq">Perguntas frequentes</h2>
+          <h3 id="faq-1">O que é follow-up de pacientes?</h3>
+          <p>É o acompanhamento ativo de quem demonstrou interesse e não fechou. Envolve retomar o contato de forma planejada, lembrar o paciente do que ficou pendente e oferecer o próximo passo, em vez de esperar que ele volte sozinho, o que raramente acontece.</p>
+          <h3 id="faq-2">Por que os pacientes somem depois do orçamento?</h3>
+          <p>Quase nunca é falta de interesse. Normalmente o paciente adia a decisão, se assusta com o valor, precisa conversar com alguém antes ou simplesmente se distrai com a rotina. Sem alguém retomando, o assunto morre por inércia, não por recusa.</p>
+          <h3 id="faq-3">Quando e quantas vezes fazer follow-up?</h3>
+          <p>O primeiro retorno deve ser rápido, ainda com o assunto quente, e os seguintes espaçados ao longo dos dias e semanas seguintes. O erro mais comum é parar cedo demais: boa parte dos fechamentos acontece depois da primeira tentativa sem resposta.</p>
+          <h3 id="faq-4">O que escrever no follow-up para não parecer insistência?</h3>
+          <p>Mensagem curta, pessoal e com um motivo real para o contato, como tirar uma dúvida específica, informar uma condição ou oferecer um horário. O que soa chato é a cobrança repetida e igual. O que funciona é lembrar do contexto daquele paciente.</p>
+          <h3 id="faq-5">Vale a pena automatizar o follow-up?</h3>
+          <p>Vale para garantir que ele aconteça, que é onde a maioria falha. O sistema lembra a equipe de quem precisa de retorno hoje e dispara as etapas previsíveis, deixando o toque pessoal para os casos que exigem conversa. Follow-up que depende só de memória não sobrevive à rotina da clínica.</p>
+
         </article>
+
+        <div class="author-box" style="display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid #E3E8F2;border-radius:14px;padding:22px 24px;margin:34px 0 8px">
+          <img src="/logo.webp" alt="Juan Lourenço" width="56" height="56" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none">
+          <div style="font-size:15px;line-height:1.6">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;margin-bottom:2px">Juan Lourenço</div>
+            <div style="font-size:13px;color:#5A6472;margin-bottom:10px">Fundador do SaúdeCRM · acelerador de clínicas odontológicas</div>
+            <p style="margin:0 0 10px;color:#232B39">Trabalha dentro da operação de clínicas: agenda, recepção, funil de leads e fechamento de tratamento. Escreve a partir do que vê se repetir em clínicas diferentes, não de teoria.</p>
+            <p style="margin:0;color:#232B39"><a href="/sobre.html" rel="author">Sobre o autor</a> · <a href="https://www.instagram.com/juansaraivalourenco/" rel="me nofollow">@juansaraivalourenco</a></p>
+          </div>
+        </div>
       </main>
 
       <aside class="sidebar">
@@ -889,8 +870,9 @@
             <li><a href="#erros-que-afastam">Erros que afastam</a></li>
             <li><a href="#como-medir">Como medir</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
-            <li><a href="#perguntas-frequentes">Perguntas frequentes</a></li>
-            </ul>
+            <li><a href="#faq">Perguntas frequentes</a></li>
+            <li><a href="#fontes">Fontes</a></li>
+          </ul>
         </div>
 
         <div class="sidebar-cta">
@@ -918,6 +900,7 @@
         <div class="footer-links">
           <a href="/">Início</a>
           <a href="/blog/">Blog</a>
+          <a href="/sobre.html">Sobre</a>
           <a href="https://app.saudecrm.com/cadastro">Começar grátis</a>
         </div>
       </div>
