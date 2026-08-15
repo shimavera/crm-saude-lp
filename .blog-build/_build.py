@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import re, os, html
+import re, os, html, json
 
 # HERE = onde vivem os fontes do build (_bodies). OUT = onde os .html publicados ficam.
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -117,6 +117,68 @@ ARTICLES = [
         "heroPills": ["Atendimento", "Gestão de clínica", "CRM com WhatsApp"],
         "toc": [{"id":"o-dilema-contratar-ou-investir-em-sistema","label":"O dilema"},{"id":"o-que-sobrecarrega-a-recepcao-hoje","label":"O que sobrecarrega a recepção"},{"id":"o-que-so-o-humano-faz","label":"O que só o humano faz"},{"id":"o-que-o-sistema-faz-melhor-que-humano","label":"O que o sistema faz melhor"},{"id":"como-o-crm-libera-a-secretaria","label":"Como o CRM libera a secretária"},{"id":"sinais-de-que-sua-recepcao-precisa-de-um-crm","label":"Sinais de alerta"},{"id":"como-implementar-sem-assustar-a-equipe","label":"Como implementar"},{"id":"custo-de-uma-contratacao-x-custo-de-um-crm","label":"Custo: contratação x CRM"},{"id":"conclusao","label":"Conclusão"}],
     },
+    # ── Publicados em 15/08/2026, no formato pensado para citação por IA:
+    #    H2 em forma de pergunta, resposta completa no primeiro parágrafo e FAQ com schema.
+    {
+        "slug": "quanto-custa-um-crm-para-clinica",
+        "title": "Quanto Custa um CRM para Clínica em 2026: Faixas de Preço Reais",
+        "seoTitle": "Quanto Custa um CRM para Clínica em 2026",
+        "desc": "Quanto custa um CRM para clínica em 2026: faixas de preço praticadas no Brasil, modelos de cobrança, custos escondidos e como calcular em quanto tempo se paga.",
+        "category": "Guia de Compra",
+        "readTime": 7,
+        "heroPills": ["Preço de CRM", "Custo por clínica", "Retorno do investimento"],
+        "toc": [{"id":"quanto-custa","label":"Quanto custa"},{"id":"modelos-de-cobranca","label":"Modelos de cobrança"},{"id":"custos-escondidos","label":"Custos escondidos"},{"id":"quando-se-paga","label":"Em quanto tempo se paga"},{"id":"crm-gratuito","label":"CRM gratuito vale a pena?"},{"id":"como-escolher","label":"Como comparar preços"},{"id":"conclusao","label":"Conclusão"}],
+        "faq": [
+            ("Quanto custa um CRM para clínica por mês?",
+             "No Brasil, em 2026, um CRM para clínica custa entre cerca de R$ 100 e R$ 700 por mês. Ferramentas focadas em prontuário e agenda ficam na faixa mais baixa e costumam cobrar por dentista. Plataformas com WhatsApp multiatendente, automação e inteligência artificial ficam na faixa mais alta e costumam cobrar por clínica."),
+            ("CRM para clínica é cobrado por dentista ou por clínica?",
+             "Depende do fornecedor. Existem quatro modelos: por profissional, por usuário do sistema, por clínica com limite de leads ativos e por consumo de conversas na API oficial do WhatsApp. A unidade de cobrança muda o custo total mais que o valor anunciado: um sistema por dentista fica mais caro que um por clínica assim que a equipe cresce."),
+            ("Em quanto tempo um CRM se paga numa clínica?",
+             "Divida a mensalidade pelo ticket médio de um tratamento fechado. Numa clínica com ticket médio de R$ 2.000, um CRM de R$ 497 por mês se paga com um paciente recuperado a cada quatro meses. Como o follow-up organizado costuma resgatar mais que isso entre orçamentos parados, o retorno normalmente aparece no primeiro ou segundo mês de uso consistente."),
+            ("Existe CRM gratuito para clínica?",
+             "Existem planos gratuitos, e eles funcionam para clínicas que ainda não investem em captação e recebem poucos contatos por semana. O limite aparece em três pontos: teto de contatos, falta de integração nativa com WhatsApp e ausência de automação de follow-up, que é justamente o recurso que devolve dinheiro."),
+        ],
+    },
+    {
+        "slug": "crm-ou-software-de-gestao-odontologica",
+        "title": "CRM ou Software de Gestão Odontológica: Qual a Diferença e Qual Você Precisa",
+        "seoTitle": "CRM ou Software de Gestão Odontológica",
+        "desc": "Entenda a diferença entre CRM e software de gestão odontológica: o que cada um resolve, onde se sobrepõem, quando a clínica precisa dos dois e como integrá-los.",
+        "category": "Guia de Compra",
+        "readTime": 7,
+        "heroPills": ["CRM x gestão", "Prontuário e funil", "Jornada do paciente"],
+        "toc": [{"id":"diferenca","label":"Qual a diferença"},{"id":"prontuario-nao-e-crm","label":"Por que o prontuário não capta"},{"id":"crm-nao-e-gestao","label":"Por que o CRM não substitui"},{"id":"sobreposicao","label":"Onde se sobrepõem"},{"id":"quando-precisa-dos-dois","label":"Quando precisa dos dois"},{"id":"como-integrar","label":"Como integrar"},{"id":"conclusao","label":"Conclusão"}],
+        "faq": [
+            ("Qual a diferença entre CRM e software de gestão odontológica?",
+             "O software de gestão odontológica cuida de quem já é paciente: prontuário, odontograma, plano de tratamento, agenda clínica e faturamento. O CRM cuida de quem ainda não é paciente: o lead que mandou mensagem, a conversa no WhatsApp, o orçamento enviado e o follow-up de quem não respondeu. Um organiza o tratamento, o outro organiza a venda do tratamento."),
+            ("Prontuário eletrônico serve como CRM?",
+             "Não. O prontuário só passa a existir depois que a pessoa vira paciente cadastrado. Quem pediu preço, recebeu orçamento e sumiu nunca chega a ter cadastro, e por isso é invisível para o sistema de gestão: não aparece em relatório, não gera alerta e não entra em nenhuma lista de retorno."),
+            ("Minha clínica precisa dos dois sistemas?",
+             "Precisa quando passa a investir em captação. Enquanto os pacientes chegam só por indicação, o software de gestão dá conta. A partir do momento em que existe verba de anúncio e mensagem entrando no WhatsApp o dia inteiro, aparece um estágio anterior ao cadastro que ninguém controla, e é ali que o dinheiro vaza."),
+            ("Como integrar o CRM ao software de gestão da clínica?",
+             "Defina um único evento de passagem, normalmente a avaliação agendada, e estabeleça qual sistema é a fonte da verdade em cada fase: o CRM até o agendamento, o software de gestão do cadastro em diante. Duplicar cadastro nos dois sistemas é o erro que quebra qualquer relatório depois."),
+        ],
+    },
+    {
+        "slug": "melhores-crm-para-clinica-odontologica",
+        "title": "Melhores CRMs para Clínica Odontológica em 2026: Comparativo por Categoria",
+        "seoTitle": "Melhores CRMs para Clínica Odontológica em 2026",
+        "desc": "Comparativo dos tipos de CRM para clínica odontológica em 2026: o que cada categoria resolve, critérios que importam, qual serve para o seu perfil e erros comuns.",
+        "category": "Guia de Compra",
+        "readTime": 8,
+        "heroPills": ["Comparativo 2026", "Escolha por perfil", "Critérios que importam"],
+        "toc": [{"id":"categorias","label":"Os 4 tipos de CRM"},{"id":"criterios","label":"Critérios que importam"},{"id":"por-perfil","label":"Qual serve para você"},{"id":"saudecrm","label":"Onde entra o SaúdeCRM"},{"id":"erros","label":"Erros comuns"},{"id":"como-decidir","label":"Como decidir em uma semana"},{"id":"conclusao","label":"Conclusão"}],
+        "faq": [
+            ("Qual o melhor CRM para clínica odontológica?",
+             "Não existe um melhor em absoluto: existe o melhor para o gargalo atual da clínica. Se o problema é prontuário e agenda, a resposta é um software de gestão odontológica. Se é lead sem resposta e orçamento parado, é um CRM feito para clínicas, com WhatsApp e funil na mesma tela. Comparar categorias diferentes leva à escolha errada."),
+            ("CRM de vendas comum funciona em clínica odontológica?",
+             "Funciona mal. CRMs de vendas genéricos foram desenhados para ciclo comercial corporativo, com previsão de fechamento e campos que não existem na rotina de uma recepção. Sem WhatsApp nativo, a equipe precisa registrar a conversa manualmente depois, o que na prática não acontece em dia cheio."),
+            ("Quais critérios usar para escolher um CRM para clínica?",
+             "Seis: integração nativa com WhatsApp, funil visual que a recepção entende sem treinamento longo, automação de follow-up, histórico completo por paciente, relatório de conversão legível para o dono e simplicidade de operação. Falhando o primeiro ou o último, os demais não sustentam o uso."),
+            ("Como testar um CRM antes de contratar?",
+             "Escolha dois candidatos, conecte o WhatsApp real da clínica em um deles e registre todos os leads de uma semana. No fim, responda três perguntas: quantos contatos ficaram sem resposta, qual foi o tempo médio de resposta e quantos avançaram para avaliação agendada. A ferramenta que responder isso sem esforço é a certa."),
+        ],
+    },
 ]
 
 by_slug = {a["slug"]: a for a in ARTICLES}
@@ -142,15 +204,48 @@ GTM = '''  <!-- Google Tag Manager -->
 
 def esc(s): return html.escape(s, quote=True)
 
+
+def faq_schema(a):
+    """
+    Bloco FAQPage separado, quando o artigo declara "faq".
+
+    Fica em um <script> próprio de propósito: se o JSON do Article quebrar, o FAQ
+    continua válido, e vice-versa. As perguntas precisam existir visíveis no corpo
+    (o _bodies traz a mesma pergunta como H3), senão o Google desqualifica o rich result.
+    """
+    if not a.get("faq"):
+        return ""
+    itens = ",\n".join(
+        '      {{"@type": "Question", "name": {q}, "acceptedAnswer": {{"@type": "Answer", "text": {r}}}}}'.format(
+            q=json.dumps(p, ensure_ascii=False), r=json.dumps(r, ensure_ascii=False))
+        for p, r in a["faq"])
+    return ('\n  <script type="application/ld+json">\n'
+            '  {\n    "@context": "https://schema.org",\n    "@type": "FAQPage",\n'
+            '    "mainEntity": [\n' + itens + '\n    ]\n  }\n  </script>\n')
+
+
+def faq_html(a):
+    if not a.get("faq"):
+        return ""
+    blocos = "".join(
+        f'          <h3 id="faq-{i+1}">{esc(p)}</h3>\n          <p>{esc(r)}</p>\n'
+        for i, (p, r) in enumerate(a["faq"]))
+    return ('\n        <h2 id="faq">Perguntas frequentes</h2>\n' + blocos)
+
+
 def build(a, idx):
     slug = a["slug"]; url = f"{BASE}/blog/{slug}.html"
     body = open(os.path.join(HERE, "_bodies", f"{slug}.body.html"), encoding="utf-8").read().strip()
     toc = list(a["toc"])
     # o bloco de fontes é injetado por _add_sources.py; reflete na TOC quando existir
+    if a.get("faq") and not any(t["id"] == "faq" for t in toc):
+        toc.append({"id": "faq", "label": "Perguntas frequentes"})
     if 'id="fontes"' in body and not any(t["id"] == "fontes" for t in toc):
         toc.append({"id": "fontes", "label": "Fontes"})
     toc_items = "\n".join(f'            <li><a href="#{t["id"]}">{esc(t["label"])}</a></li>' for t in toc)
     pills = a["heroPills"]
+    faq_ld = faq_schema(a)
+    faq_visivel = faq_html(a)
     # related: 3 outros artigos (rotativo entre os novos + 1 existente)
     others = [x["slug"] for x in ARTICLES if x["slug"] != slug]
     rel = others[idx % len(others):idx % len(others)+2] + ["crm-para-clinica-odontologica"]
@@ -230,7 +325,7 @@ def build(a, idx):
     }}
   }}
   </script>
-
+{faq_ld}
   <style>{css}</style>
 </head>
 <body>
@@ -283,7 +378,7 @@ def build(a, idx):
         </div>
 
         <article class="article-content">
-{body}
+{body}{faq_visivel}
         </article>
 
         <div class="author-box" style="display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid #E3E8F2;border-radius:14px;padding:22px 24px;margin:34px 0 8px">
