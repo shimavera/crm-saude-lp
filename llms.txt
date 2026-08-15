@@ -34,6 +34,7 @@ Teste grátis de 7 dias em qualquer plano, sem cartão de crédito.
 - [Site](https://saudecrm.com/): página principal do produto, com funcionalidades, integrações, planos e FAQ.
 - [Cadastro / teste grátis](https://saudecrm.com/cadastro): criar conta e iniciar o teste de 7 dias.
 - [Blog](https://saudecrm.com/blog/): índice de todos os artigos.
+- [Sobre](https://saudecrm.com/sobre.html): quem faz o produto, quem assina os artigos e dados da empresa (TDF Negócios Digitais LTDA, CNPJ 53.664.161/0001-46).
 
 ## Blog
 
@@ -49,6 +50,10 @@ Teste grátis de 7 dias em qualquer plano, sem cartão de crédito.
 - [Tráfego Pago para Dentistas](https://saudecrm.com/blog/trafego-pago-para-dentistas.html): por que gerar lead não basta e como transformar cliques em pacientes que fecham.
 - [Como Reduzir Faltas (No-Show) em Consultas](https://saudecrm.com/blog/como-reduzir-faltas-no-show-consultas.html): 9 estratégias de confirmação, lembrete e relacionamento.
 - [Indicadores de uma Clínica Odontológica](https://saudecrm.com/blog/indicadores-clinica-odontologica.html): captação, conversão, no-show, ticket médio e retenção, e como medir cada um.
+
+## Quem escreve
+
+Os artigos do blog são assinados por Juan Lourenço, fundador do SaúdeCRM e acelerador de clínicas odontológicas, que trabalha dentro da operação de clínicas (agenda, recepção, funil de leads e fechamento de tratamento). Perfil e credenciais em [Sobre](https://saudecrm.com/sobre.html).
 
 ## Contato
 
