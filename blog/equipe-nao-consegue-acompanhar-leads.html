@@ -597,7 +597,74 @@
       .stat-block { flex-direction: column; }
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Por que marketing e recepção vivem em conflito na clínica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque cada lado enxerga metade do processo. O marketing mostra o volume de contatos gerados, a recepção sente o volume de mensagens que não consegue responder, e nenhum dos dois tem um número comum para olhar. Sem registro compartilhado, a conversa vira opinião contra opinião."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como saber se o problema é o lead ruim ou o atendimento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Medindo etapa por etapa. Se muitos contatos chegam e poucos são respondidos no mesmo dia, o gargalo é atendimento. Se todos são respondidos rápido e mesmo assim não avançam, o problema está na qualidade do contato ou na abordagem. Sem esse dado, a discussão não termina."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que fazer quando a equipe não dá conta do volume de leads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Antes de contratar, vale organizar. Boa parte da sobrecarga vem de tarefa repetitiva, como responder a mesma dúvida, confirmar horário e lembrar paciente, que o sistema absorve. Depois disso é que fica claro se falta gente de verdade ou se faltava processo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como um CRM resolve esse conflito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dando visibilidade a todo mundo sobre o mesmo funil: quantos entraram, quem respondeu, quem ficou parado e onde travou. A conversa deixa de ser sobre culpa e passa a ser sobre o ponto específico que precisa melhorar, com nome e etapa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que muda nos primeiros 30 dias com o processo organizado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Costuma aparecer primeiro o que estava invisível: contatos sem retorno, orçamentos parados e pessoas que ninguém retomou. Esse resgate inicial normalmente já traz agendamento, antes mesmo de qualquer aumento de investimento em captação."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -823,6 +890,32 @@
           <p>O Dr. Ricardo parou de ser árbitro de brigas e começou a ser gestor de um processo que funciona. Esse é o único jeito real de resolver o conflito marketing vs. recepção — não com reuniões e conversas, mas com dados, automação e um sistema que faz todo mundo trabalhar na mesma direção.</p>
 
           <!-- CTA FINAL -->
+
+          <!-- FAQ -->
+          <section class="faq-block" id="perguntas-frequentes">
+            <h2>Perguntas frequentes</h2>
+            <div class="faq-q-item">
+              <h3>Por que marketing e recepção vivem em conflito na clínica?</h3>
+              <p>Porque cada lado enxerga metade do processo. O marketing mostra o volume de contatos gerados, a recepção sente o volume de mensagens que não consegue responder, e nenhum dos dois tem um número comum para olhar. Sem registro compartilhado, a conversa vira opinião contra opinião.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Como saber se o problema é o lead ruim ou o atendimento?</h3>
+              <p>Medindo etapa por etapa. Se muitos contatos chegam e poucos são respondidos no mesmo dia, o gargalo é atendimento. Se todos são respondidos rápido e mesmo assim não avançam, o problema está na qualidade do contato ou na abordagem. Sem esse dado, a discussão não termina.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>O que fazer quando a equipe não dá conta do volume de leads?</h3>
+              <p>Antes de contratar, vale organizar. Boa parte da sobrecarga vem de tarefa repetitiva, como responder a mesma dúvida, confirmar horário e lembrar paciente, que o sistema absorve. Depois disso é que fica claro se falta gente de verdade ou se faltava processo.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Como um CRM resolve esse conflito?</h3>
+              <p>Dando visibilidade a todo mundo sobre o mesmo funil: quantos entraram, quem respondeu, quem ficou parado e onde travou. A conversa deixa de ser sobre culpa e passa a ser sobre o ponto específico que precisa melhorar, com nome e etapa.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>O que muda nos primeiros 30 dias com o processo organizado?</h3>
+              <p>Costuma aparecer primeiro o que estava invisível: contatos sem retorno, orçamentos parados e pessoas que ninguém retomou. Esse resgate inicial normalmente já traz agendamento, antes mesmo de qualquer aumento de investimento em captação.</p>
+            </div>
+          </section>
+
           <div class="cta-inline">
             <h3>Pronto para acabar com o achismo na sua clínica?</h3>
             <p>O SaúdeCRM organiza seus leads, WhatsApp e follow-up em um painel só. Starter a partir de R$297/mês. Comece grátis e veja a diferença nos primeiros 30 dias.</p>
@@ -860,8 +953,9 @@
             <li><a href="#o-processo-que-a-maioria-nao-tem">O processo que a maioria não tem</a></li>
             <li><a href="#como-um-crm-resolve">Como um CRM resolve</a></li>
             <li><a href="#exemplo-pratico-30-dias">Exemplo prático: 30 dias</a></li>
+            <li><a href="#perguntas-frequentes">Perguntas frequentes</a></li>
             <li><a href="#fontes">Fontes</a></li>
-          </ul>
+            </ul>
         </div>
 
         <div class="sidebar-cta">

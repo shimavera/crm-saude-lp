@@ -77,6 +77,20 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Vale a pena investir em tráfego pago para dentistas?", "acceptedAnswer": {"@type": "Answer", "text": "Vale quando existe estrutura para atender o que o anúncio gera. Anúncio traz contato rápido, mas contato que não é respondido vira dinheiro perdido. Antes de aumentar a verba, é mais rentável garantir que todo contato recebe resposta e acompanhamento."}},
+      {"@type": "Question", "name": "Meta Ads ou Google Ads para clínica odontológica?", "acceptedAnswer": {"@type": "Answer", "text": "São momentos diferentes. O Google captura quem já está procurando tratamento agora, com intenção mais avançada. O Meta apresenta a clínica para quem ainda não estava buscando, gerando volume maior a custo menor por contato. Muitas clínicas usam os dois com objetivos distintos."}},
+      {"@type": "Question", "name": "Por que meus anúncios geram leads mas não geram pacientes?", "acceptedAnswer": {"@type": "Answer", "text": "Porque o resultado não termina no clique. A perda costuma estar no intervalo entre o contato chegar e alguém responder, e na ausência de follow-up de quem não fechou na hora. O anúncio entrega o contato, o processo é que entrega o paciente."}},
+      {"@type": "Question", "name": "Qual a diferença entre custo por lead e custo por paciente?", "acceptedAnswer": {"@type": "Answer", "text": "Custo por lead é quanto se paga por um contato. Custo por paciente é quanto se paga por alguém que efetivamente sentou na cadeira. É o segundo que importa, porque campanha com lead barato e conversão ruim sai mais cara no fim do que a de lead caro e bem trabalhado."}},
+      {"@type": "Question", "name": "O que o dentista pode e não pode anunciar?", "acceptedAnswer": {"@type": "Answer", "text": "A publicidade odontológica tem regras específicas do conselho da categoria, com restrições sobre promessa de resultado, uso de imagem de antes e depois e apelo comercial. Vale conferir as normas vigentes antes de subir campanha, porque o custo de um anúncio irregular vai além da mídia."}}
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -649,6 +663,25 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
 </head>
 <body>
@@ -768,6 +801,18 @@
             <li><a href="https://website.cfo.org.br/resolucao-cfo-196-2019/" target="_blank" rel="noopener nofollow">Resolução CFO-196/2019</a> — regras para divulgação de imagens de tratamentos.</li>
             <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener nofollow">Código de Defesa do Consumidor (Lei nº 8.078/1990)</a> — art. 37 trata de publicidade enganosa.</li>
         </ul>
+        <h2 id="faq">Perguntas frequentes</h2>
+          <h3 id="faq-1">Vale a pena investir em tráfego pago para dentistas?</h3>
+          <p>Vale quando existe estrutura para atender o que o anúncio gera. Anúncio traz contato rápido, mas contato que não é respondido vira dinheiro perdido. Antes de aumentar a verba, é mais rentável garantir que todo contato recebe resposta e acompanhamento.</p>
+          <h3 id="faq-2">Meta Ads ou Google Ads para clínica odontológica?</h3>
+          <p>São momentos diferentes. O Google captura quem já está procurando tratamento agora, com intenção mais avançada. O Meta apresenta a clínica para quem ainda não estava buscando, gerando volume maior a custo menor por contato. Muitas clínicas usam os dois com objetivos distintos.</p>
+          <h3 id="faq-3">Por que meus anúncios geram leads mas não geram pacientes?</h3>
+          <p>Porque o resultado não termina no clique. A perda costuma estar no intervalo entre o contato chegar e alguém responder, e na ausência de follow-up de quem não fechou na hora. O anúncio entrega o contato, o processo é que entrega o paciente.</p>
+          <h3 id="faq-4">Qual a diferença entre custo por lead e custo por paciente?</h3>
+          <p>Custo por lead é quanto se paga por um contato. Custo por paciente é quanto se paga por alguém que efetivamente sentou na cadeira. É o segundo que importa, porque campanha com lead barato e conversão ruim sai mais cara no fim do que a de lead caro e bem trabalhado.</p>
+          <h3 id="faq-5">O que o dentista pode e não pode anunciar?</h3>
+          <p>A publicidade odontológica tem regras específicas do conselho da categoria, com restrições sobre promessa de resultado, uso de imagem de antes e depois e apelo comercial. Vale conferir as normas vigentes antes de subir campanha, porque o custo de um anúncio irregular vai além da mídia.</p>
+
         </article>
 
         <div class="author-box" style="display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid #E3E8F2;border-radius:14px;padding:22px 24px;margin:34px 0 8px">
@@ -794,6 +839,7 @@
             <li><a href="#como-medir-o-retorno">Medir o retorno</a></li>
             <li><a href="#regras-de-publicidade">Regras de publicidade</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
             <li><a href="#fontes">Fontes</a></li>
           </ul>
         </div>

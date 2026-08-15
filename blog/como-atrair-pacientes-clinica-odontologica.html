@@ -77,6 +77,20 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Como atrair mais pacientes para uma clínica odontológica?", "acceptedAnswer": {"@type": "Answer", "text": "Funciona em camadas: presença digital que gera confiança, conteúdo que educa e nutre, tráfego pago para acelerar a captação e um processo de atendimento que transforma o contato em consulta marcada. Clínica que só faz anúncio e não organiza o atendimento gasta mais e agenda menos."}},
+      {"@type": "Question", "name": "Quanto tempo leva para o marketing odontológico dar resultado?", "acceptedAnswer": {"@type": "Answer", "text": "Depende do canal. Tráfego pago traz contato nos primeiros dias, mas só vira paciente se alguém responder rápido. Conteúdo e presença digital levam meses para maturar, porém sustentam a captação sem depender de verba diária. O ideal é rodar os dois, com o pago financiando o curto prazo enquanto o orgânico se consolida."}},
+      {"@type": "Question", "name": "Vale mais investir em tráfego pago ou em conteúdo?", "acceptedAnswer": {"@type": "Answer", "text": "Tráfego pago é aluguel de atenção, para quando você quer agenda cheia agora. Conteúdo é patrimônio, gera contato mesmo quando você para de pagar. Clínica que só faz pago fica refém do orçamento, e clínica que só faz orgânico demora a crescer. A combinação é o que dá previsibilidade."}},
+      {"@type": "Question", "name": "De que adianta atrair paciente se a agenda não enche?", "acceptedAnswer": {"@type": "Answer", "text": "De nada, e esse é o erro mais caro. A maior parte da perda não está na captação, está no que acontece depois do contato: demora para responder, ausência de follow-up e nenhum registro de quem ficou pelo caminho. Antes de aumentar a verba, vale organizar o atendimento do que já chega."}},
+      {"@type": "Question", "name": "Como transformar seguidor em paciente agendado?", "acceptedAnswer": {"@type": "Answer", "text": "Dando um caminho claro para a conversa sair da rede social e ir para o WhatsApp, e ali respondendo rápido, qualificando o interesse e conduzindo até o agendamento. Seguidor que manda mensagem e recebe resposta horas depois normalmente já marcou em outro lugar."}}
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -649,6 +663,25 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
 </head>
 <body>
@@ -780,6 +813,18 @@
             <li><a href="https://website.cfo.org.br/resolucao-cfo-196-2019/" target="_blank" rel="noopener nofollow">Resolução CFO-196/2019</a> — regras para divulgação de imagens de tratamentos.</li>
             <li><a href="https://website.cfo.org.br/estatisticas/" target="_blank" rel="noopener nofollow">Estatísticas do CFO</a> — profissionais e entidades ativas no Brasil.</li>
         </ul>
+        <h2 id="faq">Perguntas frequentes</h2>
+          <h3 id="faq-1">Como atrair mais pacientes para uma clínica odontológica?</h3>
+          <p>Funciona em camadas: presença digital que gera confiança, conteúdo que educa e nutre, tráfego pago para acelerar a captação e um processo de atendimento que transforma o contato em consulta marcada. Clínica que só faz anúncio e não organiza o atendimento gasta mais e agenda menos.</p>
+          <h3 id="faq-2">Quanto tempo leva para o marketing odontológico dar resultado?</h3>
+          <p>Depende do canal. Tráfego pago traz contato nos primeiros dias, mas só vira paciente se alguém responder rápido. Conteúdo e presença digital levam meses para maturar, porém sustentam a captação sem depender de verba diária. O ideal é rodar os dois, com o pago financiando o curto prazo enquanto o orgânico se consolida.</p>
+          <h3 id="faq-3">Vale mais investir em tráfego pago ou em conteúdo?</h3>
+          <p>Tráfego pago é aluguel de atenção, para quando você quer agenda cheia agora. Conteúdo é patrimônio, gera contato mesmo quando você para de pagar. Clínica que só faz pago fica refém do orçamento, e clínica que só faz orgânico demora a crescer. A combinação é o que dá previsibilidade.</p>
+          <h3 id="faq-4">De que adianta atrair paciente se a agenda não enche?</h3>
+          <p>De nada, e esse é o erro mais caro. A maior parte da perda não está na captação, está no que acontece depois do contato: demora para responder, ausência de follow-up e nenhum registro de quem ficou pelo caminho. Antes de aumentar a verba, vale organizar o atendimento do que já chega.</p>
+          <h3 id="faq-5">Como transformar seguidor em paciente agendado?</h3>
+          <p>Dando um caminho claro para a conversa sair da rede social e ir para o WhatsApp, e ali respondendo rápido, qualificando o interesse e conduzindo até o agendamento. Seguidor que manda mensagem e recebe resposta horas depois normalmente já marcou em outro lugar.</p>
+
         </article>
 
         <div class="author-box" style="display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid #E3E8F2;border-radius:14px;padding:22px 24px;margin:34px 0 8px">
@@ -804,6 +849,7 @@
             <li><a href="#retencao-indicacao">Retenção e indicação</a></li>
             <li><a href="#processos-tecnologia">Processo e tecnologia</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
             <li><a href="#fontes">Fontes</a></li>
           </ul>
         </div>

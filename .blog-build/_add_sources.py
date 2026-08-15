@@ -53,9 +53,6 @@ SOURCES = {
     "funil-de-vendas-para-clinicas": ["wa_policy", "lgpd"],
     "indicadores-clinica-odontologica": ["cfo_estat", "lgpd"],
     "secretaria-ou-crm-atendimento-clinica": ["wa_policy", "lgpd"],
-    "quanto-custa-um-crm-para-clinica": ["wa_pricing", "wa_policy", "cdc"],
-    "crm-ou-software-de-gestao-odontologica": ["cfo_codigos", "lgpd", "wa_policy"],
-    "melhores-crm-para-clinica-odontologica": ["wa_policy", "wa_pricing", "lgpd"],
 }
 
 # links inline: (slug, trecho exato a substituir, trecho novo)

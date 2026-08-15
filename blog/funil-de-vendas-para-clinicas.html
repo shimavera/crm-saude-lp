@@ -77,6 +77,20 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "O que é funil de vendas em uma clínica?", "acceptedAnswer": {"@type": "Answer", "text": "É o caminho que a pessoa percorre do primeiro contato até virar paciente em tratamento, dividido em etapas visíveis. Ele existe em toda clínica, mesmo nas que nunca desenharam: a diferença é que, sem mapear, ninguém sabe em qual etapa está perdendo gente."}},
+      {"@type": "Question", "name": "Quais são as etapas do funil de uma clínica?", "acceptedAnswer": {"@type": "Answer", "text": "Em geral: contato recebido, atendimento iniciado, avaliação ou consulta agendada, comparecimento, orçamento apresentado e tratamento fechado. Os nomes mudam conforme a especialidade, mas a lógica é a mesma, acompanhar a passagem de uma etapa para a outra."}},
+      {"@type": "Question", "name": "Como saber onde está o gargalo do funil?", "acceptedAnswer": {"@type": "Answer", "text": "Olhando a queda entre etapas, não o total. Se muita gente entra e pouca é atendida, o gargalo é resposta. Se todos são atendidos mas poucos agendam, é abordagem. Se agendam e não aparecem, é confirmação. Cada gargalo tem uma solução diferente."}},
+      {"@type": "Question", "name": "Qual é uma boa taxa de conversão para clínica?", "acceptedAnswer": {"@type": "Answer", "text": "Não existe número universal, porque varia muito por especialidade, ticket e origem do contato. O parâmetro mais útil é o seu próprio histórico: medir hoje, agir em um gargalo específico e comparar depois. Melhorar a própria taxa vale mais que perseguir uma média de mercado."}},
+      {"@type": "Question", "name": "Como usar Kanban para gerenciar o funil da clínica?", "acceptedAnswer": {"@type": "Answer", "text": "Cada paciente vira um cartão que caminha pelas colunas conforme avança. A vantagem é enxergar de imediato onde há acúmulo e quem está parado há tempo demais. É o formato mais simples para uma equipe adotar sem treinamento longo."}}
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -649,6 +663,25 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
 </head>
 <body>
@@ -780,6 +813,18 @@
             <li><a href="https://whatsappbusiness.com/pt-br/policy/" target="_blank" rel="noopener nofollow">Política de Mensagens do WhatsApp Business</a> — regras de consentimento (opt-in) e de suspensão de conta.</li>
             <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener nofollow">Lei nº 13.709/2018 (LGPD)</a> — texto integral da lei de proteção de dados.</li>
         </ul>
+        <h2 id="faq">Perguntas frequentes</h2>
+          <h3 id="faq-1">O que é funil de vendas em uma clínica?</h3>
+          <p>É o caminho que a pessoa percorre do primeiro contato até virar paciente em tratamento, dividido em etapas visíveis. Ele existe em toda clínica, mesmo nas que nunca desenharam: a diferença é que, sem mapear, ninguém sabe em qual etapa está perdendo gente.</p>
+          <h3 id="faq-2">Quais são as etapas do funil de uma clínica?</h3>
+          <p>Em geral: contato recebido, atendimento iniciado, avaliação ou consulta agendada, comparecimento, orçamento apresentado e tratamento fechado. Os nomes mudam conforme a especialidade, mas a lógica é a mesma, acompanhar a passagem de uma etapa para a outra.</p>
+          <h3 id="faq-3">Como saber onde está o gargalo do funil?</h3>
+          <p>Olhando a queda entre etapas, não o total. Se muita gente entra e pouca é atendida, o gargalo é resposta. Se todos são atendidos mas poucos agendam, é abordagem. Se agendam e não aparecem, é confirmação. Cada gargalo tem uma solução diferente.</p>
+          <h3 id="faq-4">Qual é uma boa taxa de conversão para clínica?</h3>
+          <p>Não existe número universal, porque varia muito por especialidade, ticket e origem do contato. O parâmetro mais útil é o seu próprio histórico: medir hoje, agir em um gargalo específico e comparar depois. Melhorar a própria taxa vale mais que perseguir uma média de mercado.</p>
+          <h3 id="faq-5">Como usar Kanban para gerenciar o funil da clínica?</h3>
+          <p>Cada paciente vira um cartão que caminha pelas colunas conforme avança. A vantagem é enxergar de imediato onde há acúmulo e quem está parado há tempo demais. É o formato mais simples para uma equipe adotar sem treinamento longo.</p>
+
         </article>
 
         <div class="author-box" style="display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid #E3E8F2;border-radius:14px;padding:22px 24px;margin:34px 0 8px">
@@ -805,6 +850,7 @@
             <li><a href="#como-usar-kanban-e-crm">Kanban e CRM</a></li>
             <li><a href="#erros-comuns-ao-montar-o-funil">Erros comuns</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
             <li><a href="#fontes">Fontes</a></li>
           </ul>
         </div>

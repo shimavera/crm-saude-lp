@@ -77,6 +77,20 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "O que é um CRM para clínica de estética?", "acceptedAnswer": {"@type": "Answer", "text": "É o sistema que organiza toda a jornada do cliente, do primeiro contato à recompra, reunindo WhatsApp, histórico e etapas de negociação em um lugar só. Diferente de uma agenda, ele mostra em que ponto cada pessoa parou e o que precisa ser feito para avançar."}},
+      {"@type": "Question", "name": "O que muda em um CRM de estética em relação a outras áreas da saúde?", "acceptedAnswer": {"@type": "Answer", "text": "A estética vive de ticket alto, decisão mais demorada e, principalmente, de recompra. O cliente pesquisa, compara, adia e volta semanas depois. Por isso o acompanhamento de quem não fechou na hora e o retorno de quem já fez procedimento pesam muito mais no faturamento do que na maioria das outras áreas."}},
+      {"@type": "Question", "name": "Como aumentar a recompra na clínica de estética?", "acceptedAnswer": {"@type": "Answer", "text": "Sabendo quem fez o quê e quando, para retomar o contato no momento em que o procedimento pede manutenção ou o próximo passo faz sentido. Sem esse registro, a clínica só reencontra o cliente por acaso, normalmente quando ele já foi para a concorrente."}},
+      {"@type": "Question", "name": "Vale a pena ter CRM em clínica de estética pequena?", "acceptedAnswer": {"@type": "Answer", "text": "Vale quando o volume de contatos passa do que dá para lembrar de cabeça, o que acontece antes do que se imagina. O sinal clássico é perceber que existem pessoas interessadas que ninguém retomou. Os planos começam em R$ 297 por mês e há teste grátis de 7 dias, então dá para validar antes de decidir."}},
+      {"@type": "Question", "name": "O que observar na hora de escolher um CRM para estética?", "acceptedAnswer": {"@type": "Answer", "text": "Se o WhatsApp é integrado de verdade, se dá para ver o funil visualmente, se o follow-up é registrado e cobrado pelo sistema e se a equipe consegue usar sem treinamento longo. Ferramenta genérica de vendas costuma travar justamente na conversa e no acompanhamento, que é o coração da estética."}}
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -649,6 +663,25 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
 </head>
 <body>
@@ -758,6 +791,18 @@
             <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener nofollow">Lei nº 13.709/2018 (LGPD)</a> — texto integral da lei de proteção de dados.</li>
             <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener nofollow">Código de Defesa do Consumidor (Lei nº 8.078/1990)</a> — art. 37 trata de publicidade enganosa.</li>
         </ul>
+        <h2 id="faq">Perguntas frequentes</h2>
+          <h3 id="faq-1">O que é um CRM para clínica de estética?</h3>
+          <p>É o sistema que organiza toda a jornada do cliente, do primeiro contato à recompra, reunindo WhatsApp, histórico e etapas de negociação em um lugar só. Diferente de uma agenda, ele mostra em que ponto cada pessoa parou e o que precisa ser feito para avançar.</p>
+          <h3 id="faq-2">O que muda em um CRM de estética em relação a outras áreas da saúde?</h3>
+          <p>A estética vive de ticket alto, decisão mais demorada e, principalmente, de recompra. O cliente pesquisa, compara, adia e volta semanas depois. Por isso o acompanhamento de quem não fechou na hora e o retorno de quem já fez procedimento pesam muito mais no faturamento do que na maioria das outras áreas.</p>
+          <h3 id="faq-3">Como aumentar a recompra na clínica de estética?</h3>
+          <p>Sabendo quem fez o quê e quando, para retomar o contato no momento em que o procedimento pede manutenção ou o próximo passo faz sentido. Sem esse registro, a clínica só reencontra o cliente por acaso, normalmente quando ele já foi para a concorrente.</p>
+          <h3 id="faq-4">Vale a pena ter CRM em clínica de estética pequena?</h3>
+          <p>Vale quando o volume de contatos passa do que dá para lembrar de cabeça, o que acontece antes do que se imagina. O sinal clássico é perceber que existem pessoas interessadas que ninguém retomou. Os planos começam em R$ 297 por mês e há teste grátis de 7 dias, então dá para validar antes de decidir.</p>
+          <h3 id="faq-5">O que observar na hora de escolher um CRM para estética?</h3>
+          <p>Se o WhatsApp é integrado de verdade, se dá para ver o funil visualmente, se o follow-up é registrado e cobrado pelo sistema e se a equipe consegue usar sem treinamento longo. Ferramenta genérica de vendas costuma travar justamente na conversa e no acompanhamento, que é o coração da estética.</p>
+
         </article>
 
         <div class="author-box" style="display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid #E3E8F2;border-radius:14px;padding:22px 24px;margin:34px 0 8px">
@@ -783,6 +828,7 @@
             <li><a href="#o-que-observar-ao-escolher">O que observar ao escolher</a></li>
             <li><a href="#como-implementar">Como implementar</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
             <li><a href="#fontes">Fontes</a></li>
           </ul>
         </div>
@@ -797,7 +843,6 @@
           <h4>Mais do blog</h4>
           <ul class="toc-list">
             <li><a href="/blog/secretaria-ou-crm-atendimento-clinica.html">Secretária ou CRM? Como Organizar o Atendimento da Sua Clínica</a></li>
-            <li><a href="/blog/quanto-custa-um-crm-para-clinica.html">Quanto Custa um CRM para Clínica em 2026: Faixas de Preço Reais</a></li>
             <li><a href="/blog/crm-para-clinica-odontologica.html">CRM para Clínica Odontológica: o guia completo</a></li>
           </ul>
         </div>

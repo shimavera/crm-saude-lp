@@ -77,6 +77,20 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "O que é follow-up de pacientes?", "acceptedAnswer": {"@type": "Answer", "text": "É o acompanhamento ativo de quem demonstrou interesse e não fechou. Envolve retomar o contato de forma planejada, lembrar o paciente do que ficou pendente e oferecer o próximo passo, em vez de esperar que ele volte sozinho, o que raramente acontece."}},
+      {"@type": "Question", "name": "Por que os pacientes somem depois do orçamento?", "acceptedAnswer": {"@type": "Answer", "text": "Quase nunca é falta de interesse. Normalmente o paciente adia a decisão, se assusta com o valor, precisa conversar com alguém antes ou simplesmente se distrai com a rotina. Sem alguém retomando, o assunto morre por inércia, não por recusa."}},
+      {"@type": "Question", "name": "Quando e quantas vezes fazer follow-up?", "acceptedAnswer": {"@type": "Answer", "text": "O primeiro retorno deve ser rápido, ainda com o assunto quente, e os seguintes espaçados ao longo dos dias e semanas seguintes. O erro mais comum é parar cedo demais: boa parte dos fechamentos acontece depois da primeira tentativa sem resposta."}},
+      {"@type": "Question", "name": "O que escrever no follow-up para não parecer insistência?", "acceptedAnswer": {"@type": "Answer", "text": "Mensagem curta, pessoal e com um motivo real para o contato, como tirar uma dúvida específica, informar uma condição ou oferecer um horário. O que soa chato é a cobrança repetida e igual. O que funciona é lembrar do contexto daquele paciente."}},
+      {"@type": "Question", "name": "Vale a pena automatizar o follow-up?", "acceptedAnswer": {"@type": "Answer", "text": "Vale para garantir que ele aconteça, que é onde a maioria falha. O sistema lembra a equipe de quem precisa de retorno hoje e dispara as etapas previsíveis, deixando o toque pessoal para os casos que exigem conversa. Follow-up que depende só de memória não sobrevive à rotina da clínica."}}
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -649,6 +663,25 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
 </head>
 <body>
@@ -799,6 +832,18 @@
             <li><a href="https://whatsappbusiness.com/pt-br/policy/" target="_blank" rel="noopener nofollow">Política de Mensagens do WhatsApp Business</a> — regras de consentimento (opt-in) e de suspensão de conta.</li>
             <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener nofollow">Lei nº 13.709/2018 (LGPD)</a> — texto integral da lei de proteção de dados.</li>
         </ul>
+        <h2 id="faq">Perguntas frequentes</h2>
+          <h3 id="faq-1">O que é follow-up de pacientes?</h3>
+          <p>É o acompanhamento ativo de quem demonstrou interesse e não fechou. Envolve retomar o contato de forma planejada, lembrar o paciente do que ficou pendente e oferecer o próximo passo, em vez de esperar que ele volte sozinho, o que raramente acontece.</p>
+          <h3 id="faq-2">Por que os pacientes somem depois do orçamento?</h3>
+          <p>Quase nunca é falta de interesse. Normalmente o paciente adia a decisão, se assusta com o valor, precisa conversar com alguém antes ou simplesmente se distrai com a rotina. Sem alguém retomando, o assunto morre por inércia, não por recusa.</p>
+          <h3 id="faq-3">Quando e quantas vezes fazer follow-up?</h3>
+          <p>O primeiro retorno deve ser rápido, ainda com o assunto quente, e os seguintes espaçados ao longo dos dias e semanas seguintes. O erro mais comum é parar cedo demais: boa parte dos fechamentos acontece depois da primeira tentativa sem resposta.</p>
+          <h3 id="faq-4">O que escrever no follow-up para não parecer insistência?</h3>
+          <p>Mensagem curta, pessoal e com um motivo real para o contato, como tirar uma dúvida específica, informar uma condição ou oferecer um horário. O que soa chato é a cobrança repetida e igual. O que funciona é lembrar do contexto daquele paciente.</p>
+          <h3 id="faq-5">Vale a pena automatizar o follow-up?</h3>
+          <p>Vale para garantir que ele aconteça, que é onde a maioria falha. O sistema lembra a equipe de quem precisa de retorno hoje e dispara as etapas previsíveis, deixando o toque pessoal para os casos que exigem conversa. Follow-up que depende só de memória não sobrevive à rotina da clínica.</p>
+
         </article>
 
         <div class="author-box" style="display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid #E3E8F2;border-radius:14px;padding:22px 24px;margin:34px 0 8px">
@@ -825,6 +870,7 @@
             <li><a href="#erros-que-afastam">Erros que afastam</a></li>
             <li><a href="#como-medir">Como medir</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
             <li><a href="#fontes">Fontes</a></li>
           </ul>
         </div>

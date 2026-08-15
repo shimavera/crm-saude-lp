@@ -652,7 +652,74 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é um CRM para clínica odontológica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É o sistema que organiza os pacientes em potencial e o relacionamento com eles, do primeiro contato no WhatsApp até o tratamento fechado. Ele mostra em que etapa cada pessoa está, o que já foi conversado e quem precisa de retorno, coisa que agenda e prontuário não fazem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre CRM e software de gestão odontológica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O software de gestão cuida de quem já é paciente: agenda, prontuário, faturamento. O CRM cuida de quem ainda não é: o contato que chegou pelo anúncio, pediu orçamento e está decidindo. São camadas diferentes e complementares, e a maioria das clínicas tem a segunda descoberta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto custa um CRM para clínica odontológica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No SaúdeCRM os planos vão de R$ 297 a R$ 687 por mês conforme o volume de leads e os recursos, com 7 dias grátis para testar. O cálculo que importa é comparar a mensalidade com o valor de um único tratamento recuperado, que na odontologia costuma pagar o sistema."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vale a pena ter CRM em clínica odontológica pequena?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale quando a clínica já investe em captação ou quando a recepção não dá conta de acompanhar todo mundo. Se os contatos ainda são poucos e todos recebem retorno no mesmo dia, dá para esperar. O problema aparece quando ninguém sabe dizer quantos orçamentos ficaram sem resposta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva para implantar um CRM na clínica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A configuração inicial é rápida, questão de horas para começar a receber e organizar os contatos. O que leva algumas semanas é o hábito da equipe, registrar tudo no sistema e seguir a rotina de follow-up. Começar simples e ampliar depois funciona melhor do que tentar configurar tudo de uma vez."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -935,6 +1002,32 @@
           </ol>
 
           <!-- CTA FINAL -->
+
+          <!-- FAQ -->
+          <section class="faq-block" id="perguntas-frequentes">
+            <h2>Perguntas frequentes</h2>
+            <div class="faq-q-item">
+              <h3>O que é um CRM para clínica odontológica?</h3>
+              <p>É o sistema que organiza os pacientes em potencial e o relacionamento com eles, do primeiro contato no WhatsApp até o tratamento fechado. Ele mostra em que etapa cada pessoa está, o que já foi conversado e quem precisa de retorno, coisa que agenda e prontuário não fazem.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Qual a diferença entre CRM e software de gestão odontológica?</h3>
+              <p>O software de gestão cuida de quem já é paciente: agenda, prontuário, faturamento. O CRM cuida de quem ainda não é: o contato que chegou pelo anúncio, pediu orçamento e está decidindo. São camadas diferentes e complementares, e a maioria das clínicas tem a segunda descoberta.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Quanto custa um CRM para clínica odontológica?</h3>
+              <p>No SaúdeCRM os planos vão de R$ 297 a R$ 687 por mês conforme o volume de leads e os recursos, com 7 dias grátis para testar. O cálculo que importa é comparar a mensalidade com o valor de um único tratamento recuperado, que na odontologia costuma pagar o sistema.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Vale a pena ter CRM em clínica odontológica pequena?</h3>
+              <p>Vale quando a clínica já investe em captação ou quando a recepção não dá conta de acompanhar todo mundo. Se os contatos ainda são poucos e todos recebem retorno no mesmo dia, dá para esperar. O problema aparece quando ninguém sabe dizer quantos orçamentos ficaram sem resposta.</p>
+            </div>
+            <div class="faq-q-item">
+              <h3>Quanto tempo leva para implantar um CRM na clínica?</h3>
+              <p>A configuração inicial é rápida, questão de horas para começar a receber e organizar os contatos. O que leva algumas semanas é o hábito da equipe, registrar tudo no sistema e seguir a rotina de follow-up. Começar simples e ampliar depois funciona melhor do que tentar configurar tudo de uma vez.</p>
+            </div>
+          </section>
+
           <div class="cta-inline">
             <h3>Comece a organizar sua clínica hoje.</h3>
             <p>SaúdeCRM com WhatsApp integrado, funil visual e automação. Starter a partir de R$297/mês. Comece grátis e configure em menos de 1 hora — sem contrato, sem fidelidade, sem surpresa.</p>
@@ -975,8 +1068,9 @@
             <li><a href="#o-que-nao-serve-para-clinicas">O que não serve para clínicas</a></li>
             <li><a href="#quanto-custa-e-quando-o-crm-se-paga">Quanto custa e ROI</a></li>
             <li><a href="#como-implementar-sem-bagunca">Como implementar</a></li>
+            <li><a href="#perguntas-frequentes">Perguntas frequentes</a></li>
             <li><a href="#fontes">Fontes</a></li>
-          </ul>
+            </ul>
         </div>
 
         <div class="sidebar-cta">

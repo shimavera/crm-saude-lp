@@ -77,6 +77,20 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "O que é automação de WhatsApp para clínicas?", "acceptedAnswer": {"@type": "Answer", "text": "É o uso de um sistema que responde, organiza e acompanha as conversas do WhatsApp da clínica sem depender de alguém digitando tudo manualmente. Na prática, ela cuida das tarefas repetitivas, como responder o primeiro contato, confirmar consulta e lembrar o paciente, enquanto a equipe fica livre para o atendimento que exige gente de verdade."}},
+      {"@type": "Question", "name": "Automatizar o WhatsApp da clínica pode gerar bloqueio?", "acceptedAnswer": {"@type": "Answer", "text": "Pode, se for feito errado. Disparo em massa para quem não pediu contato, volume alto de mensagens em pouco tempo e número novo já saindo atirando são os principais gatilhos de bloqueio. O caminho seguro é responder quem procurou a clínica, respeitar ritmo humano de conversa e aquecer o número antes de escalar."}},
+      {"@type": "Question", "name": "Qual a diferença entre automação e IA de atendimento?", "acceptedAnswer": {"@type": "Answer", "text": "Automação segue uma regra fixa: se acontecer isso, envie aquilo. A IA interpreta o que o paciente escreveu e responde de forma diferente conforme o caso, tirando dúvida sobre procedimento, valor ou horário. As duas se complementam, e a maioria das clínicas usa automação para lembretes e IA para a conversa em si."}},
+      {"@type": "Question", "name": "Preciso da API oficial do WhatsApp para automatizar?", "acceptedAnswer": {"@type": "Answer", "text": "Não para começar. Dá para operar conectando o número da clínica ao sistema, que é o suficiente para a maior parte das clínicas. A API oficial faz sentido quando o volume cresce, quando se quer mais estabilidade e quando a clínica precisa de vários atendentes no mesmo número com segurança."}},
+      {"@type": "Question", "name": "O que dá para automatizar sem o atendimento ficar robótico?", "acceptedAnswer": {"@type": "Answer", "text": "Resposta imediata ao primeiro contato, confirmação de consulta, lembrete antes do horário, retomada de quem sumiu e pesquisa de satisfação. O que não se automatiza é negociação, contorno de objeção e acolhimento de paciente inseguro. A régua é simples: automatize o previsível, mantenha humano o que envolve decisão."}}
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -649,6 +663,25 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
 </head>
 <body>
@@ -776,6 +809,18 @@
             <li><a href="https://developers.facebook.com/docs/whatsapp/pricing" target="_blank" rel="noopener nofollow">Preços da API do WhatsApp Business (Meta for Developers)</a> — como a Meta cobra pelas conversas na API oficial.</li>
             <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener nofollow">Lei nº 13.709/2018 (LGPD)</a> — texto integral da lei de proteção de dados.</li>
         </ul>
+        <h2 id="faq">Perguntas frequentes</h2>
+          <h3 id="faq-1">O que é automação de WhatsApp para clínicas?</h3>
+          <p>É o uso de um sistema que responde, organiza e acompanha as conversas do WhatsApp da clínica sem depender de alguém digitando tudo manualmente. Na prática, ela cuida das tarefas repetitivas, como responder o primeiro contato, confirmar consulta e lembrar o paciente, enquanto a equipe fica livre para o atendimento que exige gente de verdade.</p>
+          <h3 id="faq-2">Automatizar o WhatsApp da clínica pode gerar bloqueio?</h3>
+          <p>Pode, se for feito errado. Disparo em massa para quem não pediu contato, volume alto de mensagens em pouco tempo e número novo já saindo atirando são os principais gatilhos de bloqueio. O caminho seguro é responder quem procurou a clínica, respeitar ritmo humano de conversa e aquecer o número antes de escalar.</p>
+          <h3 id="faq-3">Qual a diferença entre automação e IA de atendimento?</h3>
+          <p>Automação segue uma regra fixa: se acontecer isso, envie aquilo. A IA interpreta o que o paciente escreveu e responde de forma diferente conforme o caso, tirando dúvida sobre procedimento, valor ou horário. As duas se complementam, e a maioria das clínicas usa automação para lembretes e IA para a conversa em si.</p>
+          <h3 id="faq-4">Preciso da API oficial do WhatsApp para automatizar?</h3>
+          <p>Não para começar. Dá para operar conectando o número da clínica ao sistema, que é o suficiente para a maior parte das clínicas. A API oficial faz sentido quando o volume cresce, quando se quer mais estabilidade e quando a clínica precisa de vários atendentes no mesmo número com segurança.</p>
+          <h3 id="faq-5">O que dá para automatizar sem o atendimento ficar robótico?</h3>
+          <p>Resposta imediata ao primeiro contato, confirmação de consulta, lembrete antes do horário, retomada de quem sumiu e pesquisa de satisfação. O que não se automatiza é negociação, contorno de objeção e acolhimento de paciente inseguro. A régua é simples: automatize o previsível, mantenha humano o que envolve decisão.</p>
+
         </article>
 
         <div class="author-box" style="display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid #E3E8F2;border-radius:14px;padding:22px 24px;margin:34px 0 8px">
@@ -801,6 +846,7 @@
             <li><a href="#passo-a-passo-de-implementacao">Passo a passo</a></li>
             <li><a href="#como-o-saudecrm-faz">Como o SaúdeCRM faz</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
             <li><a href="#fontes">Fontes</a></li>
           </ul>
         </div>

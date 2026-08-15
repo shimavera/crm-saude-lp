@@ -77,6 +77,20 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "O que é no-show em uma clínica?", "acceptedAnswer": {"@type": "Answer", "text": "É o paciente que marca a consulta e não aparece, sem avisar a tempo de encaixar outra pessoa. O custo não é só o horário vago: entra a estrutura parada, a equipe disponível e o paciente que poderia ter ocupado aquele espaço e ficou esperando vaga."}},
+      {"@type": "Question", "name": "Por que os pacientes faltam à consulta?", "acceptedAnswer": {"@type": "Answer", "text": "Esquecimento é a causa mais comum, mas não é a única. Também pesam o medo do procedimento, a insegurança com o valor, a marcação feita com muita antecedência e a falta de qualquer contato entre o agendamento e o dia. Cada motivo pede uma ação diferente, por isso lembrete sozinho não resolve tudo."}},
+      {"@type": "Question", "name": "Como reduzir faltas em consultas na prática?", "acceptedAnswer": {"@type": "Answer", "text": "Combinando confirmação ativa, lembrete no canal que o paciente realmente usa, contato mais próximo do horário, lista de espera para preencher a vaga que abriu e atenção especial a quem já faltou antes. O ganho vem do conjunto, não de uma medida isolada."}},
+      {"@type": "Question", "name": "Lembrete por WhatsApp funciona para reduzir faltas?", "acceptedAnswer": {"@type": "Answer", "text": "Funciona, e costuma ser o canal com melhor retorno, porque é onde o paciente já está e responde. O detalhe que faz diferença é permitir resposta: o lembrete que aceita um simples confirmar ou remarcar transforma uma falta silenciosa em um horário que a clínica consegue reaproveitar."}},
+      {"@type": "Question", "name": "Dá para automatizar a confirmação de consulta?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, e é justamente onde a automação rende mais, porque é uma tarefa repetitiva, previsível e que ninguém gosta de fazer manualmente. O sistema dispara na hora certa, registra quem confirmou e destaca quem não respondeu, deixando para a equipe apenas os casos que exigem contato pessoal."}}
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -649,6 +663,25 @@
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
+  
+    /* ─── FAQ do artigo ─── */
+    .faq-block { margin: 44px 0 8px; }
+    .faq-block h2 { margin-bottom: 8px; }
+    .faq-q-item {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q-item h3 {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-q-item p { color: var(--muted); margin: 0; }
+    @media (max-width: 600px) { .faq-q-item h3 { font-size: 17px; } }
   </style>
 </head>
 <body>
@@ -802,6 +835,18 @@
             <li><a href="https://whatsappbusiness.com/pt-br/policy/" target="_blank" rel="noopener nofollow">Política de Mensagens do WhatsApp Business</a> — regras de consentimento (opt-in) e de suspensão de conta.</li>
             <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener nofollow">Lei nº 13.709/2018 (LGPD)</a> — texto integral da lei de proteção de dados.</li>
         </ul>
+        <h2 id="faq">Perguntas frequentes</h2>
+          <h3 id="faq-1">O que é no-show em uma clínica?</h3>
+          <p>É o paciente que marca a consulta e não aparece, sem avisar a tempo de encaixar outra pessoa. O custo não é só o horário vago: entra a estrutura parada, a equipe disponível e o paciente que poderia ter ocupado aquele espaço e ficou esperando vaga.</p>
+          <h3 id="faq-2">Por que os pacientes faltam à consulta?</h3>
+          <p>Esquecimento é a causa mais comum, mas não é a única. Também pesam o medo do procedimento, a insegurança com o valor, a marcação feita com muita antecedência e a falta de qualquer contato entre o agendamento e o dia. Cada motivo pede uma ação diferente, por isso lembrete sozinho não resolve tudo.</p>
+          <h3 id="faq-3">Como reduzir faltas em consultas na prática?</h3>
+          <p>Combinando confirmação ativa, lembrete no canal que o paciente realmente usa, contato mais próximo do horário, lista de espera para preencher a vaga que abriu e atenção especial a quem já faltou antes. O ganho vem do conjunto, não de uma medida isolada.</p>
+          <h3 id="faq-4">Lembrete por WhatsApp funciona para reduzir faltas?</h3>
+          <p>Funciona, e costuma ser o canal com melhor retorno, porque é onde o paciente já está e responde. O detalhe que faz diferença é permitir resposta: o lembrete que aceita um simples confirmar ou remarcar transforma uma falta silenciosa em um horário que a clínica consegue reaproveitar.</p>
+          <h3 id="faq-5">Dá para automatizar a confirmação de consulta?</h3>
+          <p>Sim, e é justamente onde a automação rende mais, porque é uma tarefa repetitiva, previsível e que ninguém gosta de fazer manualmente. O sistema dispara na hora certa, registra quem confirmou e destaca quem não respondeu, deixando para a equipe apenas os casos que exigem contato pessoal.</p>
+
         </article>
 
         <div class="author-box" style="display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid #E3E8F2;border-radius:14px;padding:22px 24px;margin:34px 0 8px">
@@ -824,6 +869,7 @@
             <li><a href="#as-9-estrategias">As 9 estratégias</a></li>
             <li><a href="#como-juntar-tudo">Como juntar tudo</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
             <li><a href="#fontes">Fontes</a></li>
           </ul>
         </div>
