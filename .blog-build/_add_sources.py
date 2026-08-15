@@ -53,6 +53,11 @@ SOURCES = {
     "funil-de-vendas-para-clinicas": ["wa_policy", "lgpd"],
     "indicadores-clinica-odontologica": ["cfo_estat", "lgpd"],
     "secretaria-ou-crm-atendimento-clinica": ["wa_policy", "lgpd"],
+    "crm-para-dentistas": ["wa_policy", "cfo_codigos", "lgpd"],
+    "precificacao-consulta-clinica-medica": ["cdc", "lgpd"],
+    "precificacao-procedimentos-esteticos": ["cdc", "cfo_196"],
+    "gestao-de-clinicas-guia": ["lgpd", "wa_policy"],
+    "equipe-minima-para-clinica": ["lgpd", "wa_policy"],
 }
 
 # links inline: (slug, trecho exato a substituir, trecho novo)
