@@ -66,6 +66,9 @@ Teste grátis de 7 dias em qualquer plano, sem cartão de crédito.
 - [Precificação de Procedimentos Estéticos](https://saudecrm.com/blog/precificacao-procedimentos-esteticos.html): custo da hora de sala, depreciação de equipamento, pacotes e o efeito real do desconto.
 - [Gestão de Clínicas](https://saudecrm.com/blog/gestao-de-clinicas-guia.html): as 6 frentes (captação, conversão, agenda, equipe, finanças, retenção), o que medir e por onde começar.
 - [Equipe Mínima para Clínica](https://saudecrm.com/blog/equipe-minima-para-clinica.html): equipe por porte, sobrecarga x desorganização, custo real da contratação e ordem de contratar.
+- [CRM ou Planilha para Clínica](https://saudecrm.com/blog/crm-ou-planilha-para-clinica.html): quando a planilha ainda resolve, sinais de limite e como migrar para um CRM sem travar a equipe.
+- [Como Saber Qual Anúncio Trouxe Cada Paciente](https://saudecrm.com/blog/como-saber-qual-anuncio-trouxe-paciente.html): origem do lead, atribuição de campanha e diferença entre custo por lead e custo por paciente.
+- [IA no Atendimento de Clínicas](https://saudecrm.com/blog/ia-no-atendimento-de-clinicas-limites.html): tarefas que podem ser automatizadas, limites clínicos e implantação com revisão humana.
 
 ## Quem escreve
 
