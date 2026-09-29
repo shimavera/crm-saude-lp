@@ -315,6 +315,20 @@
       else control.removeAttribute('aria-invalid');
     });
   }
+  function hasValidWhatsApp(value) {
+    return /^(?:55)?[1-9]\d\d{8,9}$/.test(String(value).replace(/\D/g, ''));
+  }
+  function serverValidationError(code) {
+    const errors = {
+      invalid_name: { field: 'name', message: 'Confira seu nome e remova caracteres especiais.' },
+      invalid_email: { field: 'email', message: 'Confira o e-mail informado.' },
+      invalid_whatsapp: { field: 'whatsapp', message: 'Confira seu WhatsApp, incluindo o DDD.' },
+      consent_required: { field: 'consent', message: 'Autorize o contato para enviar a solicitação.' },
+      invalid_answers: { step: 0, message: 'Revise as escolhas sobre a sua clínica.' },
+      invalid_payload: { message: 'Revise os dados informados antes de enviar.' }
+    };
+    return errors[code] || null;
+  }
   function validateFormStep(index) {
     let firstInvalid = null;
     if (index === 0) {
@@ -331,8 +345,7 @@
         else if (name !== 'consent' && !control.value.trim()) message = 'Preencha este campo para continuar.';
         else if (name === 'email' && !control.checkValidity()) message = 'Confira o e-mail informado.';
         else if (name === 'whatsapp') {
-          const digits = control.value.replace(/\D/g, '');
-          if (digits.length < 10 || digits.length > 13) message = 'Confira seu WhatsApp e inclua o DDD.';
+          if (!hasValidWhatsApp(control.value)) message = 'Confira seu WhatsApp e inclua o DDD.';
         }
         fieldError(name, message);
         if (message && !firstInvalid) firstInvalid = control;
@@ -406,8 +419,7 @@
     }
     if (!validateFormStep(1)) { measureFormPanels(); return; }
     const data = new FormData(form);
-    const phone = String(data.get('whatsapp') || '').replace(/\D/g, '');
-    if (phone.length < 10 || phone.length > 13) {
+    if (!hasValidWhatsApp(data.get('whatsapp'))) {
       note.textContent = 'Confira seu WhatsApp e inclua o DDD.';
       note.dataset.state = 'error';
       form.elements.whatsapp.focus();
@@ -439,19 +451,38 @@
     delete note.dataset.state;
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 45000);
+    let validation = null;
     try {
       const response = await fetch('/api/diagnostic', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload), signal: controller.signal
       });
       const result = await response.json();
-      if (!response.ok || result.ok !== true) throw new Error('Submission not confirmed');
+      if (!response.ok) {
+        validation = serverValidationError(result && result.error);
+        if (validation) throw new Error('Submission validation failed');
+        throw new Error('Submission not confirmed');
+      }
+      if (result.ok !== true) throw new Error('Submission not confirmed');
       note.textContent = 'Solicitação enviada. Nossa equipe vai entrar em contato para conhecer sua operação.';
       note.dataset.state = 'success';
       submit.textContent = 'Solicitação enviada';
       form.reset();
       window.dataLayer.push({ event: 'diagnostic_form_success', lead_volume: payload.volume });
     } catch {
+      if (validation) {
+        if (validation.step === 0) showFormStep(0, true);
+        if (validation.field) {
+          fieldError(validation.field, validation.message);
+          form.elements.namedItem(validation.field).focus();
+        }
+        note.textContent = validation.message;
+        note.dataset.state = 'error';
+        submit.textContent = 'Corrigir dados';
+        submit.disabled = false;
+        formBack.disabled = false;
+        return;
+      }
       note.textContent = 'Não foi possível confirmar o envio. Seus dados continuam preenchidos. Tente novamente em instantes.';
       note.dataset.state = 'error';
       submit.textContent = 'Tentar novamente';
