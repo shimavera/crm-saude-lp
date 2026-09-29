@@ -1,10 +1,10 @@
 # Story 005: diagnóstico em duas etapas e publicação da LP
 
-Status: Ready for production; live verification pending
+Status: Done
 
 ## Controle do documento
 
-Autoria: Juan Lourenço. Versão: 1.0. Data: 29/09/2026.
+Autoria: Juan Lourenço. Versão: 1.1. Data: 29/09/2026.
 Histórico: versão 1.0, redesenho aprovado pelo usuário e preparação para publicação.
 
 ## Briefing
@@ -22,7 +22,7 @@ O usuário aprovou a nova LP e solicitou melhorar o formulário, publicar a nova
 
 ## OUT
 
-- Alterações na API de diagnóstico ou no contrato de dados.
+- Alterações no contrato de dados; ajuste de prazo e telemetria da API incluído após validação em produção.
 - Terceira etapa, novo funil comercial, métricas ou condições de oferta inventadas.
 - Mudanças na estética aprovada, galeria, copy principal, blog ou páginas legais.
 
@@ -60,3 +60,14 @@ O usuário aprovou a nova LP e solicitou melhorar o formulário, publicar a nova
 Um envio de QA foi persistido na planilha, mas a interface recebeu HTTP 502 de confirmação não concluída. O proxy tinha limite de 12 segundos e o navegador de 20 segundos. Os logs existentes confirmam o status, mas não registravam a duração; timeout é a hipótese principal, não uma causa comprovada.
 
 A correção amplia a janela do destino para 30 segundos, da função para 60 segundos e do navegador para 45 segundos. Logs de falha passam a incluir apenas categoria, duração e status HTTP, sem dados pessoais, corpo de resposta ou endpoint. Não repetir o marcador já persistido. O aceite exige novo teste com marcador distinto e confirmação na interface e na planilha.
+
+## Aceite em produção
+
+- Publicação final: `dpl_BnQu7umWJzXZVMGHfJfsQXAPtacg`, promovida explicitamente para `https://saudecrm.com/`.
+- Nova LP e formulário em duas etapas publicados. Versão anterior disponível em `https://saudecrm.com/lp-v1/`.
+- Envio de QA único, com e-mail reservado `.invalid` e telefone fictício, confirmado pela interface e localizado na célula B4 da planilha canônica. Nenhum contato com terceiros foi disparado pelo script inspecionado.
+- Interface confirmou: “Solicitação enviada. Nossa equipe vai entrar em contato para conhecer sua operação.”
+- 9 testes, lint, typecheck e build aprovados. Cliente publicado com prazo de 45 segundos.
+- Browser público: canonical correto, verificação Search Console presente, Clarity carregado e zero imagens quebradas.
+- A hipótese de timeout permanece sem duração do primeiro erro; a confirmação ponta a ponta passou após ampliar os prazos.
+- Limite da validação: o envio foi comprovado com JavaScript ativo; o POST nativo sem JavaScript não foi validado ponta a ponta.
