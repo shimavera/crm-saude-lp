@@ -5,6 +5,7 @@ const VOLUMES = ['Até 20 por dia', 'De 20 a 50 por dia', 'De 50 a 150 por dia',
 const TEAMS = ['A recepção', 'O próprio profissional', 'Mais de uma pessoa', 'Cada pessoa responde quando consegue', 'Já usamos alguma automação'];
 const PAINS = ['Demoramos para responder', 'O paciente para de responder', 'A equipe esquece os follow-ups', 'Temos conversas espalhadas', 'Não sabemos quais contatos estão mais quentes'];
 const MAX_BODY_BYTES = 16384;
+const DELIVERY_TIMEOUT_MS = 30000;
 
 /** @param {unknown} value @param {number} max */
 function field(value, max) {
@@ -74,17 +75,30 @@ export default async function handler(req, res) {
     const url = new URL(webhook || '');
     if (url.protocol !== 'https:' || url.hostname !== 'script.google.com' || !/^\/macros\/s\/[^/]+\/exec$/.test(url.pathname)) throw new Error('Invalid endpoint');
   } catch { return res.status(503).json({ ok: false, error: 'service_unavailable' }); }
+  const startedAt = Date.now();
+  let failureReason = 'upstream_network';
+  let upstreamStatus = 0;
   try {
     const response = await fetch(/** @type {string} */ (webhook), {
       method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(result.payload), signal: AbortSignal.timeout(12000), redirect: 'follow',
+      body: JSON.stringify(result.payload), signal: AbortSignal.timeout(DELIVERY_TIMEOUT_MS), redirect: 'follow',
     });
+    upstreamStatus = response.status;
+    failureReason = 'upstream_http';
     if (!response.ok) throw new Error('Upstream failed');
+    failureReason = 'upstream_json';
     const acknowledgment = await response.json();
+    failureReason = 'upstream_ack';
     if (!acknowledgment || acknowledgment.ok !== true) throw new Error('Missing acknowledgment');
     return res.status(200).json({ ok: true });
-  } catch {
-    // Não expor endpoint, resposta upstream ou dados pessoais ao cliente/log.
+  } catch (error) {
+    const timedOut = error instanceof Error && ['TimeoutError', 'AbortError'].includes(error.name);
+    // Somente metadados operacionais; nunca endpoint, resposta ou dados pessoais.
+    console.warn('[diagnostic] delivery_unconfirmed', {
+      reason: timedOut ? 'upstream_timeout' : failureReason,
+      duration_ms: Date.now() - startedAt,
+      upstream_status: upstreamStatus,
+    });
     return res.status(502).json({ ok: false, error: 'delivery_unconfirmed' });
   }
 }

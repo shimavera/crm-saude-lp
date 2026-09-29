@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import handler, { validateLead } from '../api/diagnostic.js';
 
 const lead = {
@@ -71,21 +72,46 @@ test('confirma somente JSON ok:true; falhas e respostas ambíguas não produzem 
   const old = process.env.LEAD_WEBHOOK_URL;
   process.env.LEAD_WEBHOOK_URL = 'https://script.google.com/macros/s/test-only/exec';
   t.after(() => { if (old === undefined) delete process.env.LEAD_WEBHOOK_URL; else process.env.LEAD_WEBHOOK_URL = old; });
-  let reply = { ok: true, json: async () => ({ ok: true, private: 'never echo' }) };
+  let reply = { ok: true, status: 200, json: async () => ({ ok: true, private: 'never echo' }) };
+  const warnings = [];
+  t.mock.method(console, 'warn', (...args) => warnings.push(args));
   let forwarded;
   t.mock.method(globalThis, 'fetch', async (_url, options) => { forwarded = JSON.parse(options.body); return reply; });
   assert.deepEqual((await invoke()).data, { ok: true });
   assert.equal(forwarded.consent, true);
   assert.equal(forwarded.company_website, undefined);
   for (const failed of [
-    { ok: false, json: async () => ({ ok: true }) },
-    { ok: true, json: async () => ({ ok: false }) },
-    { ok: true, json: async () => ({ status: 'success' }) },
-    { ok: true, json: async () => { throw new SyntaxError('HTML'); } },
+    { ok: false, status: 503, json: async () => ({ ok: true }) },
+    { ok: true, status: 200, json: async () => ({ ok: false }) },
+    { ok: true, status: 200, json: async () => ({ status: 'success' }) },
+    { ok: true, status: 200, json: async () => { throw new SyntaxError('HTML'); } },
   ]) {
     reply = failed;
     const response = await invoke();
     assert.equal(response.status, 502);
     assert.deepEqual(response.data, { ok: false, error: 'delivery_unconfirmed' });
   }
+  assert.deepEqual(warnings.map(entry => entry[1].reason), ['upstream_http', 'upstream_ack', 'upstream_ack', 'upstream_json']);
+  assert.ok(warnings.every(entry => Object.keys(entry[1]).sort().join(',') === 'duration_ms,reason,upstream_status'));
+  assert.doesNotMatch(JSON.stringify(warnings), /qa@example|never echo|script.google/);
+});
+
+test('timeout mantém erro honesto e telemetria segura, com margem entre destino, cliente e função', async (t) => {
+  const old = process.env.LEAD_WEBHOOK_URL;
+  process.env.LEAD_WEBHOOK_URL = 'https://script.google.com/macros/s/test-only/exec';
+  t.after(() => { if (old === undefined) delete process.env.LEAD_WEBHOOK_URL; else process.env.LEAD_WEBHOOK_URL = old; });
+  let timeoutMs;
+  const warnings = [];
+  t.mock.method(AbortSignal, 'timeout', milliseconds => { timeoutMs = milliseconds; return new AbortController().signal; });
+  t.mock.method(console, 'warn', (...args) => warnings.push(args));
+  t.mock.method(globalThis, 'fetch', async () => { throw new DOMException('Sensitive upstream detail', 'TimeoutError'); });
+  assert.equal((await invoke()).status, 502);
+  assert.equal(warnings[0][1].reason, 'upstream_timeout');
+  assert.doesNotMatch(JSON.stringify(warnings), /Sensitive|script.google|qa@example/);
+  const config = JSON.parse(await readFile('vercel.json', 'utf8'));
+  const client = await readFile('assets/futurista.js', 'utf8');
+  const clientTimeout = Number(client.match(/setTimeout\(\(\) => controller\.abort\(\), (\d+)\)/)[1]);
+  assert.ok(timeoutMs >= 30000);
+  assert.ok(clientTimeout > timeoutMs, 'Cliente deve aguardar a resposta do proxy.');
+  assert.ok(config.functions['api/diagnostic.js'].maxDuration * 1000 > clientTimeout, 'Função precisa de margem para responder.');
 });

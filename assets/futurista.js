@@ -438,7 +438,7 @@
     note.textContent = 'Aguarde enquanto enviamos sua solicitação.';
     delete note.dataset.state;
     const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 20000);
+    const timeout = window.setTimeout(() => controller.abort(), 45000);
     try {
       const response = await fetch('/api/diagnostic', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
