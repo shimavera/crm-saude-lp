@@ -1,6 +1,6 @@
 # Story 006: feedback de validação do diagnóstico
 
-Status: Ready
+Status: Done
 
 ## Controle do documento
 
@@ -28,3 +28,10 @@ Um envio em produção retornou HTTP 400. A interface mostrou uma mensagem de in
 3. Campos recusados pela API recebem foco e mensagem compreensível.
 4. Erro de serviço continua preservando os dados e permite nova tentativa.
 5. Testes, lint, typecheck, build e validação no domínio público passam.
+
+## Validação
+
+- Registro da falha real: HTTP 400 em `POST /api/diagnostic`, portanto recusada antes do serviço de planilha.
+- Requisição de QA com dados fictícios confirmou o fluxo completo com HTTP 200 em 13,4 segundos.
+- Browser no domínio público confirmou que WhatsApp inválido é bloqueado no campo, sem requisição e sem a mensagem de indisponibilidade.
+- Testes, lint, typecheck e build aprovados.
