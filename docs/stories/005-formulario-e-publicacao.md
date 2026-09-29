@@ -54,3 +54,9 @@ O usuário aprovou a nova LP e solicitou melhorar o formulário, publicar a nova
 - `/lp-v1/` validada visualmente, sem imagens quebradas, com noindex e canonical próprio. Recursos isolados e formulário compatível com o proxy confirmado.
 - 8 testes, lint, typecheck e build aprovados. Preview valida home e arquivo com bytes iguais aos arquivos locais.
 - Variáveis de produção preparadas; publicação e validação real de captura serão registradas após o deploy.
+
+## Correção encontrada na validação em produção
+
+Um envio de QA foi persistido na planilha, mas a interface recebeu HTTP 502 de confirmação não concluída. O proxy tinha limite de 12 segundos e o navegador de 20 segundos. Os logs existentes confirmam o status, mas não registravam a duração; timeout é a hipótese principal, não uma causa comprovada.
+
+A correção amplia a janela do destino para 30 segundos, da função para 60 segundos e do navegador para 45 segundos. Logs de falha passam a incluir apenas categoria, duração e status HTTP, sem dados pessoais, corpo de resposta ou endpoint. Não repetir o marcador já persistido. O aceite exige novo teste com marcador distinto e confirmação na interface e na planilha.
