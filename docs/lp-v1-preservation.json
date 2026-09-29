@@ -1,0 +1,125 @@
+{
+  "source": "https://saudecrm.com/",
+  "source_deployment": "dpl_Eyfb6u2wYmXprBUphAxDXmDkdcV7",
+  "original_html_sha256": "69df52e26d442b4b49e1a585ad5ee063aec08820c3db01ae616664da629ba097",
+  "original_html_bytes": 185358,
+  "preserved_assets": [
+    {
+      "path": "/assets/integrations/clinicorp.png",
+      "sha256": "89cb320486990dab3db350ff91ab9759c91de63cf7e7a101d974abeb41fb85df",
+      "bytes": 8215
+    },
+    {
+      "path": "/assets/integrations/google-calendar.svg",
+      "sha256": "aaebe4378bc647bccdeef7477e51a15fd634b281546e3def5f4d7596bc72ff83",
+      "bytes": 1225
+    },
+    {
+      "path": "/assets/integrations/google-sheets.svg",
+      "sha256": "039e9c84aeaf486991e763539940ab32053754879021e62f6b40c15f006f26f7",
+      "bytes": 459
+    },
+    {
+      "path": "/assets/integrations/instagram.svg",
+      "sha256": "9007b995b5d7f7de899ceac41e619e8c0caa1e3faec7eee70fe2b3584bcc4a21",
+      "bytes": 2116
+    },
+    {
+      "path": "/assets/integrations/webhooks.svg",
+      "sha256": "3ca4e1b17e7cfff9f2975a910e23fe35311cbebb33fbd10ff81a69021862614a",
+      "bytes": 379
+    },
+    {
+      "path": "/assets/integrations/whatsapp.svg",
+      "sha256": "3e197e0e1f3e679ee09823c75e1c7bad3a19da9bd1ba01df395268b9ae91816f",
+      "bytes": 1231
+    },
+    {
+      "path": "/como-funciona-poster.webp",
+      "sha256": "2a3011208f1d768d3e2bb5c00ea532dd6583745da255f13497f07a86e57ec303",
+      "bytes": 40188
+    },
+    {
+      "path": "/como-funciona.mp4",
+      "sha256": "c0ed6099ca7ef03b2484523fd2da41fd14c738e659aa6326e752f4ed9120e77e",
+      "bytes": 6788433
+    },
+    {
+      "path": "/favicon.png",
+      "sha256": "ed5a14a1cdfa114df70c462201754eda3451ba505cbe3871b9ea5b1c9cf6a510",
+      "bytes": 5054
+    },
+    {
+      "path": "/fonts/inter-300.woff2",
+      "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+      "bytes": 48432
+    },
+    {
+      "path": "/fonts/inter-400.woff2",
+      "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+      "bytes": 48432
+    },
+    {
+      "path": "/fonts/inter-500.woff2",
+      "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+      "bytes": 48432
+    },
+    {
+      "path": "/fonts/inter-600.woff2",
+      "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+      "bytes": 48432
+    },
+    {
+      "path": "/fonts/plus-jakarta-sans-400.woff2",
+      "sha256": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+      "bytes": 27272
+    },
+    {
+      "path": "/fonts/plus-jakarta-sans-500.woff2",
+      "sha256": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+      "bytes": 27272
+    },
+    {
+      "path": "/fonts/plus-jakarta-sans-600.woff2",
+      "sha256": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+      "bytes": 27272
+    },
+    {
+      "path": "/fonts/plus-jakarta-sans-700.woff2",
+      "sha256": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+      "bytes": 27272
+    },
+    {
+      "path": "/fonts/plus-jakarta-sans-800.woff2",
+      "sha256": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+      "bytes": 27272
+    },
+    {
+      "path": "/logo-animado.mp4",
+      "sha256": "76ca45f78754fd6dba210b7b6f9dea3ba822b7b427f487c11301cc0d1bec7aaf",
+      "bytes": 25315
+    },
+    {
+      "path": "/logo-poster.jpg",
+      "sha256": "049c52415e8790b3fe2b4c85af9b5a4e34dccd8f6264e68e30d1cb737d75f703",
+      "bytes": 4662
+    },
+    {
+      "path": "/logo.webp",
+      "sha256": "981aa10fdf7f1ba20e0e3de7e2f31fec7720e4f82d664ad01a62eb6561b15c54",
+      "bytes": 13808
+    },
+    {
+      "path": "/og-image.jpg",
+      "sha256": "5f7b9f42b5bf9f07d5f3518ca5ab78d6271acc11917fc0f6c662f94ae1349dad",
+      "bytes": 149373
+    }
+  ],
+  "adjustments": [
+    "Dependências apontam para /lp-v1/.",
+    "Canonical próprio e noindex,follow.",
+    "Clarity usa configuração pública gerada de PUBLIC_CLARITY_ID.",
+    "Formulário preserva campos e envio via /api/diagnostic com confirmação JSON."
+  ],
+  "note": "Snapshot da resposta pública real; o deployment estava com alterações não representadas integralmente no commit9fc560a."
+}

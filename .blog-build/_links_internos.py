@@ -31,12 +31,14 @@ TITULOS = {
     "crm-para-clinica-de-estetica": "CRM para clínica de estética",
     "crm-para-clinica-odontologica": "CRM para clínica odontológica: guia completo",
     "crm-para-dentistas": "CRM para dentistas",
+    "crm-ou-planilha-para-clinica": "CRM ou planilha para clínica",
     "equipe-minima-para-clinica": "Equipe mínima para clínica",
     "equipe-nao-consegue-acompanhar-leads": "Equipe não consegue acompanhar os leads?",
     "follow-up-de-pacientes": "Follow-up de pacientes",
     "funil-de-vendas-para-clinicas": "Funil de vendas para clínicas",
     "gestao-de-clinicas-guia": "Gestão de clínicas: as 6 frentes",
     "indicadores-clinica-odontologica": "Indicadores de uma clínica odontológica",
+    "ia-no-atendimento-de-clinicas-limites": "IA no atendimento de clínicas: usos e limites",
     "lgpd-para-clinicas": "LGPD na clínica",
     "melhores-sistemas-para-clinicas": "Melhores sistemas para clínicas",
     "precificacao-consulta-clinica-medica": "Precificação de consulta em clínica médica",
@@ -49,6 +51,7 @@ TITULOS = {
     "secretaria-virtual-com-ia-para-clinicas": "Secretária virtual com IA para clínicas",
     "software-de-gestao-ou-crm-para-clinica": "Software de gestão ou CRM",
     "trafego-pago-para-dentistas": "Tráfego pago para dentistas",
+    "como-saber-qual-anuncio-trouxe-paciente": "Como saber qual anúncio trouxe cada paciente",
 }
 
 # 3 relacionados por post, escolhidos por proximidade de tema e por intenção
@@ -56,6 +59,7 @@ TITULOS = {
 RELACIONADOS = {
     "crm-para-dentistas": ["quanto-custa-crm-para-clinica", "software-de-gestao-ou-crm-para-clinica", "melhores-sistemas-para-clinicas"],
     "crm-para-clinica-odontologica": ["crm-para-dentistas", "quanto-custa-crm-para-clinica", "melhores-sistemas-para-clinicas"],
+    "crm-ou-planilha-para-clinica": ["software-de-gestao-ou-crm-para-clinica", "crm-para-dentistas", "melhores-sistemas-para-clinicas"],
     "crm-para-clinica-de-estetica": ["recorrencia-em-clinica-de-estetica", "precificacao-procedimentos-esteticos", "captacao-pacientes-harmonizacao-facial"],
     "melhores-sistemas-para-clinicas": ["quanto-custa-crm-para-clinica", "software-de-gestao-ou-crm-para-clinica", "crm-para-dentistas"],
     "quanto-custa-crm-para-clinica": ["melhores-sistemas-para-clinicas", "crm-para-dentistas", "indicadores-clinica-odontologica"],
@@ -63,6 +67,7 @@ RELACIONADOS = {
 
     "como-nao-perder-leads-no-whatsapp": ["follow-up-de-pacientes", "automacao-de-whatsapp-para-clinicas", "funil-de-vendas-para-clinicas"],
     "automacao-de-whatsapp-para-clinicas": ["secretaria-virtual-com-ia-para-clinicas", "como-nao-perder-leads-no-whatsapp", "como-reduzir-faltas-no-show-consultas"],
+    "ia-no-atendimento-de-clinicas-limites": ["automacao-de-whatsapp-para-clinicas", "secretaria-virtual-com-ia-para-clinicas", "lgpd-para-clinicas"],
     "follow-up-de-pacientes": ["funil-de-vendas-para-clinicas", "equipe-nao-consegue-acompanhar-leads", "como-nao-perder-leads-no-whatsapp"],
     "funil-de-vendas-para-clinicas": ["indicadores-clinica-odontologica", "follow-up-de-pacientes", "crm-para-dentistas"],
     "equipe-nao-consegue-acompanhar-leads": ["secretaria-ou-crm-atendimento-clinica", "follow-up-de-pacientes", "equipe-minima-para-clinica"],
@@ -71,6 +76,7 @@ RELACIONADOS = {
 
     "como-atrair-pacientes-clinica-odontologica": ["trafego-pago-para-dentistas", "publicidade-odontologica-o-que-pode", "crm-para-dentistas"],
     "trafego-pago-para-dentistas": ["publicidade-odontologica-o-que-pode", "como-atrair-pacientes-clinica-odontologica", "indicadores-clinica-odontologica"],
+    "como-saber-qual-anuncio-trouxe-paciente": ["trafego-pago-para-dentistas", "indicadores-clinica-odontologica", "funil-de-vendas-para-clinicas"],
     "captacao-pacientes-harmonizacao-facial": ["precificacao-procedimentos-esteticos", "recorrencia-em-clinica-de-estetica", "crm-para-clinica-de-estetica"],
     "publicidade-odontologica-o-que-pode": ["trafego-pago-para-dentistas", "como-atrair-pacientes-clinica-odontologica", "lgpd-para-clinicas"],
 

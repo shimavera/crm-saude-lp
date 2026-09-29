@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "docs/demo-product/demo.css"
+        ],
+        "createdAt": "2026-09-29T14:17:04.796Z",
+        "reason": "Agent review: intentional screenshot fixture reproduces the supplied SaudeCRM conversation selection and Kanban stage accents; user requested fidelity to existing product screens."
+      },
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "docs/demo-product/demo.css"
+        ],
+        "createdAt": "2026-09-29T14:17:06.534Z",
+        "reason": "Agent review: false positive; chat-history uses faint radial-gradient curves as conversation wallpaper, not a two-axis linear grid. Static demonstration fixture matching supplied product reference."
+      }
+    ]
+  }
+}
