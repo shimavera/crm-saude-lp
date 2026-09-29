@@ -65,9 +65,10 @@
   });
 
   const scenes = [
-    { title: 'O atendimento começa aqui', subtitle: 'IA de atendimento · SaúdeCRM', patient: 'Oi! Vocês fazem avaliação?', answer: 'Olá! Vamos te ajudar. Me conta: é sua primeira visita à clínica?', insight: 'Uma pergunta simples. Um atendimento com contexto.' },
-    { title: 'Uma conversa merece continuidade', subtitle: 'Follow-up · SaúdeCRM', patient: 'Vou olhar com calma e depois retorno.', answer: 'Olá! Ficou alguma dúvida sobre a avaliação? Se quiser continuar, nossa equipe pode te ajudar com o próximo passo.', insight: 'O retorno segue o contexto e as regras da sua clínica.' },
-    { title: 'Sua equipe entra com o contexto', subtitle: 'Atendimento humano · SaúdeCRM', patient: 'Quero conversar com alguém da equipe.', answer: 'Com certeza. Vou encaminhar sua conversa para a equipe. Assim, ela continua o atendimento com o que você já compartilhou.', insight: 'O histórico acompanha o atendimento. O cuidado continua.' }
+    { title: 'Pode falar. A IA acompanha.', subtitle: 'Áudio recebido e enviado · SaúdeCRM', kind: 'audio', patient: 'Quero marcar uma avaliação, mas só consigo no fim da tarde. Vocês têm esse horário?', answer: 'Olá! Vou te ajudar a encontrar uma opção. É sua primeira visita à clínica?', insight: 'A IA entende áudios e também pode responder por áudio.' },
+    { title: 'A imagem também tem contexto.', subtitle: 'Compreensão de imagem · SaúdeCRM', kind: 'image', patient: 'Vi este material da clínica. Como faço para agendar essa avaliação?', answer: 'Você enviou o material sobre avaliação inicial. Posso te ajudar com o agendamento. Qual período costuma funcionar melhor para você?', insight: 'A imagem ajuda a continuar o atendimento. A avaliação clínica fica com o profissional.' },
+    { title: 'Interesse com um próximo passo.', subtitle: 'Agendamento com o profissional · SaúdeCRM', kind: 'schedule', patient: 'Prefiro à tarde. Já posso marcar?', answer: 'Vamos seguir com a avaliação. Neste exemplo, temos terça às 16h ou quinta às 17h. Qual funciona melhor para você?', insight: 'O agendamento segue a disponibilidade e as regras configuradas para a clínica.' },
+    { title: 'A equipe entra com o contexto.', subtitle: 'Atendimento humano · SaúdeCRM', kind: 'team', patient: 'Quero conversar com alguém da recepção.', answer: 'Com certeza. Vou encaminhar sua conversa para a equipe continuar o atendimento com o que você já compartilhou.', insight: 'Sua recepção recebe o histórico e assume quando necessário.' }
   ];
   const tabs = Array.from(document.querySelectorAll('[data-scene]'));
   const scenePanel = document.getElementById('demo-panel');
@@ -84,7 +85,12 @@
     scenePanel.setAttribute('aria-labelledby', tabs[index].id);
     document.getElementById('scene-title').textContent = scene.title;
     document.getElementById('scene-subtitle').textContent = scene.subtitle;
-    messages.innerHTML = '<div class="scene-message from-patient"><span>PACIENTE</span>' + scene.patient + '</div><div class="scene-message from-ai"><span><svg><use href="#i-spark"/></svg> SAÚDECRM IA</span>' + scene.answer + '</div><div class="scene-insight"><svg><use href="#i-check"/></svg>' + scene.insight + '</div>';
+    const audioWave = '<span class="audio-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>';
+    const patientLabel = scene.kind === 'audio' ? 'EXEMPLO DE ÁUDIO TRANSCRITO' : 'PACIENTE';
+    const answerLabel = scene.kind === 'audio' ? 'RESPOSTA EM ÁUDIO, TRANSCRITA' : 'SAÚDECRM IA';
+    const mediaCard = scene.kind === 'image' ? '<div class="demo-image-card"><span>SAÚDECRM / CLÍNICA DEMONSTRATIVA</span><strong>Avaliação inicial.</strong><small>Conheça nosso atendimento.</small><svg><use href="#i-spark"/></svg></div>' : '';
+    const scheduleCard = scene.kind === 'schedule' ? '<div class="demo-appointment"><svg><use href="#i-check"/></svg><div><b>Exemplo: avaliação agendada</b><span>Dra. Sofia · quinta, 17h</span><small>Profissional e horário fictícios.</small></div></div>' : '';
+    messages.innerHTML = mediaCard + '<div class="scene-message from-patient"><span>' + patientLabel + '</span>' + (scene.kind === 'audio' ? audioWave : '') + scene.patient + '</div><div class="scene-message from-ai"><span><svg><use href="#i-spark"/></svg> ' + answerLabel + '</span>' + scene.answer + '</div>' + scheduleCard + '<div class="scene-insight"><svg><use href="#i-check"/></svg>' + scene.insight + '</div>';
     if (!paused && !focus && typeof messages.animate === 'function') {
       messages.getAnimations().forEach(animation => animation.cancel());
       messages.animate([{ opacity: 0, transform: 'translateY(7px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 250, easing: 'ease-out' });
@@ -102,6 +108,71 @@
     event.preventDefault();
     selectScene(next, true);
   });
+
+
+  const productScreens = [
+    { name: 'Dashboard', src: '/assets/product/dashboard.jpg', alt: 'Dashboard demonstrativo do SaúdeCRM com visão geral da operação', caption: 'Sua operação organizada para acompanhar o próximo passo.' },
+    { name: 'Conversas', src: '/assets/product/conversas.jpg', alt: 'Interface demonstrativa de conversas do SaúdeCRM, com histórico e atendimento da IA', caption: 'O histórico acompanha o atendimento da IA e da sua equipe.' },
+    { name: 'Kanban', src: '/assets/product/kanban.jpg', alt: 'Funil demonstrativo do SaúdeCRM organizado em colunas por etapa do atendimento', caption: 'Cada contato tem uma etapa para acompanhar.' }
+  ];
+  const productTabs = Array.from(document.querySelectorAll('[data-product]'));
+  const productImage = document.getElementById('product-image');
+  const productPanel = document.getElementById('product-panel');
+  let productIndex = 0;
+  function selectProduct(index, focus = false) {
+    productIndex = index;
+    const screen = productScreens[index];
+    productTabs.forEach((tab, tabIndex) => {
+      tab.setAttribute('aria-selected', String(tabIndex === index));
+      tab.tabIndex = tabIndex === index ? 0 : -1;
+    });
+    productPanel.setAttribute('aria-labelledby', productTabs[index].id);
+    productImage.src = screen.src;
+    productImage.alt = screen.alt;
+    document.getElementById('product-caption').textContent = screen.caption;
+    if (focus) productTabs[index].focus();
+  }
+  productTabs.forEach((tab, index) => tab.addEventListener('click', () => selectProduct(index)));
+  document.querySelector('.product-tabs').addEventListener('keydown', event => {
+    let next = productIndex;
+    if (event.key === 'ArrowRight') next = (next + 1) % productTabs.length;
+    else if (event.key === 'ArrowLeft') next = (next + productTabs.length - 1) % productTabs.length;
+    else if (event.key === 'Home') next = 0;
+    else if (event.key === 'End') next = productTabs.length - 1;
+    else return;
+    event.preventDefault();
+    selectProduct(next, true);
+  });
+  const productDialog = document.getElementById('product-dialog');
+  const dialogImage = document.getElementById('dialog-product-image');
+  let dialogTrigger = null;
+  document.querySelectorAll('[data-open-product]').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const value = trigger.dataset.openProduct;
+      const screen = productScreens[value === 'current' ? productIndex : Number(value)];
+      if (!screen || !productDialog) return;
+      dialogTrigger = trigger;
+      document.getElementById('dialog-title').textContent = screen.name + ' SaúdeCRM';
+      dialogImage.src = screen.src;
+      dialogImage.alt = screen.alt + ', ampliado';
+      if (typeof productDialog.showModal === 'function') {
+        productDialog.showModal();
+        document.body.classList.add('dialog-open');
+        productDialog.querySelector('.dialog-close').focus();
+      }
+    });
+  });
+  productDialog.querySelector('.dialog-close').addEventListener('click', () => productDialog.close());
+  productDialog.addEventListener('click', event => {
+    if (event.target !== productDialog) return;
+    const bounds = productDialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) productDialog.close();
+  });
+  productDialog.addEventListener('close', () => {
+    document.body.classList.remove('dialog-open');
+    if (dialogTrigger && document.contains(dialogTrigger)) dialogTrigger.focus({ preventScroll: true });
+  });
+  selectScene(0);
 
   let width = 0;
   let height = 0;
