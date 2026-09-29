@@ -297,9 +297,114 @@
   const note = document.getElementById('diagnostic-note');
   const submit = form.querySelector('[type="submit"]');
   let submitting = false;
+  const formPanels = Array.from(form.querySelectorAll('[data-form-step]'));
+  const formNext = form.querySelector('.form-next');
+  const formBack = form.querySelector('.form-back');
+  const formProgress = form.querySelector('.form-progress');
+  const formCounter = document.querySelector('.form-counter');
+  const formPanelWrap = form.querySelector('.diagnostic-panels');
+  const initialNote = note.innerHTML;
+  let formStep = 0;
+  form.noValidate = true;
+  form.classList.add('form-enhanced');
+  function fieldError(name, message) {
+    const error = document.getElementById(name + '-error');
+    if (error) { error.textContent = message; error.hidden = !message; }
+    form.querySelectorAll('[name="' + name + '"]').forEach(control => {
+      if (message) control.setAttribute('aria-invalid', 'true');
+      else control.removeAttribute('aria-invalid');
+    });
+  }
+  function validateFormStep(index) {
+    let firstInvalid = null;
+    if (index === 0) {
+      ['volume', 'team', 'pain'].forEach(name => {
+        const selected = form.querySelector('[name="' + name + '"]:checked');
+        fieldError(name, selected ? '' : 'Escolha uma opção para continuar.');
+        if (!selected && !firstInvalid) firstInvalid = form.querySelector('[name="' + name + '"]');
+      });
+    } else {
+      ['name', 'whatsapp', 'email', 'consent'].forEach(name => {
+        const control = form.elements.namedItem(name);
+        let message = '';
+        if (name === 'consent' && !control.checked) message = 'Autorize o contato para enviar a solicitação.';
+        else if (name !== 'consent' && !control.value.trim()) message = 'Preencha este campo para continuar.';
+        else if (name === 'email' && !control.checkValidity()) message = 'Confira o e-mail informado.';
+        else if (name === 'whatsapp') {
+          const digits = control.value.replace(/\D/g, '');
+          if (digits.length < 10 || digits.length > 13) message = 'Confira seu WhatsApp e inclua o DDD.';
+        }
+        fieldError(name, message);
+        if (message && !firstInvalid) firstInvalid = control;
+      });
+    }
+    if (firstInvalid) { firstInvalid.focus(); return false; }
+    return true;
+  }
+  function measureFormPanels() {
+    const width = formPanelWrap.clientWidth;
+    if (!width) return;
+    let height = 0;
+    formPanels.forEach(panel => {
+      const wasHidden = panel.hidden;
+      const savedStyle = panel.getAttribute('style');
+      panel.hidden = false;
+      panel.style.cssText = 'position:absolute;visibility:hidden;pointer-events:none;left:0;top:0;width:' + width + 'px;';
+      height = Math.max(height, panel.getBoundingClientRect().height);
+      if (savedStyle === null) panel.removeAttribute('style'); else panel.setAttribute('style', savedStyle);
+      panel.hidden = wasHidden;
+    });
+    formPanelWrap.style.minHeight = Math.ceil(height) + 'px';
+  }
+  function showFormStep(index, focus = false) {
+    formStep = index;
+    formPanels.forEach((panel, panelIndex) => { panel.hidden = panelIndex !== index; });
+    formNext.hidden = index !== 0;
+    formBack.hidden = index !== 1;
+    submit.hidden = index !== 1;
+    formProgress.hidden = false;
+    formCounter.hidden = false;
+    formCounter.textContent = index === 0 ? '01 / 02' : '02 / 02';
+    formProgress.setAttribute('aria-label', 'Etapa ' + (index + 1) + ' de 2');
+    formProgress.querySelectorAll('.form-progress-step').forEach((step, stepIndex) => {
+      step.classList.toggle('is-current', stepIndex === index);
+      step.classList.toggle('is-complete', stepIndex < index);
+      if (stepIndex === index) step.setAttribute('aria-current', 'step');
+      else step.removeAttribute('aria-current');
+    });
+    form.querySelector('.form-answer-summary').hidden = index !== 1;
+    if (focus) {
+      const heading = formPanels[index].querySelector('h3');
+      heading.tabIndex = -1;
+      heading.focus({ preventScroll: true });
+    }
+    measureFormPanels();
+  }
+  formNext.addEventListener('click', () => {
+    if (validateFormStep(0)) { note.innerHTML = initialNote; delete note.dataset.state; showFormStep(1, true); }
+    else measureFormPanels();
+  });
+  formBack.addEventListener('click', () => {
+    if (!submitting) { note.innerHTML = initialNote; delete note.dataset.state; showFormStep(0, true); }
+  });
+  form.addEventListener('input', event => {
+    if (event.target.name && event.target.getAttribute('aria-invalid')) fieldError(event.target.name, '');
+  });
+  form.addEventListener('change', event => {
+    if (event.target.type === 'radio') fieldError(event.target.name, '');
+  });
+  showFormStep(0);
+  window.addEventListener('resize', measureFormPanels, { passive: true });
+  if (document.fonts) document.fonts.ready.then(measureFormPanels);
   form.addEventListener('submit', async event => {
     event.preventDefault();
-    if (submitting || !form.reportValidity()) return;
+    if (submitting) return;
+    if (formStep === 0) {
+      if (validateFormStep(0)) showFormStep(1, true);
+      else measureFormPanels();
+      return;
+    }
+    if (!validateFormStep(1)) { measureFormPanels(); return; }
     const data = new FormData(form);
     const phone = String(data.get('whatsapp') || '').replace(/\D/g, '');
     if (phone.length < 10 || phone.length > 13) {
@@ -328,6 +433,7 @@
     window.dataLayer.push({ event: 'diagnostic_form_submit', lead_volume: data.get('volume') });
     submitting = true;
     submit.disabled = true;
+    formBack.disabled = true;
     submit.textContent = 'Enviando solicitação...';
     note.textContent = 'Aguarde enquanto enviamos sua solicitação.';
     delete note.dataset.state;
@@ -350,6 +456,7 @@
       note.dataset.state = 'error';
       submit.textContent = 'Tentar novamente';
       submit.disabled = false;
+      formBack.disabled = false;
     } finally {
       window.clearTimeout(timeout);
       submitting = false;
