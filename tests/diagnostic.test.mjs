@@ -53,7 +53,12 @@ test('valida método, origem, content type e tamanho antes de encaminhar', async
   assert.equal((await invoke(lead, { headers: { 'content-type': 'text/plain' } })).status, 415);
   assert.equal((await invoke('x'.repeat(16385))).status, 413);
   assert.equal((await invoke('{invalid')).status, 400);
-  assert.equal((await invoke({ ...lead, consent: false })).status, 400);
+  const invalidConsent = await invoke({ ...lead, consent: false });
+  assert.equal(invalidConsent.status, 400);
+  assert.equal(invalidConsent.data.error, 'consent_required');
+  const invalidWhatsapp = await invoke({ ...lead, whatsapp: '(00) 00000-0000' });
+  assert.equal(invalidWhatsapp.status, 400);
+  assert.equal(invalidWhatsapp.data.error, 'invalid_whatsapp');
 });
 
 test('sem configuração válida, retorna indisponível e nunca faz envio', async (t) => {
