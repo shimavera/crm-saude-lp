@@ -1,6 +1,6 @@
 # Story 007: CTA único para diagnóstico
 
-Status: Ready
+Status: Done
 
 ## Controle do documento
 
@@ -26,3 +26,10 @@ A LP deve conduzir exclusivamente ao formulário de diagnóstico. O acesso de lo
 2. O CTA de cabeçalho leva ao formulário.
 3. Navegação desktop e mobile seguem acessíveis.
 4. Testes, lint, typecheck, build e verificação no domínio público passam.
+
+## Validação
+
+- Produção confirmada na publicação `dpl_4m81deaU1Fd8Goj71RkNWiTqnc3g`.
+- A página pública não contém links para `app.saudecrm.com` nem rótulos de login.
+- Cinco links internos direcionam para `#diagnostico`, incluindo cabeçalho e menu mobile.
+- Testes, lint, typecheck e build aprovados.
