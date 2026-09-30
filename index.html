@@ -65,8 +65,8 @@
 <header class="site-header">
  <a class="brand" href="#" aria-label="SaúdeCRM, início"><img class="brand-logo" src="/logo.webp" alt="" width="34" height="34"><span>saúde<span class="brand-crm">crm</span><span class="brand-dot">.</span></span></a>
  <nav class="desktop-nav" aria-label="Navegação principal"><a href="#experiencia">A experiência</a><a href="#como-funciona">Como funciona</a><a href="#perguntas">Perguntas</a></nav>
- <div class="nav-actions"><a class="login-link" href="https://app.saudecrm.com/">Entrar <span aria-hidden="true">↗</span></a><a class="button button-small" href="#diagnostico">Conhecer a IA <svg><use href="#i-arrow"/></svg></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><span></span><span></span></button></div>
- <nav id="mobile-menu" class="mobile-menu" aria-label="Navegação mobile" hidden><a href="#experiencia">A experiência</a><a href="#como-funciona">Como funciona</a><a href="#perguntas">Perguntas</a><a href="https://app.saudecrm.com/">Entrar na plataforma</a></nav>
+ <div class="nav-actions"><a class="button button-small" href="#diagnostico">Conhecer a IA <svg><use href="#i-arrow"/></svg></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><span></span><span></span></button></div>
+ <nav id="mobile-menu" class="mobile-menu" aria-label="Navegação mobile" hidden><a href="#experiencia">A experiência</a><a href="#como-funciona">Como funciona</a><a href="#perguntas">Perguntas</a><a class="button button-small" href="#diagnostico">Conhecer a IA <svg><use href="#i-arrow"/></svg></a></nav>
 </header>
 <main id="conteudo">
 <section class="hero" aria-labelledby="hero-title">
@@ -121,12 +121,9 @@
 
 <footer class="site-footer section-shell"><div class="footer-top"><a class="brand" href="#" aria-label="SaúdeCRM, início"><img class="brand-logo" src="/logo.webp" alt="" width="34" height="34"><span>saúde<span class="brand-crm">crm</span><span class="brand-dot">.</span></span></a><p>Tecnologia que conversa.<br>Cuidado que continua.</p><a class="back-top" href="#">De volta ao início <span>↑</span></a></div><div class="footer-bottom"><span>© 2026 SaúdeCRM. Todos os direitos reservados.</span><nav aria-label="Informações legais"><a href="/sobre.html">Sobre nós</a><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a><a href="/exclusao-dados.html">Exclusão de dados</a></nav></div></footer>
 <script>
-  /* Propaga a origem do lead para o app.
-     A LP fica em saudecrm.com e o cadastro em app.saudecrm.com — domínios
-     diferentes, então localStorage não atravessa. A única forma de a
-     atribuição sobreviver ao clique é ir na própria URL do CTA.
-     Guardamos o primeiro toque na sessão: se a pessoa navegar pelo blog
-     antes de clicar em "Começar grátis", a query string original já se perdeu. */
+  /* Guarda a origem do lead na sessão para o formulário.
+     Se a pessoa navegar pela LP antes de preencher, a query original já pode
+     ter se perdido. */
   (function () {
     var CHAVE = 'sp3_origem_v1';
     var CAMPOS = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
@@ -149,35 +146,7 @@
       } catch (e) { /* storage bloqueado: sem atribuição, sem quebrar a página */ }
     }
 
-    function anexarNosLinks() {
-      var bruto;
-      try { bruto = sessionStorage.getItem(CHAVE); } catch (e) { return; }
-      if (!bruto) return;
-
-      var dados;
-      try { dados = JSON.parse(bruto); } catch (e) { return; }
-
-      var chaves = Object.keys(dados);
-      if (!chaves.length) return;
-
-      var links = document.querySelectorAll('a[href*="app.saudecrm.com"]');
-      for (var i = 0; i < links.length; i++) {
-        try {
-          var u = new URL(links[i].href);
-          chaves.forEach(function (k) {
-            if (!u.searchParams.has(k)) u.searchParams.set(k, dados[k]);
-          });
-          links[i].href = u.toString();
-        } catch (e) { /* href inválido: ignora esse link */ }
-      }
-    }
-
     capturar();
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', anexarNosLinks);
-    } else {
-      anexarNosLinks();
-    }
   })();
 </script>
 </body>
