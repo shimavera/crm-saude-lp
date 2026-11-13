@@ -202,6 +202,21 @@
       "permanent": true
     },
     {
+      "source": "/crm-para-clinica-odontologica.html",
+      "destination": "/crm-para-clinica-odontologica",
+      "permanent": true
+    },
+    {
+      "source": "/crm-para-clinica-de-estetica.html",
+      "destination": "/crm-para-clinica-de-estetica",
+      "permanent": true
+    },
+    {
+      "source": "/crm-para-clinica-medica.html",
+      "destination": "/crm-para-clinica-medica",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -428,6 +443,18 @@
     {
       "source": "/blog/trafego-pago-para-dentistas",
       "destination": "/blog/trafego-pago-para-dentistas.html"
+    },
+    {
+      "source": "/crm-para-clinica-odontologica",
+      "destination": "/crm-para-clinica-odontologica.html"
+    },
+    {
+      "source": "/crm-para-clinica-de-estetica",
+      "destination": "/crm-para-clinica-de-estetica.html"
+    },
+    {
+      "source": "/crm-para-clinica-medica",
+      "destination": "/crm-para-clinica-medica.html"
     },
     {
       "source": "/api/:path((?!(?:material|diagnostic)(?:/|$)).*)",
