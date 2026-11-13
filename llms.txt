@@ -35,6 +35,9 @@ Teste grátis de 7 dias em qualquer plano, sem cartão de crédito.
 
 - [Site](https://saudecrm.com/): página principal do produto, com funcionalidades, integrações, planos e FAQ.
 - [Cadastro / teste grátis](https://saudecrm.com/cadastro): criar conta e iniciar o teste de 7 dias.
+- [CRM para Clínica Odontológica](https://saudecrm.com/crm-para-clinica-odontologica): página do SaúdeCRM para clínicas odontológicas.
+- [CRM para Clínica de Estética](https://saudecrm.com/crm-para-clinica-de-estetica): página do SaúdeCRM para clínicas de estética.
+- [CRM para Clínica Médica](https://saudecrm.com/crm-para-clinica-medica): página do SaúdeCRM para clínicas médicas.
 - [Blog](https://saudecrm.com/blog/): índice de todos os artigos.
 - [Sobre](https://saudecrm.com/sobre): quem faz o produto, quem assina os artigos e dados da empresa (TDF Negócios Digitais LTDA, CNPJ 53.664.161/0001-46).
 
