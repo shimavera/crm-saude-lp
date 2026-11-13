@@ -247,6 +247,11 @@
       "permanent": true
     },
     {
+      "source": "/blog/funil-de-vendas-para-clinica-de-estetica.html",
+      "destination": "/blog/funil-de-vendas-para-clinica-de-estetica",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -509,6 +514,10 @@
     {
       "source": "/crm-para-associacoes",
       "destination": "/crm-para-associacoes.html"
+    },
+    {
+      "source": "/blog/funil-de-vendas-para-clinica-de-estetica",
+      "destination": "/blog/funil-de-vendas-para-clinica-de-estetica.html"
     },
     {
       "source": "/api/:path((?!(?:material|diagnostic)(?:/|$)).*)",
