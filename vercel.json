@@ -2,17 +2,17 @@
   "redirects": [
     {
       "source": "/blog/melhores-crm-para-clinica-odontologica.html",
-      "destination": "/blog/melhores-sistemas-para-clinicas.html",
+      "destination": "/blog/melhores-sistemas-para-clinicas",
       "permanent": true
     },
     {
       "source": "/blog/quanto-custa-um-crm-para-clinica.html",
-      "destination": "/blog/quanto-custa-crm-para-clinica.html",
+      "destination": "/blog/quanto-custa-crm-para-clinica",
       "permanent": true
     },
     {
       "source": "/blog/crm-ou-software-de-gestao-odontologica.html",
-      "destination": "/blog/software-de-gestao-ou-crm-para-clinica.html",
+      "destination": "/blog/software-de-gestao-ou-crm-para-clinica",
       "permanent": true
     },
     {
@@ -38,6 +38,156 @@
     {
       "source": "/exclusao-dados.html",
       "destination": "/exclusao-dados",
+      "permanent": true
+    },
+    {
+      "source": "/blog/automacao-de-whatsapp-para-clinicas.html",
+      "destination": "/blog/automacao-de-whatsapp-para-clinicas",
+      "permanent": true
+    },
+    {
+      "source": "/blog/captacao-pacientes-harmonizacao-facial.html",
+      "destination": "/blog/captacao-pacientes-harmonizacao-facial",
+      "permanent": true
+    },
+    {
+      "source": "/blog/comissao-de-dentistas-como-calcular.html",
+      "destination": "/blog/comissao-de-dentistas-como-calcular",
+      "permanent": true
+    },
+    {
+      "source": "/blog/como-atrair-pacientes-clinica-odontologica.html",
+      "destination": "/blog/como-atrair-pacientes-clinica-odontologica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/como-nao-perder-leads-no-whatsapp.html",
+      "destination": "/blog/como-nao-perder-leads-no-whatsapp",
+      "permanent": true
+    },
+    {
+      "source": "/blog/como-reduzir-faltas-no-show-consultas.html",
+      "destination": "/blog/como-reduzir-faltas-no-show-consultas",
+      "permanent": true
+    },
+    {
+      "source": "/blog/como-saber-qual-anuncio-trouxe-paciente.html",
+      "destination": "/blog/como-saber-qual-anuncio-trouxe-paciente",
+      "permanent": true
+    },
+    {
+      "source": "/blog/crm-ou-planilha-para-clinica.html",
+      "destination": "/blog/crm-ou-planilha-para-clinica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/crm-para-clinica-de-estetica.html",
+      "destination": "/blog/crm-para-clinica-de-estetica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/crm-para-clinica-odontologica.html",
+      "destination": "/blog/crm-para-clinica-odontologica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/crm-para-dentistas.html",
+      "destination": "/blog/crm-para-dentistas",
+      "permanent": true
+    },
+    {
+      "source": "/blog/equipe-minima-para-clinica.html",
+      "destination": "/blog/equipe-minima-para-clinica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/equipe-nao-consegue-acompanhar-leads.html",
+      "destination": "/blog/equipe-nao-consegue-acompanhar-leads",
+      "permanent": true
+    },
+    {
+      "source": "/blog/follow-up-de-pacientes.html",
+      "destination": "/blog/follow-up-de-pacientes",
+      "permanent": true
+    },
+    {
+      "source": "/blog/funil-de-vendas-para-clinicas.html",
+      "destination": "/blog/funil-de-vendas-para-clinicas",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gestao-de-clinicas-guia.html",
+      "destination": "/blog/gestao-de-clinicas-guia",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ia-no-atendimento-de-clinicas-limites.html",
+      "destination": "/blog/ia-no-atendimento-de-clinicas-limites",
+      "permanent": true
+    },
+    {
+      "source": "/blog/indicadores-clinica-odontologica.html",
+      "destination": "/blog/indicadores-clinica-odontologica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/lgpd-para-clinicas.html",
+      "destination": "/blog/lgpd-para-clinicas",
+      "permanent": true
+    },
+    {
+      "source": "/blog/melhores-sistemas-para-clinicas.html",
+      "destination": "/blog/melhores-sistemas-para-clinicas",
+      "permanent": true
+    },
+    {
+      "source": "/blog/precificacao-consulta-clinica-medica.html",
+      "destination": "/blog/precificacao-consulta-clinica-medica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/precificacao-odontologica-hora-clinica.html",
+      "destination": "/blog/precificacao-odontologica-hora-clinica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/precificacao-procedimentos-esteticos.html",
+      "destination": "/blog/precificacao-procedimentos-esteticos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/publicidade-odontologica-o-que-pode.html",
+      "destination": "/blog/publicidade-odontologica-o-que-pode",
+      "permanent": true
+    },
+    {
+      "source": "/blog/quanto-custa-crm-para-clinica.html",
+      "destination": "/blog/quanto-custa-crm-para-clinica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/recorrencia-em-clinica-de-estetica.html",
+      "destination": "/blog/recorrencia-em-clinica-de-estetica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/secretaria-ou-crm-atendimento-clinica.html",
+      "destination": "/blog/secretaria-ou-crm-atendimento-clinica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/secretaria-virtual-com-ia-para-clinicas.html",
+      "destination": "/blog/secretaria-virtual-com-ia-para-clinicas",
+      "permanent": true
+    },
+    {
+      "source": "/blog/software-de-gestao-ou-crm-para-clinica.html",
+      "destination": "/blog/software-de-gestao-ou-crm-para-clinica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/trafego-pago-para-dentistas.html",
+      "destination": "/blog/trafego-pago-para-dentistas",
       "permanent": true
     },
     {
@@ -147,6 +297,126 @@
     {
       "source": "/exclusao-dados",
       "destination": "/exclusao-dados.html"
+    },
+    {
+      "source": "/blog/automacao-de-whatsapp-para-clinicas",
+      "destination": "/blog/automacao-de-whatsapp-para-clinicas.html"
+    },
+    {
+      "source": "/blog/captacao-pacientes-harmonizacao-facial",
+      "destination": "/blog/captacao-pacientes-harmonizacao-facial.html"
+    },
+    {
+      "source": "/blog/comissao-de-dentistas-como-calcular",
+      "destination": "/blog/comissao-de-dentistas-como-calcular.html"
+    },
+    {
+      "source": "/blog/como-atrair-pacientes-clinica-odontologica",
+      "destination": "/blog/como-atrair-pacientes-clinica-odontologica.html"
+    },
+    {
+      "source": "/blog/como-nao-perder-leads-no-whatsapp",
+      "destination": "/blog/como-nao-perder-leads-no-whatsapp.html"
+    },
+    {
+      "source": "/blog/como-reduzir-faltas-no-show-consultas",
+      "destination": "/blog/como-reduzir-faltas-no-show-consultas.html"
+    },
+    {
+      "source": "/blog/como-saber-qual-anuncio-trouxe-paciente",
+      "destination": "/blog/como-saber-qual-anuncio-trouxe-paciente.html"
+    },
+    {
+      "source": "/blog/crm-ou-planilha-para-clinica",
+      "destination": "/blog/crm-ou-planilha-para-clinica.html"
+    },
+    {
+      "source": "/blog/crm-para-clinica-de-estetica",
+      "destination": "/blog/crm-para-clinica-de-estetica.html"
+    },
+    {
+      "source": "/blog/crm-para-clinica-odontologica",
+      "destination": "/blog/crm-para-clinica-odontologica.html"
+    },
+    {
+      "source": "/blog/crm-para-dentistas",
+      "destination": "/blog/crm-para-dentistas.html"
+    },
+    {
+      "source": "/blog/equipe-minima-para-clinica",
+      "destination": "/blog/equipe-minima-para-clinica.html"
+    },
+    {
+      "source": "/blog/equipe-nao-consegue-acompanhar-leads",
+      "destination": "/blog/equipe-nao-consegue-acompanhar-leads.html"
+    },
+    {
+      "source": "/blog/follow-up-de-pacientes",
+      "destination": "/blog/follow-up-de-pacientes.html"
+    },
+    {
+      "source": "/blog/funil-de-vendas-para-clinicas",
+      "destination": "/blog/funil-de-vendas-para-clinicas.html"
+    },
+    {
+      "source": "/blog/gestao-de-clinicas-guia",
+      "destination": "/blog/gestao-de-clinicas-guia.html"
+    },
+    {
+      "source": "/blog/ia-no-atendimento-de-clinicas-limites",
+      "destination": "/blog/ia-no-atendimento-de-clinicas-limites.html"
+    },
+    {
+      "source": "/blog/indicadores-clinica-odontologica",
+      "destination": "/blog/indicadores-clinica-odontologica.html"
+    },
+    {
+      "source": "/blog/lgpd-para-clinicas",
+      "destination": "/blog/lgpd-para-clinicas.html"
+    },
+    {
+      "source": "/blog/melhores-sistemas-para-clinicas",
+      "destination": "/blog/melhores-sistemas-para-clinicas.html"
+    },
+    {
+      "source": "/blog/precificacao-consulta-clinica-medica",
+      "destination": "/blog/precificacao-consulta-clinica-medica.html"
+    },
+    {
+      "source": "/blog/precificacao-odontologica-hora-clinica",
+      "destination": "/blog/precificacao-odontologica-hora-clinica.html"
+    },
+    {
+      "source": "/blog/precificacao-procedimentos-esteticos",
+      "destination": "/blog/precificacao-procedimentos-esteticos.html"
+    },
+    {
+      "source": "/blog/publicidade-odontologica-o-que-pode",
+      "destination": "/blog/publicidade-odontologica-o-que-pode.html"
+    },
+    {
+      "source": "/blog/quanto-custa-crm-para-clinica",
+      "destination": "/blog/quanto-custa-crm-para-clinica.html"
+    },
+    {
+      "source": "/blog/recorrencia-em-clinica-de-estetica",
+      "destination": "/blog/recorrencia-em-clinica-de-estetica.html"
+    },
+    {
+      "source": "/blog/secretaria-ou-crm-atendimento-clinica",
+      "destination": "/blog/secretaria-ou-crm-atendimento-clinica.html"
+    },
+    {
+      "source": "/blog/secretaria-virtual-com-ia-para-clinicas",
+      "destination": "/blog/secretaria-virtual-com-ia-para-clinicas.html"
+    },
+    {
+      "source": "/blog/software-de-gestao-ou-crm-para-clinica",
+      "destination": "/blog/software-de-gestao-ou-crm-para-clinica.html"
+    },
+    {
+      "source": "/blog/trafego-pago-para-dentistas",
+      "destination": "/blog/trafego-pago-para-dentistas.html"
     },
     {
       "source": "/api/:path((?!(?:material|diagnostic)(?:/|$)).*)",

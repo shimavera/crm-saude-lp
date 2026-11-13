@@ -38,37 +38,37 @@ Teste grátis de 7 dias em qualquer plano, sem cartão de crédito.
 
 ## Blog
 
-- [CRM para Clínica Odontológica: o guia completo](https://saudecrm.com/blog/crm-para-clinica-odontologica.html): o que é, por que usar, como funciona na prática, como escolher e quanto custa.
-- [CRM para Clínica de Estética](https://saudecrm.com/blog/crm-para-clinica-de-estetica.html): como organizar leads e vender mais em clínicas de estética.
-- [Como Não Perder Leads no WhatsApp](https://saudecrm.com/blog/como-nao-perder-leads-no-whatsapp.html): organizar o atendimento, responder rápido e fazer follow-up para converter contatos em pacientes.
-- [Automação de WhatsApp para Clínicas](https://saudecrm.com/blog/automacao-de-whatsapp-para-clinicas.html): o que dá para automatizar (confirmação, lembrete, follow-up) e como implementar sem parecer robô nem tomar ban.
-- [Follow-up de Pacientes](https://saudecrm.com/blog/follow-up-de-pacientes.html): cadência ideal, modelos de mensagem e como recuperar leads que sumiram.
-- [Funil de Vendas para Clínicas](https://saudecrm.com/blog/funil-de-vendas-para-clinicas.html): as etapas do funil, gargalos comuns e taxa de conversão por etapa.
-- [Equipe Não Consegue Acompanhar Leads?](https://saudecrm.com/blog/equipe-nao-consegue-acompanhar-leads.html): como resolver o conflito entre marketing e recepção com um processo de follow-up.
-- [Secretária ou CRM?](https://saudecrm.com/blog/secretaria-ou-crm-atendimento-clinica.html): como organizar o atendimento da clínica unindo a recepção a um CRM.
-- [Como Atrair Pacientes para Clínica Odontológica](https://saudecrm.com/blog/como-atrair-pacientes-clinica-odontologica.html): 12 estratégias de captação, de presença digital a tráfego pago.
-- [Tráfego Pago para Dentistas](https://saudecrm.com/blog/trafego-pago-para-dentistas.html): por que gerar lead não basta e como transformar cliques em pacientes que fecham.
-- [Como Reduzir Faltas (No-Show) em Consultas](https://saudecrm.com/blog/como-reduzir-faltas-no-show-consultas.html): 9 estratégias de confirmação, lembrete e relacionamento.
-- [Indicadores de uma Clínica Odontológica](https://saudecrm.com/blog/indicadores-clinica-odontologica.html): captação, conversão, no-show, ticket médio e retenção, e como medir cada um.
-- [Melhores Sistemas para Clínicas em 2026](https://saudecrm.com/blog/melhores-sistemas-para-clinicas.html): os 4 tipos de sistema que existem (prontuário, agenda, CRM, financeiro), critérios de escolha, sinais de alerta e roteiro de teste de 7 dias.
-- [Quanto Custa um CRM para Clínica](https://saudecrm.com/blog/quanto-custa-crm-para-clinica.html): faixas e modelos de cobrança, custos escondidos além da mensalidade e como calcular o retorno com os números da própria clínica.
-- [Software de Gestão ou CRM](https://saudecrm.com/blog/software-de-gestao-ou-crm-para-clinica.html): a diferença entre cuidar de quem já é paciente e de quem ainda não é, quando precisa dos dois e por onde começar.
-- [Comissão de Dentistas: como calcular](https://saudecrm.com/blog/comissao-de-dentistas-como-calcular.html): os 3 modelos de base de cálculo (bruta, líquida, lucro), quanto e quando pagar, e os erros que mais geram conflito.
-- [Secretária Virtual com IA para Clínicas](https://saudecrm.com/blog/secretaria-virtual-com-ia-para-clinicas.html): o que a IA resolve bem, onde ainda erra, riscos de má configuração e como avaliar antes de contratar.
-- [Precificação Odontológica: como calcular a hora clínica](https://saudecrm.com/blog/precificacao-odontologica-hora-clinica.html): o cálculo da hora clínica passo a passo, o que entra no preço de cada procedimento e por que o mais caro nem sempre é o mais lucrativo.
-- [LGPD na Clínica](https://saudecrm.com/blog/lgpd-para-clinicas.html): por que dado de saúde é sensível, o que muda na rotina, prazo de guarda do prontuário e checklist do que fazer agora.
-- [Publicidade Odontológica: o que pode e o que não pode](https://saudecrm.com/blog/publicidade-odontologica-o-que-pode.html): o que a Resolução CFO-196/2019 permite, o que continua vedado, itens obrigatórios no material e uso de imagem de paciente.
-- [Captação de Pacientes para Harmonização Facial](https://saudecrm.com/blog/captacao-pacientes-harmonizacao-facial.html): como atrair lead qualificado, conduzir a conversa sem começar pelo preço e fazer follow-up no tempo real da decisão.
-- [Recorrência em Clínica de Estética](https://saudecrm.com/blog/recorrencia-em-clinica-de-estetica.html): por que o paciente some após a primeira sessão, régua de retorno por procedimento e resgate da base inativa.
+- [CRM para Clínica Odontológica: o guia completo](https://saudecrm.com/blog/crm-para-clinica-odontologica): o que é, por que usar, como funciona na prática, como escolher e quanto custa.
+- [CRM para Clínica de Estética](https://saudecrm.com/blog/crm-para-clinica-de-estetica): como organizar leads e vender mais em clínicas de estética.
+- [Como Não Perder Leads no WhatsApp](https://saudecrm.com/blog/como-nao-perder-leads-no-whatsapp): organizar o atendimento, responder rápido e fazer follow-up para converter contatos em pacientes.
+- [Automação de WhatsApp para Clínicas](https://saudecrm.com/blog/automacao-de-whatsapp-para-clinicas): o que dá para automatizar (confirmação, lembrete, follow-up) e como implementar sem parecer robô nem tomar ban.
+- [Follow-up de Pacientes](https://saudecrm.com/blog/follow-up-de-pacientes): cadência ideal, modelos de mensagem e como recuperar leads que sumiram.
+- [Funil de Vendas para Clínicas](https://saudecrm.com/blog/funil-de-vendas-para-clinicas): as etapas do funil, gargalos comuns e taxa de conversão por etapa.
+- [Equipe Não Consegue Acompanhar Leads?](https://saudecrm.com/blog/equipe-nao-consegue-acompanhar-leads): como resolver o conflito entre marketing e recepção com um processo de follow-up.
+- [Secretária ou CRM?](https://saudecrm.com/blog/secretaria-ou-crm-atendimento-clinica): como organizar o atendimento da clínica unindo a recepção a um CRM.
+- [Como Atrair Pacientes para Clínica Odontológica](https://saudecrm.com/blog/como-atrair-pacientes-clinica-odontologica): 12 estratégias de captação, de presença digital a tráfego pago.
+- [Tráfego Pago para Dentistas](https://saudecrm.com/blog/trafego-pago-para-dentistas): por que gerar lead não basta e como transformar cliques em pacientes que fecham.
+- [Como Reduzir Faltas (No-Show) em Consultas](https://saudecrm.com/blog/como-reduzir-faltas-no-show-consultas): 9 estratégias de confirmação, lembrete e relacionamento.
+- [Indicadores de uma Clínica Odontológica](https://saudecrm.com/blog/indicadores-clinica-odontologica): captação, conversão, no-show, ticket médio e retenção, e como medir cada um.
+- [Melhores Sistemas para Clínicas em 2026](https://saudecrm.com/blog/melhores-sistemas-para-clinicas): os 4 tipos de sistema que existem (prontuário, agenda, CRM, financeiro), critérios de escolha, sinais de alerta e roteiro de teste de 7 dias.
+- [Quanto Custa um CRM para Clínica](https://saudecrm.com/blog/quanto-custa-crm-para-clinica): faixas e modelos de cobrança, custos escondidos além da mensalidade e como calcular o retorno com os números da própria clínica.
+- [Software de Gestão ou CRM](https://saudecrm.com/blog/software-de-gestao-ou-crm-para-clinica): a diferença entre cuidar de quem já é paciente e de quem ainda não é, quando precisa dos dois e por onde começar.
+- [Comissão de Dentistas: como calcular](https://saudecrm.com/blog/comissao-de-dentistas-como-calcular): os 3 modelos de base de cálculo (bruta, líquida, lucro), quanto e quando pagar, e os erros que mais geram conflito.
+- [Secretária Virtual com IA para Clínicas](https://saudecrm.com/blog/secretaria-virtual-com-ia-para-clinicas): o que a IA resolve bem, onde ainda erra, riscos de má configuração e como avaliar antes de contratar.
+- [Precificação Odontológica: como calcular a hora clínica](https://saudecrm.com/blog/precificacao-odontologica-hora-clinica): o cálculo da hora clínica passo a passo, o que entra no preço de cada procedimento e por que o mais caro nem sempre é o mais lucrativo.
+- [LGPD na Clínica](https://saudecrm.com/blog/lgpd-para-clinicas): por que dado de saúde é sensível, o que muda na rotina, prazo de guarda do prontuário e checklist do que fazer agora.
+- [Publicidade Odontológica: o que pode e o que não pode](https://saudecrm.com/blog/publicidade-odontologica-o-que-pode): o que a Resolução CFO-196/2019 permite, o que continua vedado, itens obrigatórios no material e uso de imagem de paciente.
+- [Captação de Pacientes para Harmonização Facial](https://saudecrm.com/blog/captacao-pacientes-harmonizacao-facial): como atrair lead qualificado, conduzir a conversa sem começar pelo preço e fazer follow-up no tempo real da decisão.
+- [Recorrência em Clínica de Estética](https://saudecrm.com/blog/recorrencia-em-clinica-de-estetica): por que o paciente some após a primeira sessão, régua de retorno por procedimento e resgate da base inativa.
 
-- [CRM para Dentistas](https://saudecrm.com/blog/crm-para-dentistas.html): o que faz na rotina do consultório, diferença para o software de gestão, custo e quando passa a valer a pena.
-- [Precificação de Consulta em Clínica Médica](https://saudecrm.com/blog/precificacao-consulta-clinica-medica.html): cálculo do preço mínimo, custos esquecidos, capacidade realista, convênio e reajuste.
-- [Precificação de Procedimentos Estéticos](https://saudecrm.com/blog/precificacao-procedimentos-esteticos.html): custo da hora de sala, depreciação de equipamento, pacotes e o efeito real do desconto.
-- [Gestão de Clínicas](https://saudecrm.com/blog/gestao-de-clinicas-guia.html): as 6 frentes (captação, conversão, agenda, equipe, finanças, retenção), o que medir e por onde começar.
-- [Equipe Mínima para Clínica](https://saudecrm.com/blog/equipe-minima-para-clinica.html): equipe por porte, sobrecarga x desorganização, custo real da contratação e ordem de contratar.
-- [CRM ou Planilha para Clínica](https://saudecrm.com/blog/crm-ou-planilha-para-clinica.html): quando a planilha ainda resolve, sinais de limite e como migrar para um CRM sem travar a equipe.
-- [Como Saber Qual Anúncio Trouxe Cada Paciente](https://saudecrm.com/blog/como-saber-qual-anuncio-trouxe-paciente.html): origem do lead, atribuição de campanha e diferença entre custo por lead e custo por paciente.
-- [IA no Atendimento de Clínicas](https://saudecrm.com/blog/ia-no-atendimento-de-clinicas-limites.html): tarefas que podem ser automatizadas, limites clínicos e implantação com revisão humana.
+- [CRM para Dentistas](https://saudecrm.com/blog/crm-para-dentistas): o que faz na rotina do consultório, diferença para o software de gestão, custo e quando passa a valer a pena.
+- [Precificação de Consulta em Clínica Médica](https://saudecrm.com/blog/precificacao-consulta-clinica-medica): cálculo do preço mínimo, custos esquecidos, capacidade realista, convênio e reajuste.
+- [Precificação de Procedimentos Estéticos](https://saudecrm.com/blog/precificacao-procedimentos-esteticos): custo da hora de sala, depreciação de equipamento, pacotes e o efeito real do desconto.
+- [Gestão de Clínicas](https://saudecrm.com/blog/gestao-de-clinicas-guia): as 6 frentes (captação, conversão, agenda, equipe, finanças, retenção), o que medir e por onde começar.
+- [Equipe Mínima para Clínica](https://saudecrm.com/blog/equipe-minima-para-clinica): equipe por porte, sobrecarga x desorganização, custo real da contratação e ordem de contratar.
+- [CRM ou Planilha para Clínica](https://saudecrm.com/blog/crm-ou-planilha-para-clinica): quando a planilha ainda resolve, sinais de limite e como migrar para um CRM sem travar a equipe.
+- [Como Saber Qual Anúncio Trouxe Cada Paciente](https://saudecrm.com/blog/como-saber-qual-anuncio-trouxe-paciente): origem do lead, atribuição de campanha e diferença entre custo por lead e custo por paciente.
+- [IA no Atendimento de Clínicas](https://saudecrm.com/blog/ia-no-atendimento-de-clinicas-limites): tarefas que podem ser automatizadas, limites clínicos e implantação com revisão humana.
 
 ## Quem escreve
 
