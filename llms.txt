@@ -25,16 +25,18 @@ CRM Saúde é uma plataforma de gestão de relacionamento e vendas para clínica
 
 Teste grátis de 7 dias em qualquer plano, sem cartão de crédito.
 
-- Starter: R$ 297/mês. Até 400 leads ativos, 1 número de WhatsApp, funil básico, agendamento online, lembretes automáticos.
-- Pro: R$ 497/mês. Até 1.200 leads ativos, até 5 números de WhatsApp, IA de funil avançada, prontuário digital, relatórios, Google Agenda.
-- Scale: R$ 687/mês. Tudo do Pro, até 2.500 leads ativos, multi-unidades ilimitadas, Cloud API oficial do WhatsApp, API de integrações, SLA 99.9%.
+- Essencial: R$ 569/mês. CRM para organizar conversas e contatos, pipeline por etapas, até 250 leads por mês e até 3 usuários.
+- Inteligente: R$ 699/mês. Tudo do Essencial, até 600 leads por mês e 5 usuários, rastreamento de campanhas, IA e follow-up humanizado, Gerente de IA com análise das conversas e da equipe, sincronização com Google Calendário.
+- Avançado: R$ 889/mês. Tudo do Inteligente, até 1.000 leads por mês e 10 usuários.
+- Extras: blocos de 100 leads adicionais por R$ 10; número adicional no CRM a R$ 80 (Essencial), R$ 40 (Inteligente) ou R$ 20 (Avançado) por mês. Os recursos de IA exigem chave de API do GPT própria do cliente.
+- Detalhes: https://saudecrm.com/price
 
 ## Links
 
 - [Site](https://saudecrm.com/): página principal do produto, com funcionalidades, integrações, planos e FAQ.
 - [Cadastro / teste grátis](https://saudecrm.com/cadastro): criar conta e iniciar o teste de 7 dias.
 - [Blog](https://saudecrm.com/blog/): índice de todos os artigos.
-- [Sobre](https://saudecrm.com/sobre.html): quem faz o produto, quem assina os artigos e dados da empresa (TDF Negócios Digitais LTDA, CNPJ 53.664.161/0001-46).
+- [Sobre](https://saudecrm.com/sobre): quem faz o produto, quem assina os artigos e dados da empresa (TDF Negócios Digitais LTDA, CNPJ 53.664.161/0001-46).
 
 ## Blog
 
@@ -72,7 +74,7 @@ Teste grátis de 7 dias em qualquer plano, sem cartão de crédito.
 
 ## Quem escreve
 
-Os artigos do blog são assinados por Juan Lourenço, fundador do SaúdeCRM e acelerador de clínicas odontológicas, que trabalha dentro da operação de clínicas (agenda, recepção, funil de leads e fechamento de tratamento). Perfil e credenciais em [Sobre](https://saudecrm.com/sobre.html).
+Os artigos do blog são assinados por Juan Lourenço, fundador do SaúdeCRM e acelerador de clínicas odontológicas, que trabalha dentro da operação de clínicas (agenda, recepção, funil de leads e fechamento de tratamento). Perfil e credenciais em [Sobre](https://saudecrm.com/sobre).
 
 ## Contato
 
