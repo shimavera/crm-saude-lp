@@ -252,6 +252,11 @@
       "permanent": true
     },
     {
+      "source": "/blog/funil-de-vendas-para-clinicas-com-planos-de-saude.html",
+      "destination": "/blog/funil-de-vendas-para-clinicas-com-planos-de-saude",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -518,6 +523,10 @@
     {
       "source": "/blog/funil-de-vendas-para-clinica-de-estetica",
       "destination": "/blog/funil-de-vendas-para-clinica-de-estetica.html"
+    },
+    {
+      "source": "/blog/funil-de-vendas-para-clinicas-com-planos-de-saude",
+      "destination": "/blog/funil-de-vendas-para-clinicas-com-planos-de-saude.html"
     },
     {
       "source": "/api/:path((?!(?:material|diagnostic)(?:/|$)).*)",
