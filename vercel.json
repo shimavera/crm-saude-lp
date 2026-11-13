@@ -26,6 +26,21 @@
       "permanent": true
     },
     {
+      "source": "/sobre.html",
+      "destination": "/sobre",
+      "permanent": true
+    },
+    {
+      "source": "/termos.html",
+      "destination": "/termos",
+      "permanent": true
+    },
+    {
+      "source": "/exclusao-dados.html",
+      "destination": "/exclusao-dados",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -120,6 +135,18 @@
     {
       "source": "/privacidade",
       "destination": "/privacidade.html"
+    },
+    {
+      "source": "/sobre",
+      "destination": "/sobre.html"
+    },
+    {
+      "source": "/termos",
+      "destination": "/termos.html"
+    },
+    {
+      "source": "/exclusao-dados",
+      "destination": "/exclusao-dados.html"
     },
     {
       "source": "/api/:path((?!(?:material|diagnostic)(?:/|$)).*)",
