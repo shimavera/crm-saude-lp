@@ -55,6 +55,7 @@ Teste grátis de 7 dias em qualquer plano, sem cartão de crédito.
 - [Automação de WhatsApp para Clínicas](https://saudecrm.com/blog/automacao-de-whatsapp-para-clinicas): o que dá para automatizar (confirmação, lembrete, follow-up) e como implementar sem parecer robô nem tomar ban.
 - [Follow-up de Pacientes](https://saudecrm.com/blog/follow-up-de-pacientes): cadência ideal, modelos de mensagem e como recuperar leads que sumiram.
 - [Funil de Vendas para Clínicas](https://saudecrm.com/blog/funil-de-vendas-para-clinicas): as etapas do funil, gargalos comuns e taxa de conversão por etapa.
+- [Funil de Vendas para Clínica de Estética](https://saudecrm.com/blog/funil-de-vendas-para-clinica-de-estetica): as 7 etapas do funil, como tratar o "vou pensar" e o que medir.
 - [Equipe Não Consegue Acompanhar Leads?](https://saudecrm.com/blog/equipe-nao-consegue-acompanhar-leads): como resolver o conflito entre marketing e recepção com um processo de follow-up.
 - [Secretária ou CRM?](https://saudecrm.com/blog/secretaria-ou-crm-atendimento-clinica): como organizar o atendimento da clínica unindo a recepção a um CRM.
 - [Como Atrair Pacientes para Clínica Odontológica](https://saudecrm.com/blog/como-atrair-pacientes-clinica-odontologica): 12 estratégias de captação, de presença digital a tráfego pago.
