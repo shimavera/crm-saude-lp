@@ -16,6 +16,11 @@
       "permanent": true
     },
     {
+      "source": "/price.html",
+      "destination": "/price",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -103,6 +108,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/price",
+      "destination": "/price.html"
+    },
     {
       "source": "/api/:path((?!(?:material|diagnostic)(?:/|$)).*)",
       "destination": "https://app.saudecrm.com/api/:path"
