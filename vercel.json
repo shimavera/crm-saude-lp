@@ -21,6 +21,11 @@
       "permanent": true
     },
     {
+      "source": "/privacidade.html",
+      "destination": "/privacidade",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -111,6 +116,10 @@
     {
       "source": "/price",
       "destination": "/price.html"
+    },
+    {
+      "source": "/privacidade",
+      "destination": "/privacidade.html"
     },
     {
       "source": "/api/:path((?!(?:material|diagnostic)(?:/|$)).*)",
