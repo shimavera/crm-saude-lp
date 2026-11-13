@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/:path(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.saudecrm.com"
+        }
+      ],
+      "destination": "https://saudecrm.com/:path",
+      "permanent": true
+    },
+    {
       "source": "/blog/melhores-crm-para-clinica-odontologica.html",
       "destination": "/blog/melhores-sistemas-para-clinicas",
       "permanent": true
