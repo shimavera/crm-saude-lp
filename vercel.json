@@ -257,6 +257,11 @@
       "permanent": true
     },
     {
+      "source": "/blog/modelos-de-mensagem-whatsapp-para-clinicas.html",
+      "destination": "/blog/modelos-de-mensagem-whatsapp-para-clinicas",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -527,6 +532,10 @@
     {
       "source": "/blog/funil-de-vendas-para-clinicas-com-planos-de-saude",
       "destination": "/blog/funil-de-vendas-para-clinicas-com-planos-de-saude.html"
+    },
+    {
+      "source": "/blog/modelos-de-mensagem-whatsapp-para-clinicas",
+      "destination": "/blog/modelos-de-mensagem-whatsapp-para-clinicas.html"
     },
     {
       "source": "/api/:path((?!(?:material|diagnostic)(?:/|$)).*)",
