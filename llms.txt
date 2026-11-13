@@ -38,6 +38,12 @@ Teste grátis de 7 dias em qualquer plano, sem cartão de crédito.
 - [CRM para Clínica Odontológica](https://saudecrm.com/crm-para-clinica-odontologica): página do SaúdeCRM para clínicas odontológicas.
 - [CRM para Clínica de Estética](https://saudecrm.com/crm-para-clinica-de-estetica): página do SaúdeCRM para clínicas de estética.
 - [CRM para Clínica Médica](https://saudecrm.com/crm-para-clinica-medica): página do SaúdeCRM para clínicas médicas.
+- [CRM para Dentistas](https://saudecrm.com/crm-para-dentistas): página do SaúdeCRM para este público.
+- [CRM para Médicos](https://saudecrm.com/crm-para-medicos): página do SaúdeCRM para este público.
+- [CRM para Biomédicos](https://saudecrm.com/crm-para-biomedicos): página do SaúdeCRM para este público.
+- [CRM para TSB](https://saudecrm.com/crm-para-tsb): página do SaúdeCRM para este público.
+- [CRM para Protéticos e Laboratórios de Prótese](https://saudecrm.com/crm-para-proteticos): página do SaúdeCRM para este público.
+- [CRM para Associações](https://saudecrm.com/crm-para-associacoes): página do SaúdeCRM para este público.
 - [Blog](https://saudecrm.com/blog/): índice de todos os artigos.
 - [Sobre](https://saudecrm.com/sobre): quem faz o produto, quem assina os artigos e dados da empresa (TDF Negócios Digitais LTDA, CNPJ 53.664.161/0001-46).
 

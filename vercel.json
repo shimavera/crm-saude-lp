@@ -217,6 +217,36 @@
       "permanent": true
     },
     {
+      "source": "/crm-para-dentistas.html",
+      "destination": "/crm-para-dentistas",
+      "permanent": true
+    },
+    {
+      "source": "/crm-para-medicos.html",
+      "destination": "/crm-para-medicos",
+      "permanent": true
+    },
+    {
+      "source": "/crm-para-biomedicos.html",
+      "destination": "/crm-para-biomedicos",
+      "permanent": true
+    },
+    {
+      "source": "/crm-para-tsb.html",
+      "destination": "/crm-para-tsb",
+      "permanent": true
+    },
+    {
+      "source": "/crm-para-proteticos.html",
+      "destination": "/crm-para-proteticos",
+      "permanent": true
+    },
+    {
+      "source": "/crm-para-associacoes.html",
+      "destination": "/crm-para-associacoes",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -455,6 +485,30 @@
     {
       "source": "/crm-para-clinica-medica",
       "destination": "/crm-para-clinica-medica.html"
+    },
+    {
+      "source": "/crm-para-dentistas",
+      "destination": "/crm-para-dentistas.html"
+    },
+    {
+      "source": "/crm-para-medicos",
+      "destination": "/crm-para-medicos.html"
+    },
+    {
+      "source": "/crm-para-biomedicos",
+      "destination": "/crm-para-biomedicos.html"
+    },
+    {
+      "source": "/crm-para-tsb",
+      "destination": "/crm-para-tsb.html"
+    },
+    {
+      "source": "/crm-para-proteticos",
+      "destination": "/crm-para-proteticos.html"
+    },
+    {
+      "source": "/crm-para-associacoes",
+      "destination": "/crm-para-associacoes.html"
     },
     {
       "source": "/api/:path((?!(?:material|diagnostic)(?:/|$)).*)",
